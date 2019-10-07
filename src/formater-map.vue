@@ -58,7 +58,7 @@ export default {
          },
          onEachFeature: function (feature, layer) {
            var seePage = this.lang === 'fr' ? 'Voir la page' : 'See the page'
-           var content = '<h3>' + feature.properties.name + '</h3>'
+           var content = '<h3 style="color:'+ feature.properties.style.color +';">' + feature.properties.name + '</h3>'
            content += '<p>' + feature.properties.description + '</p>'
            content += '<a href="' + feature.properties.link + '">' + seePage + '</a>'
            layer.bindPopup(content)
