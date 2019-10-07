@@ -28,9 +28,10 @@ export default {
     }
   },
   created () {
-
+    console.log(this.lang)
   },
   mounted () {
+    console.log(this.lang)
     this.initialize()
   },
   methods: {
@@ -52,12 +53,12 @@ export default {
       }
     },
     addGeojsonLayer (features) {
-       this.layer = L.geoJSON(features, {
+      var seePage = this.lang === 'fr' ? 'Voir la page' : 'See the page'
+      this.layer = L.geoJSON(features, {
          style: function (feature) {
            return feature.properties.style
          },
          onEachFeature: function (feature, layer) {
-           var seePage = this.lang === 'fr' ? 'Voir la page' : 'See the page'
            var content = '<h3 style="color:'+ feature.properties.style.color +';">' + feature.properties.name + '</h3>'
            content += '<p>' + feature.properties.description + '</p>'
            content += '<a href="' + feature.properties.link + '">' + seePage + '</a>'
