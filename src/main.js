@@ -10,9 +10,7 @@ Vue.use(vueCustomElement);
 // import ajax from './services/ajax'
 
 
-//pour la traduction 
-import VueI18n from 'vue-i18n'
-Vue.use(VueI18n);
+
 
 import FormaterMap from './formater-map.vue'
 
@@ -22,7 +20,10 @@ ljs.addAliases({
        // font-awesome
        // 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 
        // leaflet
-       'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css'
+       'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css',
+       //regiter element
+       //-------------
+      // 'https://cdnjs.cloudflare.com/ajax/libs/document-register-element/1.4.1/document-register-element.js'
       ]
 })
 ljs.load('dep', function() {

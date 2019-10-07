@@ -12,9 +12,9 @@ export default {
   name: 'FormaterMap',
   components: {},
   props: {
-    data: {
-      type: Object,
-      default: null
+    lang: {
+      type: String,
+      default: 'en'
     },
     geojson: {
       type: String,
@@ -26,6 +26,9 @@ export default {
       map: null,
       layer: null
     }
+  },
+  created () {
+
   },
   mounted () {
     this.initialize()
@@ -54,9 +57,10 @@ export default {
            return feature.properties.style
          },
          onEachFeature: function (feature, layer) {
+           var seePage = this.lang === 'fr' ? 'Voir la page' : 'See the page'
            var content = '<h3>' + feature.properties.name + '</h3>'
            content += '<p>' + feature.properties.description + '</p>'
-           content += '<a href="' + feature.properties.link + '">Voir la page</a>'
+           content += '<a href="' + feature.properties.link + '">' + seePage + '</a>'
            layer.bindPopup(content)
          }
        })
