@@ -1,16 +1,29 @@
 <template>
   <div class="fmt-wrapper">
+    <div style="height:100px;margin:50px;">
+    <a class="area-button" :href="feature.properties.link" v-for="feature in features" >
+       <div :style="{backgroundColor: $shadeColor(feature.properties.style.color, -0.3)}">
+       {{feature.properties.name}}
+       </div>
+    </a>
+    </div>
+     <div>
+    <formater-popup v-for="(feature, index) in features"  :key="index" :properties="feature.properties" :lang="lang"></formater-popup>
+    </div>
     <div class="fmt-container">
       <div id="fmtMap" />
     </div>
+   
   </div>
 </template>
 <script>
 var L = require('leaflet');
-
+import FormaterPopup from './formater-popup.vue'
 export default {
   name: 'FormaterMap',
-  components: {},
+  components: {
+    FormaterPopup
+  },
   props: {
     lang: {
       type: String,
@@ -24,7 +37,8 @@ export default {
   data () {
     return {
       map: null,
-      layer: null
+      layer: null,
+      features: []
     }
   },
   created () {
@@ -53,20 +67,30 @@ export default {
       }
     },
     addGeojsonLayer (features) {
-      var seePage = this.lang === 'fr' ? 'Voir la page' : 'See the page'
+      this.features = features.features
       this.layer = L.geoJSON(features, {
          style: function (feature) {
            return feature.properties.style
          },
          onEachFeature: function (feature, layer) {
-           var content = '<h3 style="color:'+ feature.properties.style.color +';">' + feature.properties.name + '</h3>'
-           content += '<p>' + feature.properties.description + '</p>'
-           content += '<a href="' + feature.properties.link + '">' + seePage + '</a>'
-           layer.bindPopup(content)
+           layer.on('click', function (layer) {
+             var node = document.querySelector('#popup_' + feature.properties.id)
+             console.log(node)
+             this.bindPopup(node)
+             
+           })
+            var node = document.querySelector('#popup_' + feature.properties.id)
+             console.log(node)
+//            var content = '<h3 style="color:'+ feature.properties.style.color +';">' + feature.properties.name + '</h3>'
+//            content += '<p>' + feature.properties.description + '</p>'
+//            content += '<a href="' + feature.properties.link + '">' + seePage + '</a>'
+//            layer.bindPopup(node.cloneNode(true))
          }
        })
+      
        this.layer.addTo(this.map)
        this.map.fitBounds(this.layer.getBounds(), {padding: [10, 10]})
+
      
     }
   }
@@ -87,5 +111,25 @@ div[id="fmtMap"] {
   min-height: 500px;
   width:100%;
   z-index:0;
+}
+.area-button {
+ 
+  color:white;
+  margin: 0 30px;
+  text-decoration: none;
+}
+.area-button:hover {
+  color: white;
+}
+.area-button div{
+  min-width:120px;
+  padding: 30px;
+  opacity:0.8;
+  font-weight:600;
+  display: inline-block;
+  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.7);
+}
+.area-button div:hover {
+  opacity:1
 }
 </style>

@@ -9,7 +9,8 @@ import vueCustomElement from 'vue-custom-element'
 Vue.use(vueCustomElement);
 // import ajax from './services/ajax'
 
-
+import {VueTools} from 'formater-commons-components-vjs'
+Vue.use(VueTools)
 
 
 import FormaterMap from './formater-map.vue'
