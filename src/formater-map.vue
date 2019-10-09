@@ -74,10 +74,12 @@ export default {
          },
          onEachFeature: function (feature, layer) {
            layer.on('click', function (layer) {
-             var node = document.querySelector('#popup_' + feature.properties.id)
-             console.log(node)
-             this.bindPopup(node)
-             
+             if (!feature.properties.first) {
+	             var node = document.querySelector('#popup_' + feature.properties.id)
+	             this.bindPopup(node)
+	             this.openPopup()
+                 feature.properties.first = true
+             }
            })
             var node = document.querySelector('#popup_' + feature.properties.id)
              console.log(node)
@@ -118,7 +120,8 @@ div[id="fmtMap"] {
   margin: 0 30px;
   text-decoration: none;
 }
-.area-button:hover {
+.area-button:hover,
+.area-button:visited {
   color: white;
 }
 .area-button div{
