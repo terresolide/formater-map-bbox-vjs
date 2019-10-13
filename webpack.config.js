@@ -71,6 +71,15 @@ module.exports = {
         }]
       },
       {
+          test: /\.(json)(\?v=\d+\.\d+\.\d+)?$/,
+          use: [{
+            loader: 'url-loader',
+            options: {
+              name: 'data/[name].[ext]'
+            }
+          }]
+        },
+      {
         test: /\.(png|jpeg|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {

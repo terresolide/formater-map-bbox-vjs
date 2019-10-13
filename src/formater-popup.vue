@@ -3,7 +3,7 @@
 	     <h3 :style="{color: $shadeColor(properties.style.color, -0.3)}">{{properties.name}}</h3>
 	     <img v-if="properties.image" :src="properties.image.src" :title="properties.image.title" />
 	     <span v-html="properties.description"></span>
-	     <div style="clear:left;"><a :href="properties.link">{{seePage}}</a></div>
+	     <div style="clear:left;" ><a v-if="properties.link" :href="properties.link">{{seePage}}</a></div>
 	    </div>
 </template>
 <script>

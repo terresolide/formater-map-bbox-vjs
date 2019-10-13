@@ -1,0 +1,43 @@
+{
+  "type": "FeatureCollection",
+  "properties": {},
+  "features": [
+      {
+      "type": "Feature",
+      "geometry":{"type":"Polygon","coordinates":[[[-4.557916241,38.026802758],[-1.352358121,38.026802758],[-1.352358121,36.20013463],[-4.557916241,36.20013463],[-4.557916241,38.026802758]]]},
+      "properties": {
+        "id": "grenade",
+        "style": {
+          "color": "#ff0000"
+        },
+      "name": "GRENADE",
+      "description": "Collection d'interférogrammes sur la région de Grenade",
+       "link": "https://www.poleterresolide.fr/acces-aux-donnees/collection-dinterferogrammes/2257-2/",
+       "image": {
+         "src": "https://api.poleterresolide.fr/images/flatsim/granada.png"
+       }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry":
+        {
+          "type":"Polygon",
+          "coordinates":[[[94.370414631,37.231801956],[98.474862359,37.231801956],[98.474862359,30.694018948],[94.370414631,30.694018948],[94.370414631,37.231801956]]]
+        },
+      "properties": {
+        "id": "tibet",
+        "style": {
+          "color": "#008000"
+        },
+      "name": "TIBET",
+      "description": "Collection d'interférogrammes sur le Tibet",
+      "link": "https://www.poleterresolide.fr/acces-aux-donnees/collection-dinterferogrammes/interferogram-tibet/",
+      "image": {
+         "src": "https://api.poleterresolide.fr/images/flatsim/tibet.png"
+       }
+      }
+    }
+    
+  ]
+}

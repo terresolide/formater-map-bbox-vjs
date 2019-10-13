@@ -1,11 +1,15 @@
 <template>
   <div class="fmt-wrapper">
     <div style="height:100px;margin:50px;">
-    <a class="area-button" :href="feature.properties.link" v-for="feature in features" >
-       <div :style="{backgroundColor: $shadeColor(feature.properties.style.color, -0.3)}">
-       {{feature.properties.name}}
-       </div>
-    </a>
+    <span v-for="feature in features" class="area-button">
+	    <a   v-if="feature.properties.link"  :href="feature.properties.link"  >
+	       <div :style="{backgroundColor: $shadeColor(feature.properties.style.color, -0.3)}">
+	       {{feature.properties.name}}
+	       </div>
+	    </a>
+	     <div class="disabled" v-if="!feature.properties.link">{{feature.properties.name}}<br />
+	      ({{lang === 'en' ? 'on Going' : 'A venir'  }})</div>
+    </span>
     </div>
      <div>
     <formater-popup v-for="(feature, index) in features"  :key="index" :properties="feature.properties" :lang="lang"></formater-popup>
@@ -114,25 +118,36 @@ div[id="fmtMap"] {
   width:100%;
   z-index:0;
 }
-.area-button {
- 
+.area-button a{
   color:white;
   margin: 0 30px;
   text-decoration: none;
 }
-.area-button:hover,
-.area-button:visited {
+
+.area-button a:hover,
+.area-button a:visited {
   color: white;
 }
 .area-button div{
   min-width:120px;
-  padding: 30px;
-  opacity:0.8;
+  color: white;
+  vertical-align:middle;
+ 
   font-weight:600;
   display: inline-block;
   box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.7);
 }
-.area-button div:hover {
+.area-button a div{
+  min-height: 50px;
+  padding-top:30px;
+   opacity:0.8;
+}
+.area-button div.disabled{
+   background-color: #ccc;
+   padding-top: 20px;
+   min-height:60px;
+}
+.area-button a div:hover {
   opacity:1
 }
 </style>
