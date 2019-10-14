@@ -26,7 +26,7 @@
     "overview|https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.2.0/public/images/unwrapped_tibet.png|Unwrapped interferogram on Tibet (june 2019)",
     "overview|https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.2.0/public/images/wrapped_tibet.png|Wrapped interferogram on Tibet (june 2019)"
   ],
-  "tempExtentBegin": "2014-10-01",
+  "tempExtentBegin": "2000-01-01",
   "crsDetails": {
     "code": ":WGS 1984 ",
     "name": "",
