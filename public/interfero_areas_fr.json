@@ -2,22 +2,6 @@
   "type": "FeatureCollection",
   "properties": {},
   "features": [
-      {
-      "type": "Feature",
-      "geometry":{"type":"Polygon","coordinates":[[[-4.557916241,38.026802758],[-1.352358121,38.026802758],[-1.352358121,36.20013463],[-4.557916241,36.20013463],[-4.557916241,38.026802758]]]},
-      "properties": {
-        "id": "grenade",
-        "style": {
-          "color": "#ff0000"
-        },
-      "name": "GRENADE",
-      "description": "Collection d'interférogrammes sur la région de Grenade",
-       "link": "https://www.poleterresolide.fr/acces-aux-donnees/collection-dinterferogrammes/2257-2/",
-       "image": {
-         "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.2.0/public/images/granada.png"
-       }
-      }
-    },
     {
       "type": "Feature",
       "geometry":

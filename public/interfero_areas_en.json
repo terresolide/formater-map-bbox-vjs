@@ -4,23 +4,6 @@
   "features": [
     {
       "type": "Feature",
-      "geometry":{"type":"Polygon","coordinates":[[[-4.557916241,38.026802758],[-1.352358121,38.026802758],[-1.352358121,36.20013463],[-4.557916241,36.20013463],[-4.557916241,38.026802758]]]},
-      "properties": {
-        "id": "granada",
-        "style": {
-          "color": "#ff0000"
-        },
-      "name": "GRANADA",
-      "description": "Interferogram collection on Granada",
-       "link": "https://en.poleterresolide.fr/data-access/interferogram-collection/granada-interferogram-collection/",
-       "image": {
-         "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.2.0/public/images/granada.png"
-       }
-      }  
-      
-    },
-    {
-      "type": "Feature",
       "geometry":
         {
           "type":"Polygon",
