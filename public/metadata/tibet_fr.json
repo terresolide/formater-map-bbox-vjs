@@ -1,0 +1,92 @@
+{
+  "title": "Collection d'interférogrammes sur le Tibet",
+  "abstract": "Cette collection d'interférogrammes est calculée en continu par le CNES en collaboration avec ISTerre et ForM@Ter.\nElle génère, ... les produits suivants:\n<ul> <li>INTERFEROGRAM<ul><li>WRAPPED_INTERFEROGRAM</li><li>UNWRAPPED_INTERFEROGRAM</li><li>INTERFEROGRAM_APS_GLOBAL_MODEL</li><li>SPATIAL_COHERENCE</li></ul></li><li>AUXILIARYDATA<ul>\n<li>MAP_OF_LOS_VECTOR</li><li>DEM_RADAR_GEOMETRY</li><li>LOOKUP_TABLE_RADAR2GROUD_COORDINATES</li></ul></li></ul>",
+  "responsibleParty": "Distributor|resource|CNES||||||",
+  "lineage": "Les interférogrammes sont calculés au CNES via la chaine NSBAS à partir des images radar SENTINEL1",
+  "type": "series",
+    "identifier": "urn:ogc:def:EOP:CNES::TIBET:",
+  "isHarvested": "n",
+  "displayOrder": "0",
+  "docLocale": "eng",
+  "popularity": "0",
+     "keyword": [
+    "Asie",
+    "Chine",
+    "Qinghai",
+    "Xizang",
+    "Tibet",
+    "Information géoscientifique"
+  ],
+  "publishedForGroup": [
+    "1",
+    "15034"
+  ],
+  "image": [
+    "thumbnail|https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.2.0/public/images/atmospheric_tibet.png|Phase atmosphérique (Tibet juin 2019)",
+    "overview|https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.2.0/public/images/unwrapped_tibet.png|Interférogramme déroulé (Tibet juin 2019)",
+    "overview|https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.2.0/public/images/wrapped_tibet.png|Interférogramme enroulé (Tibet juin 2019)"
+  ],
+  "tempExtentBegin": "2000-01-01",
+  "crsDetails": {
+    "code": ":WGS 1984 ",
+    "name": "",
+    "url": ""
+  },
+  "maintenanceAndUpdateFrequency_text": "As needed",
+  "format": [
+    "GEOTIFF",
+    "CSV"
+  ],
+  "spatialRepresentationType_text": "Grid",
+  "denominator": "120",
+  "isTemplate": "n",
+  "valid": "-1",
+  "rating": "0",
+  "source": "ece14bc5-d1c1-4222-9cf4-4071a2870bb5",
+  "status": "onGoing",
+  "geoBox": "93|36.39988439|98|37.73231868",
+  "owner": "1",
+  "defaultAbstract": "Cette collection d'interférogrammes est  ... en continu par le CNES en collaboration avec ISTerre et ForM@Ter.\nElle génère, ... les produits suivants:\n<ul> <li>INTERFEROGRAM<ul><li>WRAPPED_INTERFEROGRAM</li><li>UNWRAPPED_INTERFEROGRAM</li><li>INTERFEROGRAM_APS_GLOBAL_MODEL</li><li>SPATIAL_COHERENCE</li></ul></li><li>AUXILIARYDATA<ul>\n<li>MAP_OF_LOS_VECTOR</li><li>DEM_RADAR_GEOMETRY</li><li>LOOKUP_TABLE_RADAR2GROUD_COORDINATES</li></ul></li></ul>",
+  "link": [
+    "API opensearch Flatsim|API opensearch du cnes|https://flatsim.cnes.fr/atdistrib/resto2/api/collections/TIBET/describe.xml|OpenSearch|OpenSearch|1|OpenSearch"
+  ],
+  "defaultTitle": [
+    "Collection d'interférogrammes sur le Tibet",
+    "Interferograms collection on Tibet"
+  ],
+  "datasetLang": "eng",
+  "userinfo": "admin|admin|admin|Administrator",
+  "topicCat": "geoscientificInformation",
+  "publicationDate": "2019-09-10",
+  "status_text": "On going",
+  "standardName": "ISO 19115:2003/19139",
+  "crs": "WGS 1984::\n              ::",
+  "logo": "https://www7.obs-mip.fr/wp-content-aeris/uploads/sites/4/2017/06/cnes_logo_essai-100x33.png",
+  "keywordGroup": {
+    "ForM@Ter | Solid Earth variable ontology": [
+      {
+        "value": "Géodésie",
+        "link": ""
+      }
+    ]
+  },
+  "groupOwner": "15034",
+  "_locale": "fre",
+  "geonet:info": {
+    "@xmlns:geonet": "http://www.fao.org/geonetwork",
+    "id": "15045",
+    "uuid": "86a28260-dc26-4b40-8433-9d06e9b9e628",
+    "schema": "iso19139",
+    "createDate": "2019-09-11T16:18:32",
+    "changeDate": "2019-09-11T16:46:21",
+    "source": "ece14bc5-d1c1-4222-9cf4-4071a2870bb5",
+    "isPublishedToAll": "true",
+    "view": "true",
+    "notify": "false",
+    "download": "false",
+    "dynamic": "false",
+    "featured": "false",
+    "guestdownload": "false",
+    "selected": "false"
+  }
+}
