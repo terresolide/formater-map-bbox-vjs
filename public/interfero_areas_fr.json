@@ -14,7 +14,7 @@
       "description": "Collection d'interférogrammes sur la région de Grenade",
        "link": "https://www.poleterresolide.fr/acces-aux-donnees/collection-dinterferogrammes/2257-2/",
        "image": {
-         "src": "https://api.poleterresolide.fr/images/flatsim/granada.png"
+         "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.2.0/public/images/granada.png"
        }
       }
     },
@@ -34,7 +34,7 @@
       "description": "Collection d'interférogrammes sur le Tibet",
       "link": "https://www.poleterresolide.fr/acces-aux-donnees/collection-dinterferogrammes/interferogram-tibet/",
       "image": {
-         "src": "https://api.poleterresolide.fr/images/flatsim/tibet.png"
+         "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.2.0/public/images/tibet.png"
        }
       }
     }

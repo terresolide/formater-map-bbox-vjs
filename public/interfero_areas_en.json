@@ -14,7 +14,7 @@
       "description": "Interferogram collection on Granada",
        "link": "https://en.poleterresolide.fr/data-access/interferogram-collection/granada-interferogram-collection/",
        "image": {
-         "src": "https://api.poleterresolide.fr/images/flatsim/granada.png"
+         "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.2.0/public/images/granada.png"
        }
       }  
       
@@ -35,7 +35,7 @@
       "description": "Interferogram collection on Tibet",
       "link": "https://en.poleterresolide.fr/data-access/interferogram-collection/interferogram-tibet/",
       "image": {
-         "src": "https://api.poleterresolide.fr/images/flatsim/tibet.png"
+         "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.2.0/public/images/tibet.png"
        }
       }
     }
