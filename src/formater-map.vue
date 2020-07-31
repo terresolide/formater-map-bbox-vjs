@@ -1,6 +1,6 @@
 <template>
   <div class="fmt-wrapper">
-    <div style="height:100px;margin:50px;">
+   <!--   <div style="height:100px;margin:50px;">
     <span v-for="feature in features" class="area-button">
 	    <a   v-if="feature.properties.link"  :href="feature.properties.link"  >
 	       <div :style="{backgroundColor: $shadeColor(feature.properties.style.color, -0.3)}">
@@ -10,7 +10,8 @@
 	     <div class="disabled" v-if="!feature.properties.link">{{feature.properties.name}}<br />
 	      ({{lang === 'en' ? 'on Going' : 'A venir'  }})</div>
     </span>
-    </div>
+   
+    </div> -->
      <div>
     <formater-popup v-for="(feature, index) in features"  :key="index" :properties="feature.properties" :lang="lang"></formater-popup>
     </div>
@@ -41,7 +42,7 @@ export default {
   data () {
     return {
       map: null,
-      layer: null,
+      layers: null,
       features: []
     }
   },
@@ -55,7 +56,7 @@ export default {
   methods: {
     initialize () {
       console.log('initialize')
-      this.map = L.map( "fmtMap").setView([20, -0.09], 3);
+      this.map = L.map( "fmtMap", {scrollWheelZoom: false}).setView([20, -0.09], 3);
 
       // this.map.on( "zoom", function(e){ this.updateAllPolygons();})
       L.tileLayer('//server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
@@ -72,7 +73,8 @@ export default {
     },
     addGeojsonLayer (features) {
       this.features = features.features
-      this.layer = L.geoJSON(features, {
+      var _this = this
+      this.layers = L.geoJSON(features, {
          style: function (feature) {
            return feature.properties.style
          },
@@ -92,11 +94,13 @@ export default {
 //            content += '<a href="' + feature.properties.link + '">' + seePage + '</a>'
 //            layer.bindPopup(node.cloneNode(true))
          }
+       }).on('add', function () {
+         _this.map.fitBounds(_this.layers.getBounds(), {padding: [10, 10]})
+         // _this.layers.getLayers()[0].fire('click')
        })
       
-       this.layer.addTo(this.map)
-       this.map.fitBounds(this.layer.getBounds(), {padding: [10, 10]})
-
+        this.layers.addTo(this.map)
+          // this.layer.getLayers()[0].fire('click')
      
     }
   }
@@ -109,12 +113,13 @@ div.fmt-wrapper{
 }
 div.fmt-container{
    position:relative;
-   max-width:900px;
+   max-width:1200px;
    margin: auto;
 }
 div[id="fmtMap"] {
   position:absolute;
   min-height: 500px;
+  height:500px;
   width:100%;
   z-index:0;
 }
