@@ -114,12 +114,12 @@ div.fmt-wrapper{
 div.fmt-container{
    position:relative;
    max-width:1200px;
+   height:500px;
    margin: auto;
 }
 div[id="fmtMap"] {
   position:absolute;
   min-height: 500px;
-  height:500px;
   width:100%;
   z-index:0;
 }
