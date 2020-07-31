@@ -11,17 +11,90 @@
         },
       "properties": {
         "id": "tibet",
-        "style": {
-          "color": "#008000"
-        },
-      "name": "TIBET",
-      "description": "Collection d'interférogrammes sur le Tibet",
-      "link": "https://www.poleterresolide.fr/acces-aux-donnees/collection-dinterferogrammes/interferogram-tibet/",
-      "image": {
-         "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.2.0/public/images/tibet.png"
-       }
+        "name": "Collection d'interférogrammes sur le Tibet",
+        "description": "est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles,",
+        "link": "https://www.poleterresolide.fr/acces-aux-donnees/collection-dinterferogrammes/interferogram-tibet/",
+        "image": {
+           "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.2.0/public/images/tibet.png"
+         }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              19.599609,
+              39.415672
+            ],
+            [
+              19.599609,
+              41.962613
+            ],
+            [
+              22.565918,
+              41.962613
+            ],
+            [
+              22.565918,
+              39.415672
+            ],
+            [
+              19.599609,
+              39.415672
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "albanie",
+        "name": "Collection d'interférogrammes sur l'Albanie",
+        "description": "est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles,",
+        "image": {
+           "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.2.0/public/images/tibet.png"
+         }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -109.160156,
+              18.043971
+            ],
+            [
+              -109.160156,
+              30.651329
+            ],
+            [
+              -96.328125,
+              30.651329
+            ],
+            [
+              -96.328125,
+              18.043971
+            ],
+            [
+              -109.160156,
+              18.043971
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "mexico",
+        "name": "Collection d'interférogrammes sur Mexico",
+        "description": "est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles,",
+        "link": "https://www.poleterresolide.fr/acces-aux-donnees/collection-dinterferogrammes/interferogram-tibet/",
+        "image": {
+           "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.2.0/public/images/tibet.png"
+         }
       }
     }
-    
   ]
 }

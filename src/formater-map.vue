@@ -1,19 +1,20 @@
 <template>
   <div class="fmt-wrapper">
-   <!--   <div style="height:100px;margin:50px;">
-    <span v-for="feature in features" class="area-button">
+  <div style="text-align:left;">
+    <ul style="">
+    <li v-for="feature in features">
 	    <a   v-if="feature.properties.link"  :href="feature.properties.link"  >
-	       <div :style="{backgroundColor: $shadeColor(feature.properties.style.color, -0.3)}">
 	       {{feature.properties.name}}
-	       </div>
 	    </a>
-	     <div class="disabled" v-if="!feature.properties.link">{{feature.properties.name}}<br />
-	      ({{lang === 'en' ? 'on Going' : 'A venir'  }})</div>
-    </span>
+	     <div class="disabled" v-if="!feature.properties.link">
+	     {{feature.properties.name}}
+	     ({{lang === 'en' ? 'on Going' : 'A venir'  }})</div>
+    </li>
    
-    </div> -->
+    </ul> 
+    </div>
      <div>
-    <formater-popup v-for="(feature, index) in features"  :key="index" :properties="feature.properties" :lang="lang"></formater-popup>
+    <formater-popup v-for="(feature, index) in features"  :key="index" :properties="feature.properties" :color="color" :lang="lang"></formater-popup>
     </div>
     <div class="fmt-container">
       <div id="fmtMap" />
@@ -37,6 +38,10 @@ export default {
     geojson: {
       type: String,
       default: null
+    },
+    color: {
+      type: String,
+      default:'#3d5c7a'
     }
   },
   data () {
@@ -56,6 +61,7 @@ export default {
   methods: {
     initialize () {
       console.log('initialize')
+      console.log(this.$shadeColor(this.color, -0.4))
       this.map = L.map( "fmtMap", {scrollWheelZoom: false}).setView([20, -0.09], 3);
 
       // this.map.on( "zoom", function(e){ this.updateAllPolygons();})
@@ -76,7 +82,7 @@ export default {
       var _this = this
       this.layers = L.geoJSON(features, {
          style: function (feature) {
-           return feature.properties.style
+           return {color: _this.color, width: 1}
          },
          onEachFeature: function (feature, layer) {
            layer.on('click', function (layer) {
@@ -95,8 +101,9 @@ export default {
 //            layer.bindPopup(node.cloneNode(true))
          }
        }).on('add', function () {
-         _this.map.fitBounds(_this.layers.getBounds(), {padding: [10, 10]})
-         // _this.layers.getLayers()[0].fire('click')
+         _this.map.fitBounds(_this.layers.getBounds(), {padding: [50, 50]})
+         var next = function () { _this.layers.getLayers()[2].fire('click')}
+         setTimeout(next, 1000)
        })
       
         this.layers.addTo(this.map)
