@@ -1,25 +1,64 @@
 <template>
   <div class="fmt-wrapper">
-  <div style="text-align:left;">
-    <ul style="">
-    <li v-for="feature in features">
-	    <a   v-if="feature.properties.link"  :href="feature.properties.link"  >
-	       {{feature.properties.name}}
-	    </a>
-	     <div class="disabled" v-if="!feature.properties.link">
-	     {{feature.properties.name}}
-	     ({{lang === 'en' ? 'on Going' : 'A venir'  }})</div>
-    </li>
-   
-    </ul> 
-    </div>
-     <div>
-    <formater-popup v-for="(feature, index) in features"  :key="index" :properties="feature.properties" :color="color" :lang="lang"></formater-popup>
+    <div>
+      <formater-popup v-for="(feature, index) in features"  :key="index" :properties="feature.properties" :color="color" :lang="lang"></formater-popup>
     </div>
     <div class="fmt-container">
       <div id="fmtMap" />
     </div>
-   
+   <div v-if="full" style="text-align:left;">
+   <h3>{{ lang === 'en' ? 'Selected Area list' : 'Liste des zones sélectionnées' }}</h3>
+    <div class="fmt-feature feature-header">
+      <div class="feature-column-1">
+         <span>Code</span>
+         <div class="button" @click="sort('id', 1)">&darr;</div>
+         <div class="button" @click="sort('id', -1)">&uarr;</div>
+      </div>
+      <div class="feature-column-2">
+        <span>{{lang === 'en' ? 'Location' : 'Localisation'}}</span>
+         <div class="button" @click="sort('location', -1)">&darr;</div>
+         <div class="button" @click="sort('location', 1)">&uarr;</div>
+      </div>
+      <div class="feature-column-3">
+        <span>Lat</span>
+        <div class="button" @click="sort('lat', 1)">&darr;</div>
+        <div class="button" @click="sort('lat', -1)">&uarr;</div>
+      </div>
+      <div class="feature-column-4">
+        <span>Lng</span>
+        <div class="button" @click="sort('lng', 1)">&darr;</div>
+        <div class="button" @click="sort('lng', -1)">&uarr;</div>
+      </div>
+      <div class="feature-column-5">
+         <span>{{lang === 'en' ? 'Data': 'Données'}}</span>
+         <div class="button" @click="sort('id', 1)">&darr;</div>
+         <div class="button" @click="sort('id', -1)">&uarr;</div>
+      </div>
+    </div>
+    <div class="fmt-feature" v-for="feature in features">
+      <div class="feature-column-1">
+        {{feature.properties.id}}
+      </div>
+      <div class="feature-column-2">
+        {{feature.properties.location}}
+      </div>
+       <div class="feature-column-3">
+        {{feature.geometry.coordinates[1].toFixed(2)}}
+      </div>
+       <div class="feature-column-4">
+        {{feature.geometry.coordinates[0].toFixed(2)}}
+      </div>
+      <div class="feature-column-5">
+      <a   v-if="feature.properties.link"  :href="feature.properties.link" target="_blank" >
+         {{lang === 'en' ? 'Data Access': 'Accès Données'}}
+      </a>
+     
+      <em v-if="!feature.properties.link">
+       {{lang === 'en' ? 'on Going' : 'A venir'  }}
+      </em>
+       </div>
+     </div>
+    </div>
   </div>
 </template>
 <script>
@@ -42,6 +81,10 @@ export default {
     color: {
       type: String,
       default:'#3d5c7a'
+    },
+    full: {
+      type: Boolean,
+      default: true
     }
   },
   data () {
@@ -79,6 +122,12 @@ export default {
     },
     addGeojsonLayer (features) {
       this.features = features.features
+      this.features.map(function (feature) {
+        feature.properties.data = feature.properties.link ? 1 : 0
+      } )
+      this.features.sort(function (a, b) {
+        return a.properties.id > b.properties.id
+      })
       var _this = this
       this.layers = L.geoJSON(features, {
          style: function (feature) {
@@ -109,6 +158,23 @@ export default {
         this.layers.addTo(this.map)
           // this.layer.getLayers()[0].fire('click')
      
+    },
+    sort (column, direction) {
+      switch (column) {
+      case 'lat':
+        
+      case 'lng':
+        var i = column === 'lat' ? 1 : 0
+        this.features.sort(function (a, b) {
+          return (direction > 0) ? (a.geometry.coordinates[i] > b.geometry.coordinates[i]) : (a.geometry.coordinates[i] < b.geometry.coordinates[i])
+        })
+        break;
+      default:
+        this.features.sort(function (a, b) {
+          return (direction > 0) ? (a.properties[column] > b.properties[column]) : (a.properties[column] < b.properties[column])
+        })
+      }
+      
     }
   }
 }
@@ -135,7 +201,62 @@ div[id="fmtMap"] {
   margin: 0 30px;
   text-decoration: none;
 }
-
+div.fmt-feature {
+  display: grid;
+  grid-template-columns: 250px minmax(150px,1fr) minmax(80px,1fr) minmax(80px,1fr) 120px;
+  grid-gap: 5px;
+  /*grid-auto-rows: minmax(100px, auto);*/
+  font-size:0.8em;
+  border-bottom:1px solid lightgrey;
+}
+div.fmt-feature.feature-header{
+  font-weight:800;
+  border-bottom: 1px solid darkgrey;
+  border-top: 1px solid darkgrey;
+}
+div.fmt-feature.feature-header span {
+  line-height: 36px;
+  vertical-align: middle;
+}
+div.fmt-feature div.button {
+  display: inline-block;
+  padding: 0 4px;
+  margin:0 1px;
+  width:8px;
+  font-size:20px;
+  vertical-align: top;
+  cursor:pointer;
+  opacity:0.9;
+}
+div.fmt-feature div.button:hover {
+ opacity:1;
+ border: 1px dotted grey;
+}
+div.fmt-feature:nth-child(2n) {
+  background-color:#f3F3F3;
+}
+div.fmt-feature .feature-column-1 {
+  grid-column: 1;
+  grid-row: 1/2;
+  color:#darkgrey;
+  padding:2px 4px;
+}
+div.fmt-feature .feature-column-2 {
+  grid-column: 2;
+  grid-row: 1/2;
+}
+div.fmt-feature .feature-column-3 {
+  grid-column: 3;
+  grid-row: 1/2;
+}
+div.fmt-feature .feature-column-4 {
+  grid-column: 4;
+  grid-row: 1/2;
+}
+div.fmt-feature .feature-column-5 {
+  grid-column: 5;
+  grid-row: 1/2;
+}
 .area-button a:hover,
 .area-button a:visited {
   color: white;

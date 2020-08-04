@@ -10,7 +10,7 @@
           "coordinates":[96.000695873, 34.213187865]
         },
       "properties": {
-        "id": "tibet",
+        "id": "urn:ogc:def:EOP:CNES::TIBET:",
         "name": "Collection d'interférogrammes sur le Tibet",
         "description": "est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles,",
         "link": "https://www.poleterresolide.fr/acces-aux-donnees/collection-dinterferogrammes/interferogram-tibet/",
@@ -24,14 +24,17 @@
       "geometry":
         {
           "type":"Point",
-          "coordinates":[-19.645, 23.08]
+          "coordinates":[23.08, -19.645]
         },
       "properties": {
-        "id": "okavango",
+        "id": "urn:ogc:def:EOP:CNES::OKAVANGO:",
+        "location": "Okavango, Bostwana",
         "name": "Collection d'interférogrammes sur l'Okavango",
         "description": "est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles,",
         "image": {
-           "src": "data/images/okavango.png"
+           "src": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Okavango_Delta%2C_Botswana.jpg",
+           "attribution": "Joachim Huber / CC BY-SA (https://creativecommons.org/licenses/by-sa/2.0)",
+           "page": "https://commons.wikimedia.org/wiki/File:Okavango_Delta,_Botswana.jpg"
          }
       }
     },
@@ -43,11 +46,14 @@
           "coordinates":[40.73, 11.75]
         },
       "properties": {
-        "id": "afar",
+        "id": "urn:ogc:def:EOP:CNES::AFAR:",
         "name": "Collection d'interférogrammes sur l'Afar",
+        "location": "Afar, Afrique",
         "description": "est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles,",
         "image": {
-           "src": "data/images/afar.jpg"
+           "src": "https://upload.wikimedia.org/wikipedia/commons/d/d4/ET_Afar_asv2018-01_img48_Dallol.jpg",
+           "attribution": "A.Savin (Wikimedia Commons · WikiPhotoSpace) / FAL",
+           "page": "https://commons.wikimedia.org/wiki/File:ET_Afar_asv2018-01_img48_Dallol.jpg"
          }
       }
     },
@@ -59,11 +65,14 @@
           "coordinates":[22.022, 43.137]
         },
       "properties": {
-        "id": "balkans",
+        "id": "urn:ogc:def:EOP:CNES::BALKANS:",
+        "location": "Balkans",
         "name": "Collection d'interférogrammes sur les Balkans",
         "description": "est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles,",
-        "image": {
-           "src": "data/images/tibet.jpg"
+         "image": {
+           "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Balkan_topo_en.jpg",
+           "attribution": "Captain Blood~commonswiki / CC BY-SA (http://creativecommons.org/licenses/by-sa/3.0/)",
+           "page": "https://commons.wikimedia.org/wiki/File:Balkan_topo_en.jpg"
          }
       }
     },
@@ -75,11 +84,12 @@
           "coordinates":[32.193, 38.87]
         },
       "properties": {
-        "id": "anatolie",
+        "id": "urn:ogc:def:EOP:CNES::ANATOLIA:",
+        "location": "Anatolie, Turquie",
         "name": "Collection d'interférogrammes sur l'Anatolie",
         "description": "est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles,",
         "image": {
-           "src": "data/images/tibet.jpg"
+           "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.3.3/public/images/tibet.png"
          }
       }
     },
@@ -91,11 +101,12 @@
           "coordinates":[84.791, 40.75]
         },
       "properties": {
-        "id": "anatolie",
+        "id": "urn:ogc:def:EOP:CNES::TARIM:",
+        "location": "Tarim, Chine",
         "name": "Collection d'interférogrammes sur le Tarim",
         "description": "est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles,",
         "image": {
-           "src": "data/images/tibet.jpg"
+           "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.3.3/public/images/tibet.png"
          }
       }
     },
@@ -107,11 +118,12 @@
           "coordinates":[-93.2, 37]
         },
       "properties": {
-        "id": "osark",
+        "id": "urn:ogc:def:EOP:CNES::OSARK:",
+        "location": "Osark, USA",
         "name": "Collection d'interférogrammes sur Osark",
         "description": "est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles,",
         "image": {
-           "src": "data/images/tibet.jpg"
+           "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.3.3/public/images/tibet.png"
          }
       }
     },
@@ -123,11 +135,12 @@
           "coordinates":[-67.38, -21.7]
         },
       "properties": {
-        "id": "andes",
+        "id": "urn:ogc:def:EOP:CNES::ANDES:",
+        "location": "Andes, Amérique du Sud",
         "name": "Collection d'interférogrammes sur les Andes",
         "description": "est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles,",
         "image": {
-           "src": "data/images/tibet.jpg"
+           "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.3.3/public/images/tibet.png"
          }
       }
     }
