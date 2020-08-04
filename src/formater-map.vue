@@ -1,13 +1,15 @@
 <template>
   <div class="fmt-wrapper">
     <div>
-      <formater-popup v-for="(feature, index) in features"  :key="index" :properties="feature.properties" :color="color" :lang="lang"></formater-popup>
+      <formater-popup v-for="(feature, index) in features" :key="index" :properties="feature.properties" :color="color" :lang="lang"></formater-popup>
     </div>
     <div class="fmt-container">
       <div id="fmtMap" />
     </div>
    <div v-if="full" style="text-align:left;">
-   <h3>{{ lang === 'en' ? 'Selected Area list' : 'Liste des zones sélectionnées' }}</h3>
+   <h4>
+   {{ lang === 'en' ? 'Selected Area list' : 'Liste des zones sélectionnées' }}
+   </h4>
     <div class="fmt-feature feature-header">
       <div class="feature-column-1">
          <span>Code</span>
@@ -122,7 +124,8 @@ export default {
     },
     addGeojsonLayer (features) {
       this.features = features.features
-      this.features.map(function (feature) {
+      this.features.map(function (feature, index) {
+        feature.properties.index = index
         feature.properties.data = feature.properties.link ? 1 : 0
       } )
       this.features.sort(function (a, b) {
@@ -135,15 +138,11 @@ export default {
          },
          onEachFeature: function (feature, layer) {
            layer.on('click', function (layer) {
-             if (!feature.properties.first) {
-	             var node = document.querySelector('#popup_' + feature.properties.id)
-	             this.bindPopup(node)
-	             this.openPopup()
-                 feature.properties.first = true
-             }
-           })
-            var node = document.querySelector('#popup_' + feature.properties.id)
+             var node = document.querySelector('#popup_' + feature.properties.index)
              console.log(node)
+             this.bindPopup(node)
+             this.openPopup()
+         })
 //            var content = '<h3 style="color:'+ feature.properties.style.color +';">' + feature.properties.name + '</h3>'
 //            content += '<p>' + feature.properties.description + '</p>'
 //            content += '<a href="' + feature.properties.link + '">' + seePage + '</a>'
@@ -205,6 +204,7 @@ div.fmt-feature {
   display: grid;
   grid-template-columns: 250px minmax(150px,1fr) minmax(80px,1fr) minmax(80px,1fr) 120px;
   grid-gap: 5px;
+  min-height:26px;
   /*grid-auto-rows: minmax(100px, auto);*/
   font-size:0.8em;
   border-bottom:1px solid lightgrey;

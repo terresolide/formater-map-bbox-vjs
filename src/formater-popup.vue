@@ -1,8 +1,8 @@
 <template>
-<div class="fmt-popup" :id="'popup_' + properties.id">
+<div class="fmt-popup" :id="'popup_' + properties.index">
 	     <h3 :style="{color: $shadeColor(color, -0.3)}">{{properties.name.toUpperCase()}}</h3>
 	     <div style="text-align:justify;">
-	     <img v-if="properties.image" :src="properties.image.src" :title="properties.image.title" />
+	     <img v-if="properties.image" :src="properties.image.src" />
 	     <span v-html="properties.description" style="text-align:justify;"></span>
 	     </div>
 	     <div style="clear:left;text-align:right;" >
@@ -34,6 +34,9 @@ export default {
         return 'See the data page'
       }
     }
+  },
+  created () {
+    console.log(this.index)
   }
 }
 </script>
