@@ -6,20 +6,137 @@
       "type": "Feature",
       "geometry":
         {
-          "type":"Polygon",
-          "coordinates":[[[92.000695873,41.803193999],[100.529312725,41.803193999],[100.529312725,30.213187865],[92.000695873,30.213187865],[92.000695873,41.803193999]]]
+          "type":"Point",
+          "coordinates":[96.000695873, 34.213187865]
         },
       "properties": {
         "id": "tibet",
-        "style": {
-          "color": "#008000"
+        "localisation": "East Tibet",
+        "name": "Interferogram serie on Tibet",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "link": "https://www.poleterresolide.fr/acces-aux-donnees/collection-dinterferogrammes/interferogram-tibet/",
+        "image": {
+           "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.3.3/public/images/tibet.png"
+         }
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry":
+        {
+          "type":"Point",
+          "coordinates":[-19.645, 23.08]
         },
-      "name": "TIBET",
-      "description": "Interferogram collection on Tibet",
-      "link": "https://en.poleterresolide.fr/data-access/interferogram-collection/interferogram-tibet/",
-      "image": {
-         "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.2.0/public/images/tibet.png"
-       }
+      "properties": {
+        "id": "okavango",
+        "localisation": "Okavango, Bostwana",
+        "name": "Interferogram serie on Okavango",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "image": {
+           "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.3.3/public/images/tibet.png"
+         }
+      }
+    },
+{
+      "type": "Feature",
+      "geometry":
+        {
+          "type":"Point",
+          "coordinates":[40.73, 11.75]
+        },
+      "properties": {
+        "id": "afar",
+        "localisation": "Afar, Ethiopia",
+        "name": "Interferogram serie on Afar",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "image": {
+           "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.3.3/public/images/afar.jpg"
+         }
+      }
+    },
+{
+      "type": "Feature",
+      "geometry":
+        {
+          "type":"Point",
+          "coordinates":[22.022, 43.137]
+        },
+      "properties": {
+        "id": "balkans",
+        "name": "Interferogram serie on the Balkans",
+        "localisation": "Balkans, southeastern Europe",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "image": {
+           "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.3.3/public/images/tibet.png"
+         }
+      }
+    },
+{
+      "type": "Feature",
+      "geometry":
+        {
+          "type":"Point",
+          "coordinates":[32.193, 38.87]
+        },
+      "properties": {
+        "id": "anatolie",
+        "localisation": "Anatolia, Turkey",
+        "name": "Collection d'interférogrammes sur l'Anatolie",
+       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "image": {
+           "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.3.3/public/images/tibet.png"
+         }
+      }
+    },
+{
+      "type": "Feature",
+      "geometry":
+        {
+          "type":"Point",
+          "coordinates":[84.791, 40.75]
+        },
+      "properties": {
+        "id": "tarim",
+        "localisation": "Tarim, China",
+        "name": "Interferogram serie on Tarim",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "image": {
+           "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.3.3/public/images/tibet.png"
+         }
+      }
+    },
+{
+      "type": "Feature",
+      "geometry":
+        {
+          "type":"Point",
+          "coordinates":[-93.2, 37]
+        },
+      "properties": {
+        "id": "osark",
+        "localisation": "Osark, USA",
+        "name": "Collection d'interférogrammes sur Osark",
+       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "image": {
+           "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.3.3/public/images/tibet.png"
+         }
+      }
+    },
+{
+      "type": "Feature",
+      "geometry":
+        {
+          "type":"Point",
+          "coordinates":[-67.38, -21.7]
+        },
+      "properties": {
+        "id": "andes",
+        "localisation": "Andes, South America",
+        "name": "Interferogram serie on Andes Mountains",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "image": {
+           "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.3.3/public/images/tibet.png"
+         }
       }
     }
   ]
