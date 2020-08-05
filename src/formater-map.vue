@@ -147,7 +147,7 @@ export default {
         _this.popups[index] = feature.properties
       } )
       this.features.sort(function (a, b) {
-        return a.properties.id > b.properties.id
+        return a.properties.id > b.properties.id ? 1 : -1
       })
       var _this = this
       this.layers = L.geoJSON(features, {
@@ -193,12 +193,14 @@ export default {
       case 'lng':
         var i = column === 'lat' ? 1 : 0
         this.features.sort(function (a, b) {
-          return (direction > 0) ? (a.geometry.coordinates[i] > b.geometry.coordinates[i]) : (a.geometry.coordinates[i] < b.geometry.coordinates[i])
+          var isBigger = (direction > 0) ? (a.geometry.coordinates[i] > b.geometry.coordinates[i]) : (a.geometry.coordinates[i] < b.geometry.coordinates[i])
+          return isBigger ? 1 : -1
         })
         break;
       default:
         this.features.sort(function (a, b) {
-          return (direction > 0) ? (a.properties[column] > b.properties[column]) : (a.properties[column] < b.properties[column])
+          var isBigger = (direction > 0) ? (a.properties[column] > b.properties[column]) : (a.properties[column] < b.properties[column])
+          return isBigger ? 1 : -1
         })
       }
       

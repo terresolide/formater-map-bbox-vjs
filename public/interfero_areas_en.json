@@ -107,7 +107,9 @@
         "name": "Series of interferograms over Tarim",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
         "image": {
-           "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.3.3/public/images/tibet.png"
+           "src": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Wfm_tarim_basin.jpg",
+           "attribution": "NASA / Public domain",
+           "page": "https://commons.wikimedia.org/wiki/File:Wfm_tarim_basin.jpg"
          }
       }
     },

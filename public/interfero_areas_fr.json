@@ -107,7 +107,9 @@
         "name": "Collection d'interférogrammes sur le Tarim",
         "description": "est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles,",
         "image": {
-           "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.3.3/public/images/tibet.png"
+           "src": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Wfm_tarim_basin.jpg",
+           "attribution": "NASA / Public domain",
+           "page": "https://commons.wikimedia.org/wiki/File:Wfm_tarim_basin.jpg"
          }
       }
     },
