@@ -18,8 +18,8 @@
       </div>
       <div class="feature-column-2">
         <span>{{lang === 'en' ? 'Location' : 'Localisation'}}</span>
-         <div class="button" @click="sort('location', -1)">&darr;</div>
-         <div class="button" @click="sort('location', 1)">&uarr;</div>
+         <div class="button" @click="sort('location', 1)">&darr;</div>
+         <div class="button" @click="sort('location', -1)">&uarr;</div>
       </div>
       <div class="feature-column-3">
         <span>Lat</span>
