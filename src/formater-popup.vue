@@ -1,12 +1,18 @@
 <template>
-<div class="fmt-popup" :id="'popup_' + properties.index">
+<div class="fmt-popup" :class="'popup_' + properties.index">
 	     <h3 :style="{color: $shadeColor(color, -0.3)}">{{properties.name.toUpperCase()}}</h3>
 	     <div style="text-align:justify;">
-	     <img v-if="properties.image" :src="properties.image.src" />
+	     <a v-if="properties.image && properties.image.page" target="_blank"
+	     :href="properties.image.page" :title="properties.image.attribution">
+	       <img  :src="properties.image.src" />
+	     </a>
+	      <img v-if="properties.image && !properties.image.page" :src="properties.image.src" />
 	     <span v-html="properties.description" style="text-align:justify;"></span>
 	     </div>
-	     <div style="clear:left;text-align:right;" >
-	     <a v-if="properties.link" :href="properties.link">{{seePage}}</a></div>
+	     <div style="clear:left;text-align:right;margin-top:5px;" >
+	     <a v-if="properties.link" :href="properties.link" target="_blank">{{seePage}}</a>
+	     <em v-if="!properties.link" style="color:blue;">{{lang === 'en' ? 'On Going': 'A venir'}}</em>
+	     </div>
 	    </div>
 </template>
 <script>

@@ -1,12 +1,12 @@
 <template>
   <div class="fmt-wrapper">
     <div>
-      <formater-popup v-for="(feature, index) in features" :key="index" :properties="feature.properties" :color="color" :lang="lang"></formater-popup>
+      <formater-popup v-for="(popup, index) in popups" :key="index" :properties="popup" :color="color" :lang="lang"></formater-popup>
     </div>
     <div class="fmt-container">
       <div id="fmtMap" />
     </div>
-   <div v-if="full" style="text-align:left;">
+   <div v-show="full" style="text-align:left;">
    <h4>
    {{ lang === 'en' ? 'Selected Area list' : 'Liste des zones sélectionnées' }}
    </h4>
@@ -37,7 +37,7 @@
          <div class="button" @click="sort('id', -1)">&uarr;</div>
       </div>
     </div>
-    <div class="fmt-feature" v-for="feature in features">
+    <div class="fmt-feature" v-for="feature in features" @click="openPopup(feature)" :class="{selected: isSelected(feature)}">
       <div class="feature-column-1">
         {{feature.properties.id}}
       </div>
@@ -84,6 +84,10 @@ export default {
       type: String,
       default:'#3d5c7a'
     },
+    removeId: {
+      type: String,
+      default: null
+    },
     full: {
       type: Boolean,
       default: true
@@ -93,7 +97,9 @@ export default {
     return {
       map: null,
       layers: null,
-      features: []
+      features: [],
+      popups: [],
+      selectedFeature: null
     }
   },
   created () {
@@ -107,6 +113,13 @@ export default {
     initialize () {
       console.log('initialize')
       console.log(this.$shadeColor(this.color, -0.4))
+      // remove static node
+      if (this.removeId) {
+	      var node = document.querySelector('#' + this.removeId)
+	      if (node) {
+	        node.innerHTML = ''
+	      }
+      }
       this.map = L.map( "fmtMap", {scrollWheelZoom: false}).setView([20, -0.09], 3);
 
       // this.map.on( "zoom", function(e){ this.updateAllPolygons();})
@@ -124,39 +137,51 @@ export default {
     },
     addGeojsonLayer (features) {
       this.features = features.features
+      this.popups = []
+      var _this = this
       this.features.map(function (feature, index) {
         feature.properties.index = index
         feature.properties.data = feature.properties.link ? 1 : 0
+        _this.popups[index] = feature.properties
       } )
       this.features.sort(function (a, b) {
         return a.properties.id > b.properties.id
       })
       var _this = this
       this.layers = L.geoJSON(features, {
-         style: function (feature) {
-           return {color: _this.color, width: 1}
-         },
+//          style: function (feature) {
+//            return {color: _this.color, width: 1}
+//          },
          onEachFeature: function (feature, layer) {
+           layer.id = feature.properties.id
            layer.on('click', function (layer) {
-             var node = document.querySelector('#popup_' + feature.properties.index)
-             console.log(node)
-             this.bindPopup(node)
-             this.openPopup()
-         })
-//            var content = '<h3 style="color:'+ feature.properties.style.color +';">' + feature.properties.name + '</h3>'
-//            content += '<p>' + feature.properties.description + '</p>'
-//            content += '<a href="' + feature.properties.link + '">' + seePage + '</a>'
-//            layer.bindPopup(node.cloneNode(true))
-         }
-       }).on('add', function () {
-         _this.map.fitBounds(_this.layers.getBounds(), {padding: [50, 50]})
-         var next = function () { _this.layers.getLayers()[2].fire('click')}
-         setTimeout(next, 1000)
-       })
-      
-        this.layers.addTo(this.map)
-          // this.layer.getLayers()[0].fire('click')
-     
+             this.unbindPopup()
+             if (_this.isSelected(feature)) {
+               _this.selectedFeature = null
+               _this.map.closePopup()
+             } else {
+	             var node = document.querySelector('.popup_' + feature.properties.index)
+	             console.log(node)
+	             _this.selectedFeature = feature
+	             this.bindPopup(node.cloneNode(true))
+	             this.openPopup()
+             }
+           })
+        }
+	    }).on('add', function () {
+	       _this.map.fitBounds(_this.layers.getBounds(), {padding: [50, 50]})
+	       var next = function () { _this.layers.getLayers()[2].fire('click')}
+	       setTimeout(next, 1000)
+	    })
+      this.layers.addTo(this.map)
+    },
+    isSelected (feature) {
+      return (this.selectedFeature && this.selectedFeature.properties.id === feature.properties.id)
+    },
+    openPopup (feature) {
+      // find the good layer
+      var selectedLayer = this.layers.getLayers().find(obj => obj.id === feature.properties.id)
+      selectedLayer.fire('click')
     },
     sort (column, direction) {
       switch (column) {
@@ -181,11 +206,12 @@ export default {
 <style>
 div.fmt-wrapper{
   width: 100%;
+     max-width:1200px;
   text-align:center;
 }
 div.fmt-container{
    position:relative;
-   max-width:1200px;
+
    height:500px;
    margin: auto;
 }
@@ -208,6 +234,7 @@ div.fmt-feature {
   /*grid-auto-rows: minmax(100px, auto);*/
   font-size:0.8em;
   border-bottom:1px solid lightgrey;
+  cursor: pointer;
 }
 div.fmt-feature.feature-header{
   font-weight:800;
@@ -234,6 +261,9 @@ div.fmt-feature div.button:hover {
 }
 div.fmt-feature:nth-child(2n) {
   background-color:#f3F3F3;
+}
+div.fmt-feature.selected {
+  background-color:#faebd7;
 }
 div.fmt-feature .feature-column-1 {
   grid-column: 1;
