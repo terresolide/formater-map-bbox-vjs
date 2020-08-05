@@ -228,11 +228,10 @@ div[id="fmtMap"] {
 }
 div.fmt-feature {
   display: grid;
-  grid-template-columns: 250px minmax(150px,1fr) minmax(80px,1fr) minmax(80px,1fr) 120px;
+  grid-template-columns: 260px minmax(150px,1fr) minmax(80px,1fr) minmax(80px,1fr) 120px;
   grid-gap: 5px;
   min-height:26px;
   /*grid-auto-rows: minmax(100px, auto);*/
-  font-size:0.8em;
   border-bottom:1px solid lightgrey;
   cursor: pointer;
 }
@@ -269,6 +268,7 @@ div.fmt-feature .feature-column-1 {
   grid-column: 1;
   grid-row: 1/2;
   color:#darkgrey;
+  font-size:0.9rem;
   padding:2px 4px;
 }
 div.fmt-feature .feature-column-2 {
