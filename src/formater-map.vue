@@ -221,15 +221,11 @@ div[id="fmtMap"] {
   width:100%;
   z-index:0;
 }
-.area-button a{
-  color:white;
-  margin: 0 30px;
-  text-decoration: none;
-}
+
 div.fmt-feature {
   display: grid;
-  grid-template-columns: 260px minmax(150px,1fr) minmax(80px,1fr) minmax(80px,1fr) 120px;
-  grid-gap: 5px;
+  grid-template-columns: minmax(253px,2fr) minmax(130px,2fr) minmax(70px, 1fr) minmax(70px, 1fr) 130px;
+  grid-gap: 3px;
   min-height:26px;
   /*grid-auto-rows: minmax(100px, auto);*/
   border-bottom:1px solid lightgrey;
@@ -246,9 +242,7 @@ div.fmt-feature.feature-header span {
 }
 div.fmt-feature div.button {
   display: inline-block;
-  padding: 0 4px;
   margin:0 1px;
-  width:8px;
   font-size:20px;
   vertical-align: top;
   cursor:pointer;
@@ -270,6 +264,7 @@ div.fmt-feature .feature-column-1 {
   color:#darkgrey;
   font-size:0.9rem;
   padding:2px 4px;
+  word-break:break-all;
 }
 div.fmt-feature .feature-column-2 {
   grid-column: 2;
@@ -287,30 +282,5 @@ div.fmt-feature .feature-column-5 {
   grid-column: 5;
   grid-row: 1/2;
 }
-.area-button a:hover,
-.area-button a:visited {
-  color: white;
-}
-.area-button div{
-  min-width:120px;
-  color: white;
-  vertical-align:middle;
- 
-  font-weight:600;
-  display: inline-block;
-  box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.7);
-}
-.area-button a div{
-  min-height: 50px;
-  padding-top:30px;
-   opacity:0.8;
-}
-.area-button div.disabled{
-   background-color: #ccc;
-   padding-top: 20px;
-   min-height:60px;
-}
-.area-button a div:hover {
-  opacity:1
-}
+
 </style>
