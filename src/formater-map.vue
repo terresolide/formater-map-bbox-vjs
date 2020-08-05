@@ -165,7 +165,11 @@ export default {
 	             _this.selectedFeature = feature
 	             this.bindPopup(node.cloneNode(true))
 	             this.openPopup()
+	             
              }
+           })
+           layer.on('popupclose', function(e) {
+             _this.selectedFeature = null
            })
         }
 	    }).on('add', function () {
