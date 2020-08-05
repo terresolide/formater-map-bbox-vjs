@@ -1,6 +1,6 @@
 <template>
   <div class="fmt-wrapper">
-    <div>
+    <div style="display:none;">
       <formater-popup v-for="(popup, index) in popups" :key="index" :properties="popup" :color="color" :lang="lang"></formater-popup>
     </div>
     <div class="fmt-container">
@@ -8,7 +8,7 @@
     </div>
    <div v-show="full" style="text-align:left;">
    <h4>
-   {{ lang === 'en' ? 'Selected Area list' : 'Liste des zones sélectionnées' }}
+   {{ lang === 'en' ? 'Selected Areas' : 'Zones sélectionnées' }}
    </h4>
     <div class="fmt-feature feature-header">
       <div class="feature-column-1">
@@ -55,8 +55,8 @@
          {{lang === 'en' ? 'Data Access': 'Accès Données'}}
       </a>
      
-      <em v-if="!feature.properties.link">
-       {{lang === 'en' ? 'on Going' : 'A venir'  }}
+      <em v-if="!feature.properties.link" v-html="lang === 'en' ? 'on Going' : '&Agrave; venir'">
+       {}
       </em>
        </div>
      </div>
@@ -88,6 +88,10 @@ export default {
       type: String,
       default: null
     },
+    first: {
+      type: Number,
+      default: null
+    },
     full: {
       type: Boolean,
       default: true
@@ -99,20 +103,15 @@ export default {
       layers: null,
       features: [],
       popups: [],
+      popupLayer: null,
       selectedFeature: null
     }
   },
-  created () {
-    console.log(this.lang)
-  },
   mounted () {
-    console.log(this.lang)
     this.initialize()
   },
   methods: {
     initialize () {
-      console.log('initialize')
-      console.log(this.$shadeColor(this.color, -0.4))
       // remove static node
       if (this.removeId) {
 	      var node = document.querySelector('#' + this.removeId)
@@ -121,7 +120,10 @@ export default {
 	      }
       }
       this.map = L.map( "fmtMap", {scrollWheelZoom: false}).setView([20, -0.09], 3);
-
+      var _this = this
+      this.map.on('popupclose', function (e) {
+        _this.selectedFeature = null
+      })
       // this.map.on( "zoom", function(e){ this.updateAllPolygons();})
       L.tileLayer('//server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
         {
@@ -157,25 +159,22 @@ export default {
            layer.on('click', function (layer) {
              this.unbindPopup()
              if (_this.isSelected(feature)) {
-               _this.selectedFeature = null
                _this.map.closePopup()
              } else {
 	             var node = document.querySelector('.popup_' + feature.properties.index)
-	             console.log(node)
-	             _this.selectedFeature = feature
 	             this.bindPopup(node.cloneNode(true))
 	             this.openPopup()
+	             _this.selectedFeature = feature
 	             
              }
-           })
-           layer.on('popupclose', function(e) {
-             _this.selectedFeature = null
            })
         }
 	    }).on('add', function () {
 	       _this.map.fitBounds(_this.layers.getBounds(), {padding: [50, 50]})
-	       var next = function () { _this.layers.getLayers()[2].fire('click')}
-	       setTimeout(next, 1000)
+	       if (_this.first !== null) {
+	         var next = function () { _this.layers.getLayers()[_this.first].fire('click')}
+	         setTimeout(next, 1000)
+	       }
 	    })
       this.layers.addTo(this.map)
     },

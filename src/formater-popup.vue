@@ -11,7 +11,7 @@
 	     </div>
 	     <div style="clear:left;text-align:right;margin-top:5px;" >
 	     <a v-if="properties.link" :href="properties.link" target="_blank">{{seePage}}</a>
-	     <em v-if="!properties.link" style="color:blue;">{{lang === 'en' ? 'On Going': 'A venir'}}</em>
+	     <em v-if="!properties.link" style="color:blue;" v-html="lang === 'en' ? 'On Going': '&Agrave; venir'"></em>
 	     </div>
 	    </div>
 </template>
