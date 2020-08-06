@@ -1,6 +1,6 @@
 {
   "name": "formater-map-bbox-vjs",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Display map with remarquable areas to click",
   "production": {
     "url": "https://cdn.jsdelivr.net/gh/terresolide"

@@ -1,0 +1,120 @@
+ {
+    "title": "Collection d'interférogrammes sur Grenade",
+    "abstract": "Cette collection d'interférogrammes est  ... en continu par le CNES en collaboration avec ISTerre et ForM@Ter.\nElle génère, ... les produits suivants:\n<ul> <li>INTERFEROGRAM<ul><li>WRAPPED_INTERFEROGRAM<\/li><li>UNWRAPPED_INTERFEROGRAM<\/li><li>INTERFEROGRAM_APS_GLOBAL_MODEL<\/li><li>SPATIAL_COHERENCE<\/li><\/ul><\/li><li>AUXILIARYDATA<ul>\n<li>MAP_OF_LOS_VECTOR<\/li><li>DEM_RADAR_GEOMETRY<\/li><li>LOOKUP_TABLE_RADAR2GROUND_COORDINATES<\/li><\/ul><\/li><\/ul>",
+    "responsibleParty": "Distributeur|resource|CNES||||||",
+    "type": "series",
+    "isHarvested": "n",
+    "displayOrder": "0",
+    "docLocale": "eng",
+    "popularity": "0",
+    "keyword":     [
+      "Géodésie",
+      "Espagne",
+      "CNES",
+      "Altitude",
+      "Informations géoscientifiques"
+    ],
+    "publishedForGroup":     [
+      "1",
+      "871"
+    ],
+    "image":     [
+      "thumbnail|https://api.poleterresolide.fr/images/flatsim/unwrapped_tibet.png|Unwrapped interferogram on Tibet (june 2019)",
+      "overview|https://api.poleterresolide.fr/images/flatsim/wrapped_tibet.png|Wrapped interferogram on Tibet (june 2019)"
+    ],
+    "tempExtentBegin":     [
+      "2000-01-01T00:00:00",
+      "2014-10-01"
+    ],
+    "crsDetails":     {
+      "code": "WGS 1984 ",
+      "codeSpace": "",
+      "name": "",
+      "url": ""
+    },
+    "maintenanceAndUpdateFrequency_text": "Lorsque nécessaire",
+    "format":     [
+      "GEOTIFF",
+      "CSV"
+    ],
+    "spatialRepresentationType_text": "Raster",
+    "inspirethemewithac": "el|Altitude",
+    "denominator": "120",
+    "isTemplate": "n",
+    "valid": "-1",
+    "feedbackCount": "0",
+    "rating": "0",
+    "source": "2895254d-24be-4856-98f3-4e9d1899f673",
+    "status": "onGoing",
+    "groupWebsite": "https://cnes.fr/",
+    "geoBox": "-3.85209961|36.75730308|-2.27006836|37.51053054",
+    "owner": "1",
+    "recordOwner": "Elisabeth Pointal",
+    "revisionDate": "2019-12-04",
+    "defaultAbstract": "Cette collection d'interférogrammes est  ... en continu par le CNES en collaboration avec ISTerre et ForM@Ter.\nElle génère, ... les produits suivants:\n<ul> <li>INTERFEROGRAM<ul><li>WRAPPED_INTERFEROGRAM<\/li><li>UNWRAPPED_INTERFEROGRAM<\/li><li>INTERFEROGRAM_APS_GLOBAL_MODEL<\/li><li>SPATIAL_COHERENCE<\/li><\/ul><\/li><li>AUXILIARYDATA<ul>\n<li>MAP_OF_LOS_VECTOR<\/li><li>DEM_RADAR_GEOMETRY<\/li><li>LOOKUP_TABLE_RADAR2GROUND_COORDINATES<\/li><\/ul><\/li><\/ul>",
+    "link": "API opensearch Flatsim|API opensearch du cnes|https://flatsimdev-pp.cnes.fr/atdistrib/resto2/api/collections/GRENADE/describe.xml|OpenSearch|OpenSearch|1|OpenSearch",
+    "defaultTitle":     [
+      "Collection d'interférogrammes sur Grenade",
+      "Interferograms collection on Granada"
+    ],
+    "datasetLang": "eng",
+    "userinfo": "admin|Pointal|Elisabeth|Administrator",
+    "topicCat": "geoscientificInformation",
+    "status_text": "Mise à jour continue",
+    "standardName": "ISO 19115:2003/19139",
+    "crs": "WGS 1984::\n              ::",
+    "logo": "/images/harvesting/200px-CNES.png",
+    "draft": "n",
+    "keywordGroup":     {
+      "ForM@Ter | Solid Earth variable ontology": [      {
+        "value": "Géodésie",
+        "link": ""
+      }],
+      " ":       [
+                {
+          "value": "Géodésie",
+          "link": ""
+        },
+                {
+          "value": "Altitude",
+          "link": ""
+        },
+                [
+                    {
+            "value": "Géodésie",
+            "link": ""
+          },
+                    {
+            "value": "Altitude",
+            "link": ""
+          }
+        ]
+      ],
+      "GEMET - INSPIRE themes, version 1.0": [      {
+        "value": "Altitude",
+        "link": ""
+      }]
+    },
+    "groupOwner": "871",
+    "_locale": "fre",
+    "geonet:info":     {
+      "@xmlns:geonet": "http://www.fao.org/geonetwork",
+      "id": "1677",
+      "uuid": "56d7b2ec-5cf4-4aea-98f5-880b3ed3dea0",
+      "schema": "iso19139",
+      "createDate": "2020-08-04T09:06:54",
+      "changeDate": "2020-08-04T09:17:25",
+      "source": "2895254d-24be-4856-98f3-4e9d1899f673",
+      "ownerId": "1",
+      "edit": "true",
+      "owner": "true",
+      "isPublishedToAll": "true",
+      "view": "true",
+      "notify": "true",
+      "download": "true",
+      "dynamic": "true",
+      "featured": "true",
+      "selected": "false"
+    }
+  }
+

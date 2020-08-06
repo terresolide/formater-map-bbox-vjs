@@ -1,0 +1,182 @@
+{
+    "title": "Interferograms collection on Granada",
+    "abstract": "Cette collection d'interférogrammes est  ... en continu par le CNES en collaboration avec ISTerre et ForM@Ter.\nElle génère, ... les produits suivants:\n<ul> <li>INTERFEROGRAM<ul><li>WRAPPED_INTERFEROGRAM<\/li><li>UNWRAPPED_INTERFEROGRAM<\/li><li>INTERFEROGRAM_APS_GLOBAL_MODEL<\/li><li>SPATIAL_COHERENCE<\/li><\/ul><\/li><li>AUXILIARYDATA<ul>\n<li>MAP_OF_LOS_VECTOR<\/li><li>DEM_RADAR_GEOMETRY<\/li><li>LOOKUP_TABLE_RADAR2GROUND_COORDINATES<\/li><\/ul><\/li><\/ul>",
+    "lineage": "Les interférogrammes sont calculés au CNES via la chaine NSBAS à partir des images radar SENTINEL1",
+    "responsibleParty":     [
+      "Distributor|resource|CNES||||||",
+      "Distributor|resource|CNES||||||||1",
+      "Point of contact|metadata|IRST||machin@truc.fr||||",
+      "Point of contact|metadata|IRST||machin@truc.fr||||||1"
+    ],
+    "type": "series",
+    "legalConstraints": "Authentificate user",
+    "isHarvested": "n",
+    "displayOrder": "0",
+    "docLocale": "eng",
+    "popularity": "0",
+    "keyword":     [
+      "CNES",
+      "Elevation",
+      "Geodetics",
+      "Geoscientific information",
+      "Spain",
+      "interferogram"
+    ],
+    "publishedForGroup":     [
+      "1",
+      "871"
+    ],
+    "identifier": "urn:ogc:def:EOP:CNES::GRENADE:",
+    "image":     [
+      "overview|https://api.poleterresolide.fr/images/flatsim/wrapped_tibet.png|Wrapped interferogram on Tibet (june 2019)",
+      "thumbnail|https://api.poleterresolide.fr/images/flatsim/unwrapped_tibet.png|Unwrapped interferogram on Tibet (june 2019)"
+    ],
+    "tempExtentBegin":     [
+      "1999-12-31t23:00:00.000z",
+      "2000-01-01T00:00:00",
+      "2014-09-30t22:00:00.000z",
+      "2014-10-01"
+    ],
+    "mdLanguage":     [
+      "eng",
+      "fre"
+    ],
+    "crsDetails":     {
+      "code": "WGS 1984 ",
+      "codeSpace": "",
+      "name": "",
+      "url": ""
+    },
+    "maintenanceAndUpdateFrequency_text": "As needed",
+    "format":     [
+      "CSV",
+      "GEOTIFF"
+    ],
+    "spatialRepresentationType_text": "Grid",
+    "inspirethemewithac": "el|Elevation",
+    "denominator": "120",
+    "isTemplate": "n",
+    "valid": "-1",
+    "feedbackCount": "0",
+    "tempExtentEnd": "2020-08-04t21:59:59.000z",
+    "rating": "0",
+    "source": "2895254d-24be-4856-98f3-4e9d1899f673",
+    "status": "onGoing",
+    "updateFrequency": "asNeeded",
+    "groupWebsite": "https://cnes.fr/",
+    "geoBox": "-3.85209961|36.75730308|-2.27006836|37.51053054",
+    "owner": "1",
+    "recordOwner": "Elisabeth Pointal",
+    "revisionDate": "2019-12-04",
+    "defaultAbstract": "Cette collection d'interférogrammes est  ... en continu par le CNES en collaboration avec ISTerre et ForM@Ter.\nElle génère, ... les produits suivants:\n<ul> <li>INTERFEROGRAM<ul><li>WRAPPED_INTERFEROGRAM<\/li><li>UNWRAPPED_INTERFEROGRAM<\/li><li>INTERFEROGRAM_APS_GLOBAL_MODEL<\/li><li>SPATIAL_COHERENCE<\/li><\/ul><\/li><li>AUXILIARYDATA<ul>\n<li>MAP_OF_LOS_VECTOR<\/li><li>DEM_RADAR_GEOMETRY<\/li><li>LOOKUP_TABLE_RADAR2GROUND_COORDINATES<\/li><\/ul><\/li><\/ul>",
+    "link":     [
+      "API opensearch Flatsim|API opensearch du cnes|https://flatsimdev-pp.cnes.fr/atdistrib/resto2/api/collections/GRENADE/describe.xml|OpenSearch|OpenSearch|1",
+      "API opensearch Flatsim|API opensearch du cnes|https://flatsimdev-pp.cnes.fr/atdistrib/resto2/api/collections/GRENADE/describe.xml|OpenSearch|OpenSearch|1|OpenSearch"
+    ],
+    "defaultTitle": "Interferograms collection on Granada",
+    "datasetLang": "eng",
+    "userinfo": "admin|Pointal|Elisabeth|Administrator",
+    "topicCat": "geoscientificInformation",
+    "status_text": "On going",
+    "standardName": "ISO 19115:2003/19139",
+    "crs": "WGS 1984::\n              ::",
+    "logo": "/images/harvesting/200px-CNES.png",
+    "draft": "n",
+    "keywordGroup":     [
+            {
+        "ForM@Ter | Solid Earth variable ontology": [        {
+          "value": "Geodetics",
+          "link": ""
+        }],
+        " ":         [
+                    {
+            "value": "Geodetics",
+            "link": ""
+          },
+                    {
+            "value": "Elevation",
+            "link": ""
+          },
+                    [
+                        {
+              "value": "Geodetics",
+              "link": ""
+            },
+                        {
+              "value": "Elevation",
+              "link": ""
+            }
+          ]
+        ],
+        "GEMET - INSPIRE themes, version 1.0": [        {
+          "value": "Elevation",
+          "link": ""
+        }],
+        "otherKeywords":         [
+                    {
+            "value": "Spain",
+            "link": ""
+          },
+                    {
+            "value": "interferogram",
+            "link": ""
+          },
+                    {
+            "value": "CNES",
+            "link": ""
+          }
+        ]
+      },
+            {
+        "ForM@Ter | Solid Earth variable ontology": [        {
+          "value": "Geodetics",
+          "link": ""
+        }],
+        " ":         [
+                    {
+            "value": "Geodetics",
+            "link": ""
+          },
+                    {
+            "value": "Elevation",
+            "link": ""
+          },
+                    [
+                        {
+              "value": "Geodetics",
+              "link": ""
+            },
+                        {
+              "value": "Elevation",
+              "link": ""
+            }
+          ]
+        ],
+        "GEMET - INSPIRE themes, version 1.0": [        {
+          "value": "Elevation",
+          "link": ""
+        }]
+      }
+    ],
+    "groupOwner": "871",
+    "_locale": "eng",
+    "geonet:info":     {
+      "@xmlns:geonet": "http://www.fao.org/geonetwork",
+      "id": "1677",
+      "uuid": "56d7b2ec-5cf4-4aea-98f5-880b3ed3dea0",
+      "schema": "iso19139",
+      "createDate": "2020-08-04T09:06:54",
+      "changeDate": "2020-08-04T09:17:25",
+      "source": "2895254d-24be-4856-98f3-4e9d1899f673",
+      "ownerId": "1",
+      "edit": "true",
+      "owner": "true",
+      "isPublishedToAll": "true",
+      "view": "true",
+      "notify": "true",
+      "download": "true",
+      "dynamic": "true",
+      "featured": "true",
+      "selected": "false"
+    }
+  }
