@@ -8,13 +8,13 @@ var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 // var vueLoaderConfig = require('./vue-loader.conf')
 var prodUrl = PACKAGE.production.url + '/' + buildName + '@' + buildVersion +  '/dist/' ;
+var dataUrl = PACKAGE.production.url + '/' + buildName + '@' + buildVersion +  '/public/' ;
 var FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 //if (process.env.NODE_ENV === 'production') {
 //  var appURL = prodUrl;
 //} else {
 //  var appURL = 'dist/';
 //}
-
 var pathsToClean = [
   'dist/*.*'
 ]
@@ -112,7 +112,13 @@ module.exports = {
   devtool: '#eval-source-map'
 }
 module.exports.plugins = (module.exports.plugins || []).concat([
-  new VueLoaderPlugin()
+  new VueLoaderPlugin(),
+  new webpack.DefinePlugin({
+    'process.env': {
+        PACKAGE_VERSION: '"' + buildVersion + '"',
+        DATA_URL: '"' + dataUrl + '"'
+    }
+  })
 ])
 
 if (process.env.NODE_ENV === 'development') {

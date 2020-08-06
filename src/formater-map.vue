@@ -64,6 +64,7 @@
   </div>
 </template>
 <script>
+console.log(process.env)
 var L = require('leaflet');
 import FormaterPopup from './formater-popup.vue'
 export default {
@@ -104,10 +105,13 @@ export default {
       features: [],
       popups: [],
       popupLayer: null,
-      selectedFeature: null
+      selectedFeature: null,
+      dataUrl: process.env.DATA_URL,
+      geojsonUrl: null
     }
   },
   mounted () {
+    console.log(process.env)
     this.initialize()
   },
   methods: {
@@ -118,6 +122,11 @@ export default {
 	      if (node) {
 	        node.innerHTML = ''
 	      }
+      }
+      if (!this.geojson) {
+        this.jsonUrl = this.dataUrl + 'interfero_areas_' + this.lang + '.json'
+      } else {
+        this.jsonUrl = this.geojson
       }
       this.map = L.map( "fmtMap", {scrollWheelZoom: false}).setView([20, -0.09], 3);
       var _this = this
@@ -131,11 +140,11 @@ export default {
           maxZoom: 18,
           minZoom:2
          }).addTo( this.map )
-      if (this.geojson) {
-        this.$http.get(this.geojson).then(
-          response => { this.addGeojsonLayer(response.body)}
-        )
-      }
+      
+      this.$http.get(this.jsonUrl).then(
+        response => { this.addGeojsonLayer(response.body)}
+      )
+    
     },
     addGeojsonLayer (features) {
       this.features = features.features
