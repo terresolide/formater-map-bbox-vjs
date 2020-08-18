@@ -52,7 +52,7 @@
     "recordOwner": "Elisabeth Pointal",
     "revisionDate": "2019-12-04",
     "defaultAbstract": "Cette collection d'interférogrammes est  ... en continu par le CNES en collaboration avec ISTerre et ForM@Ter.\nElle génère, ... les produits suivants:\n<ul> <li>INTERFEROGRAM<ul><li>WRAPPED_INTERFEROGRAM<\/li><li>UNWRAPPED_INTERFEROGRAM<\/li><li>INTERFEROGRAM_APS_GLOBAL_MODEL<\/li><li>SPATIAL_COHERENCE<\/li><\/ul><\/li><li>AUXILIARYDATA<ul>\n<li>MAP_OF_LOS_VECTOR<\/li><li>DEM_RADAR_GEOMETRY<\/li><li>LOOKUP_TABLE_RADAR2GROUND_COORDINATES<\/li><\/ul><\/li><\/ul>",
-    "link": "API opensearch Flatsim|API opensearch du cnes|https://flatsimdev-pp.cnes.fr/atdistrib/resto2/api/collections/GRENADE/describe.xml|OpenSearch|OpenSearch|1|OpenSearch",
+    "link": "API opensearch Flatsim|API opensearch du cnes|https://flatsimdev-expert-pp.cnes.fr/atdistrib/resto2/api/collections/GRENADE/describe.xml|OpenSearch|OpenSearch|1|OpenSearch",
     "defaultTitle":     [
       "Collection d'interférogrammes sur Grenade",
       "Interferograms collection on Granada"
@@ -63,7 +63,7 @@
     "status_text": "Mise à jour continue",
     "standardName": "ISO 19115:2003/19139",
     "crs": "WGS 1984::\n              ::",
-    "logo": "/images/harvesting/200px-CNES.png",
+    "logo": "https://www7.obs-mip.fr/wp-content-aeris/uploads/sites/4/2017/06/cnes_logo_essai-100x33.png",
     "draft": "n",
     "keywordGroup":     {
       "ForM@Ter | Solid Earth variable ontology": [      {
