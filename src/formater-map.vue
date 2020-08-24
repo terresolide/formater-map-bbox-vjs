@@ -111,6 +111,7 @@ export default {
     }
   },
   mounted () {
+    var url = 'https://www.poleterresolide.fr/acces-donnees/catalog?state=truc&chose=bidule'
     console.log(process.env)
     this.initialize()
   },
@@ -126,7 +127,9 @@ export default {
       if (!this.geojson) {
         this.jsonUrl = this.dataUrl + 'interfero_areas_' + this.lang + '.json'
       } else {
-        this.jsonUrl = this.geojson
+        var base = new URL(window.location.href)
+        var url = new URL(this.geojson, base)
+        this.jsonUrl = url.href
       }
       this.map = L.map( "fmtMap", {scrollWheelZoom: false}).setView([20, -0.09], 3);
       var _this = this
