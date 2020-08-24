@@ -116,6 +116,14 @@ export default {
     this.initialize()
   },
   methods: {
+    isUrl (url) {
+      try  {
+        new URL(url)
+      } catch (e) {
+        return false
+      }
+      return true
+    },
     initialize () {
       // remove static node
       if (this.removeId) {
@@ -126,10 +134,11 @@ export default {
       }
       if (!this.geojson) {
         this.jsonUrl = this.dataUrl + 'interfero_areas_' + this.lang + '.json'
+      } else if (this.isUrl(this.geojson)){
+         this.jsonUrl = this.geojson
       } else {
         var base = new URL(window.location.href)
-        var url = new URL(this.geojson, base)
-        this.jsonUrl = url.href
+        this.jsonUrl = base.protocol + '//' + base.host + base.pathname + this.geojson
       }
       this.map = L.map( "fmtMap", {scrollWheelZoom: false}).setView([20, -0.09], 3);
       var _this = this
