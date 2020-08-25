@@ -111,8 +111,7 @@ export default {
     }
   },
   mounted () {
-    var url = 'https://www.poleterresolide.fr/acces-donnees/catalog?state=truc&chose=bidule'
-    console.log(process.env)
+    
     this.initialize()
   },
   methods: {
@@ -138,7 +137,9 @@ export default {
          this.jsonUrl = this.geojson
       } else {
         var base = new URL(window.location.href)
-        this.jsonUrl = base.protocol + '//' + base.host + base.pathname + this.geojson
+        var r = /[^\/]*\.[a-zA-Z]{2,4}$/;
+        var path = base.pathname.replace(r, '')
+        this.jsonUrl = base.protocol + '//' + base.host + path + this.geojson
       }
       this.map = L.map( "fmtMap", {scrollWheelZoom: false}).setView([20, -0.09], 3);
       var _this = this
