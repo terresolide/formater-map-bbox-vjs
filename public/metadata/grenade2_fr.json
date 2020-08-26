@@ -56,7 +56,7 @@
       "status_text": "Mise à jour continue",
       "standardName": "ISO 19115:2003/19139",
       "crs": "WGS 1984::\n              ::",
-      "logo": "/images/harvesting/200px-CNES.png",
+      "logo": "https://www7.obs-mip.fr/wp-content-aeris/uploads/sites/4/2017/06/cnes_logo_essai-100x33.png",
       "draft": "n",
       "keywordGroup":       {
         "ForM@Ter | Solid Earth variable ontology": [        {
