@@ -1,6 +1,6 @@
   {
-      "title": "Collection d'interférogrammes Sentinel-1 sur Grenade",
-      "abstract": "Cette collection d'interférogrammes est produite par le CNES en collaboration avec ISTerre, le LGL, l'IPGP et ForM@Ter à partir de la chaîne de traitement NSBAS. <br />Elle génère, à partir de l'analyse en série temporelle de l'archive TOPSAR Sentinel-1 (ESA Copernicus???), les produits suivants:\n<ul><li>Par couple d'image (\"INTERFEROGRAM\"): Interférogrammes différentiels, enroulés ou déroulés, en géométrie radar ou terrain, filtrés ou non filtrés; les corrections atmosphériques utilisées; les cohérences spatiales;<\/li>\n<li>Pour la pile d'image, des champs auxiliaires (\"AUXILIARY DATA\") : e.g., tables de transcodage, vecteur LOS;<\/li>\n<li>Pour l'ensemble de la série temporelle (\"TIME SERIE\"): l'évolution de la phase par acquisition, la vitesse en ligne de visée,<\/li><\/ul>",
+      "title": "Sentinel-1 Interferogram collection on Granada",
+      "abstract": "Cette collection d'interférogrammes est produite par le CNES en collaboration avec ISTerre, le LGL, l'IPGP et ForM@Ter à partir de la chaîne de traitement NSBAS. <br />Elle génère, à partir de l'analyse en série temporelle de l'archive TOPSAR Sentinel-1 (ESA Copernicus???), les produits suivants:\n<ul><li>Par couple d'image (\"INTERFEROGRAM\"): Interférogrammes différentiels, enroulés ou déroulés, en géométrie radar ou terrain, filtrés ou non filtrés; les corrections atmosphériques utilisées; les cohérences spatiales;<\/li><li>Pour la pile d'image, des champs auxiliaires (\"AUXILIARY DATA\") : e.g., tables de transcodage, vecteur LOS;<\/li><li>Pour l'ensemble de la série temporelle (\"TIME SERIE\"): l'évolution de la phase par acquisition, la vitesse en ligne de visée,<\/li><\/ul>",
       "responsibleParty": "Distributeur|resource|CNES||||||",
       "type": "series",
       "isHarvested": "n",
@@ -8,16 +8,15 @@
       "docLocale": "eng",
       "popularity": "6",
       "keyword":       [
-        "Géodésie",
-        "MNT",
+        "Geodetics",
+        "DEM",
         "Deformation",
-        "Interférogramme",
         "InSar",
-        "CNES",
         "SENTINEL-1",
-        "Espagne",
-        "Altitude",
-        "Informations géoscientifiques"
+        "CNES",
+        "Elevation",
+        "Spain",
+        "Geoscientific informations"
       ],
       "publishedForGroup":       [
         "1",
@@ -89,12 +88,12 @@
           ]
         ],
         "GEMET - INSPIRE themes, version 1.0": [        {
-          "value": "Altitude",
+          "value": "Elevation",
           "link": ""
         }]
       },
       "groupOwner": "871",
-      "_locale": "fre",
+      "_locale": "eng",
       "geonet:info":       {
         "@xmlns:geonet": "http://www.fao.org/geonetwork",
         "id": "1677",
