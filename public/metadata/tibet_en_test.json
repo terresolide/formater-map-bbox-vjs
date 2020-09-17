@@ -1,6 +1,6 @@
 {
-  "title": "Interferogram collection on Tibet",
-  "abstract": "This collection includes the following products:\n<ul> <li>INTERFEROGRAM<ul><li>WRAPPED_INTERFEROGRAM</li><li>UNWRAPPED_INTERFEROGRAM</li><li>INTERFEROGRAM_APS_GLOBAL_MODEL</li><li>SPATIAL_COHERENCE</li></ul></li><li>AUXILIARYDATA<ul>\n<li>MAP_OF_LOS_VECTOR</li><li>DEM_RADAR_GEOMETRY</li><li>LOOKUP_TABLE_RADAR2GROUD_COORDINATES</li></ul></li></ul>",
+  "title": "Sentinel-1 Interferogram collection on Tibet",
+  "abstract": "Cette collection d'interférogrammes est produite par le CNES en collaboration avec ISTerre, le LGL, l'IPGP et ForM@Ter à partir de la chaîne de traitement NSBAS. <br />Elle génère, à partir de l'analyse en série temporelle de l'archive TOPSAR Sentinel-1 (ESA Copernicus???), les produits suivants:\n<ul><li>Par couple d'image (\"INTERFEROGRAM\"): Interférogrammes différentiels, enroulés ou déroulés, en géométrie radar ou terrain, filtrés ou non filtrés; les corrections atmosphériques utilisées; les cohérences spatiales;<\/li><li>Pour la pile d'image, des champs auxiliaires (\"AUXILIARY DATA\") : e.g., tables de transcodage, vecteur LOS;<\/li><li>Pour l'ensemble de la série temporelle (\"TIME SERIE\"): l'évolution de la phase par acquisition, la vitesse en ligne de visée,<\/li><\/ul>",
   "responsibleParty": "Distributor|resource|CNES||||||",
   "lineage": "The interferograms are calculated on the NSBAS chain from SENTINEL1 Sar Images.",
   "type": "series",
@@ -10,6 +10,14 @@
   "docLocale": "eng",
   "popularity": "0",
   "keyword": [
+    "Geodetics",
+    "DEM",
+    "Deformation",
+    "Interferogram",
+    "InSar",
+    "SENTINEL-1",
+    "CNES",
+    "Elevation",
     "Asia",
     "China",
     "Qinghai",
