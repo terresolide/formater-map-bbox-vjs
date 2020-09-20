@@ -19,7 +19,7 @@ import FormaterMap from './formater-map.vue'
 ljs.addAliases({
     dep: [
        // font-awesome
-       // 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 
+       'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 
        // leaflet
        'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css',
        //regiter element

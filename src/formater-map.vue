@@ -3,8 +3,9 @@
     <div style="display:none;">
       <formater-popup v-for="(popup, index) in popups" :key="index" :properties="popup" :color="color" :lang="lang"></formater-popup>
     </div>
+    <div id="fullMap"></div>
     <div class="fmt-container">
-      <div id="fmtMap" />
+      <div id="fmtMap" class="mtdt-small"/>
     </div>
    <div v-show="full" style="text-align:left;">
    <h4>
@@ -21,7 +22,7 @@
          <div class="button" @click="sort('location', 1)">&darr;</div>
          <div class="button" @click="sort('location', -1)">&uarr;</div>
       </div>
-      <div class="feature-column-3">
+     <!--  <div class="feature-column-3">
         <span>Lat</span>
         <div class="button" @click="sort('lat', 1)">&darr;</div>
         <div class="button" @click="sort('lat', -1)">&uarr;</div>
@@ -30,7 +31,7 @@
         <span>Lng</span>
         <div class="button" @click="sort('lng', 1)">&darr;</div>
         <div class="button" @click="sort('lng', -1)">&uarr;</div>
-      </div>
+      </div>  -->
       <div class="feature-column-5">
          <span>{{lang === 'en' ? 'Data': 'Données'}}</span>
          <div class="button" @click="sort('id', 1)">&darr;</div>
@@ -44,12 +45,12 @@
       <div class="feature-column-2">
         {{feature.properties.location}}
       </div>
-       <div class="feature-column-3">
+      <!--   <div class="feature-column-3">
         {{feature.geometry.coordinates[1].toFixed(2)}}
       </div>
        <div class="feature-column-4">
         {{feature.geometry.coordinates[0].toFixed(2)}}
-      </div>
+      </div> -->
       <div class="feature-column-5">
       <a   v-if="feature.properties.link"  :href="feature.properties.link" target="_blank" >
          {{lang === 'en' ? 'Data Access': 'Accès Données'}}
@@ -64,9 +65,12 @@
   </div>
 </template>
 <script>
-console.log(process.env)
+
 var L = require('leaflet');
+L.Control.Fullscreen = require('formater-metadata-vjs/src/modules/leaflet.control.fullscreen.js')
+
 import FormaterPopup from './formater-popup.vue'
+// import turfUnion from '@turf/union'
 export default {
   name: 'FormaterMap',
   components: {
@@ -111,7 +115,7 @@ export default {
     }
   },
   mounted () {
-    
+   // this.union()
     this.initialize()
   },
   methods: {
@@ -123,6 +127,22 @@ export default {
       }
       return true
     },
+//     union ()  {
+//       this.$http.get('http://api.formater/data/tarim-mini.json')
+//       .then(function (resp) {
+//         var geojson = resp.body
+//         console.log(geojson)
+//         var myUnion = null
+//         geojson.features.forEach(function (feature) {
+//           if (!myUnion) {
+//             myUnion = feature
+//           }
+//           myUnion = turfUnion(myUnion, feature)
+//         })
+//         console.log(myUnion)
+//         L.geoJSON(myUnion).addTo(this.map)
+//       })
+//     },
     initialize () {
       // remove static node
       if (this.removeId) {
@@ -146,6 +166,7 @@ export default {
       this.map.on('popupclose', function (e) {
         _this.selectedFeature = null
       })
+      
       // this.map.on( "zoom", function(e){ this.updateAllPolygons();})
       L.tileLayer('//server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
         {
@@ -153,10 +174,32 @@ export default {
           maxZoom: 18,
           minZoom:2
          }).addTo( this.map )
-      
+      var fullscreen = new L.Control.Fullscreen(
+          'fullMap',
+          {
+            lang: this.lang,
+            removeHeight: 0,
+            mouseWheel: true
+           }
+      )
+      fullscreen.addTo(this.map)
       this.$http.get(this.jsonUrl).then(
         response => { this.addGeojsonLayer(response.body)}
       )
+      this.map.on('zoomend', function (e) {
+        console.log(_this.map.getZoom())
+        if(_this.map.getZoom() > 3) {
+          _this.layers.getLayers().forEach(function (layer) {
+            if (layer.center)
+            layer.setStyle({opacity: 1, fillOpacity: 0.2})
+          })
+        } else {
+          _this.layers.getLayers().forEach(function (layer) {
+            if (layer.center)
+            layer.setStyle({opacity: 0, fillOpacity: 0})
+          })
+        }
+      })
     
     },
     addGeojsonLayer (features) {
@@ -173,28 +216,58 @@ export default {
       })
       var _this = this
       this.layers = L.geoJSON(features, {
-//          style: function (feature) {
-//            return {color: _this.color, width: 1}
-//          },
+         style: function (feature) {
+           return {color: 'red', width: 1, fillOpacity: 0, opacity:0}
+         },
          onEachFeature: function (feature, layer) {
            layer.id = feature.properties.id
-           layer.on('click', function (layer) {
-             this.unbindPopup()
-             if (_this.isSelected(feature)) {
-               _this.map.closePopup()
-             } else {
-	             var node = document.querySelector('.popup_' + feature.properties.index)
-	             this.bindPopup(node.cloneNode(true))
-	             this.openPopup()
-	             _this.selectedFeature = feature
-	             
-             }
-           })
+          
+           if (feature.geometry.type !== 'Polygon') {
+	           layer.on('click', function (layer) {
+	             this.unbindPopup()
+	             if (_this.isSelected(feature)) {
+	               _this.map.closePopup()
+	             } else {
+		             var node = document.querySelector('.popup_' + feature.properties.index)
+		             this.bindPopup(node.cloneNode(true))
+		             this.openPopup()
+		             _this.selectedFeature = feature
+		             
+	             }
+	           })
+           }
         }
 	    }).on('add', function () {
 	       _this.map.fitBounds(_this.layers.getBounds(), {padding: [50, 50]})
+	       _this.layers.getLayers().forEach(function (layer) {
+               if (layer.feature.geometry.type === 'Polygon') {
+                 var marker = L.marker(layer.getCenter()).addTo(_this.map)
+                 layer.center = marker
+                 marker.on('click', function (truc) {
+                   this.unbindPopup()
+                   if (_this.isSelected(layer.feature)) {
+                     _this.map.closePopup()
+                   } else {
+                     var node = document.querySelector('.popup_' + layer.feature.properties.index)
+                     this.bindPopup(node.cloneNode(true))
+                     this.openPopup()
+                     _this.selectedFeature = layer.feature
+                     
+                   }
+                 })
+               }
+             })
 	       if (_this.first !== null) {
-	         var next = function () { _this.layers.getLayers()[_this.first].fire('click')}
+	         var next = function () {
+	           
+	           if (_this.layers.getLayers()[_this.first]) {
+	             if (_this.layers.getLayers()[_this.first].center) {
+	               _this.layers.getLayers()[_this.first].center.fire('click')
+	             } else {
+	               _this.layers.getLayers()[_this.first].fire('click')
+	             }
+	           }
+	         }
 	         setTimeout(next, 1000)
 	       }
 	    })
@@ -206,7 +279,11 @@ export default {
     openPopup (feature) {
       // find the good layer
       var selectedLayer = this.layers.getLayers().find(obj => obj.id === feature.properties.id)
-      selectedLayer.fire('click')
+      if (selectedLayer.center) {
+        selectedLayer.center.fire('click')
+      } else {
+        selectedLayer.fire('click')
+      }
     },
     sort (column, direction) {
       switch (column) {
@@ -240,15 +317,26 @@ div.fmt-container{
    position:relative;
 
    height:500px;
+   max-height:500px;
    margin: auto;
 }
-div[id="fmtMap"] {
-  position:absolute;
-  min-height: 500px;
-  width:100%;
-  z-index:0;
+div[id="fullMap"] {
+ position:fixed;
+ top:0;
+ left:0;
+ width:100%;
+ z-index:1000;
 }
-
+div[id="fmtMap"] {
+  position:relative;
+  min-height: 500px;
+  height:500px;
+  width:100%;
+  z-index:20;
+}
+div[id="fmtMap"].mtdt-small {
+  max-height:500px;
+}
 div.fmt-feature {
   display: grid;
   grid-template-columns: minmax(253px,2fr) minmax(130px,2fr) minmax(70px, 1fr) minmax(70px, 1fr) 130px;
