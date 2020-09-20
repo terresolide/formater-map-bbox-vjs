@@ -4,9 +4,9 @@
 	     <div style="text-align:justify;">
 	     <a v-if="properties.image && properties.image.page" target="_blank"
 	     :href="properties.image.page" :title="properties.image.attribution">
-	       <img  :src="properties.image.src" />
+	       <img  :src="imageUrl(properties.image.src)" />
 	     </a>
-	      <img v-if="properties.image && !properties.image.page" :src="properties.image.src" />
+	      <img v-if="properties.image && !properties.image.page" :src="imageUrl(properties.image.src)" />
 	     <span v-html="properties.description" style="text-align:justify;"></span>
 	     </div>
 	     <div style="clear:left;text-align:right;margin-top:5px;" >
@@ -43,6 +43,20 @@ export default {
   },
   created () {
     console.log(this.index)
+  },
+  methods: {
+    isAbsoluteUrl(string) {
+      var res = string.match(/^(http(s)?:\/\/.).*$/g);
+      return (res !== null)
+    },
+    imageUrl (url) {
+      if (this.isAbsoluteUrl(url)) {
+        return url
+      } else {
+        var location = new URL(window.location.href)
+        return location.protocol + '//' + location.hostname + ':' + location.port + location.pathname + url
+      }
+    }
   }
 }
 </script>
