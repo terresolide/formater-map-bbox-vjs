@@ -1,0 +1,129 @@
+
+  {
+      "title": "Collection d'interférogrammes Sentinel-1 sur le Tibet",
+      "abstract": "Cette collection d'interférogrammes est produite par le CNES en collaboration avec ISTerre, le LGL, l'IPGP et ForM@Ter à partir de la chaîne de traitement NSBAS. <br />Elle génère, à partir de l'analyse en série temporelle de l'archive TOPSAR Sentinel-1 (ESA Copernicus???), les produits suivants:\n<ul><li>Par couple d'image (\"INTERFEROGRAM\"): Interférogrammes différentiels, enroulés ou déroulés, en géométrie radar ou terrain, filtrés ou non filtrés; les corrections atmosphériques utilisées; les cohérences spatiales;<\/li>\n<li>Pour la pile d'image, des champs auxiliaires (\"AUXILIARY DATA\") : e.g., tables de transcodage, vecteur LOS;<\/li>\n<li>Pour l'ensemble de la série temporelle (\"TIME SERIE\"): l'évolution de la phase par acquisition, la vitesse en ligne de visée,<\/li><\/ul>\nL’objectif du projet est de quantifier et de modéliser les déformations actuelles en bordure est du plateau tibétain, en se focalisant sur les déformations d’origine tectonique, à l’échelle des failles actives comme à l’échelle continentale. Outre les problématiques de cycle sismique et de mécanismes de surrection du plateau tibétain, ce projet s’intéresse également aux signaux non tectoniques présents dans les séries temporelles (surcharges hydrologiques notamment). ",
+      "lineage": "Cette collection d'interférogrammes est produite par le CNES en collaboration avec ISTerre, le LGL, l'IPGP et ForM@Ter à partir de la chaîne de traitement NSBAS. \nElle génère, à partir de l'analyse en série temporelle de l'archive TOPSAR Sentinel-1 (ESA Copernicus???), les produits suivants:\n<Par couple d'image (\"INTERFEROGRAM\"): Interférogrammes différentiels, enroulés ou déroulés, en géométrie radar ou terrain, filtrés ou non filtrés; les corrections atmosphériques utilisées; les cohérences spatiales;nPour la pile d'image, des champs auxiliaires (\"AUXILIARY DATA\") : e.g., tables de transcodage, vecteur LOS;\nPour l'ensemble de la série temporelle (\"TIME SERIE\"): l'évolution de la phase par acquisition, la vitesse en ligne de visée", 
+      "responsibleParty": "Distributeur|resource|CNES||||||",
+      "type": "series",
+      "isHarvested": "n",
+      "displayOrder": "0",
+      "docLocale": "eng",
+      "popularity": "29",
+      "keyword":       [
+        "Géodésie",
+        "MNT",
+        "Deformation",
+        "Interférogramme",
+        "InSar",
+        "CNES",
+        "SENTINEL-1",
+        "Altitude",
+        "Asie",
+        "Chine",
+        "Qinghai",
+        "Xizang",
+        "Tibet",
+        "Information géoscientifique"
+      ],
+      "publishedForGroup":       [
+        "1",
+        "130"
+      ],
+       "image": [
+        "thumbnail|https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.2.0/public/images/atmospheric_tibet.png|Phase atmosphérique (Tibet juin 2019)",
+        "overview|https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.2.0/public/images/unwrapped_tibet.png|Interférogramme déroulé (Tibet juin 2019)",
+        "overview|https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.2.0/public/images/wrapped_tibet.png|Interférogramme enroulé (Tibet juin 2019)"
+      ],
+      "tempExtentBegin": "2014-10-01",
+      "crsDetails":       {
+        "code": "WGS 1984 ",
+        "codeSpace": "",
+        "name": "",
+        "url": ""
+      },
+      "maintenanceAndUpdateFrequency_text": "Lorsque nécessaire",
+      "format":       [
+        "GEOTIFF",
+        "CSV"
+      ],
+      "spatialRepresentationType_text": "Raster",
+      "inspirethemewithac": "el|Altitude",
+      "denominator": "120",
+      "root": "gmd:MD_Metadata",
+      "isTemplate": "n",
+      "valid": "-1",
+      "feedbackCount": "0",
+      "rating": "0",
+      "source": "2895254d-24be-4856-98f3-4e9d1899f673",
+      "status": "onGoing",
+      "groupWebsite": "https://cnes.fr/",
+      "geoBox": "93.00|36.39988439|98.00|37.73231868",
+      "owner": "1",
+      "recordOwner": "Elisabeth Pointal",
+      "revisionDate": "2019-12-04",
+      "defaultAbstract": "Cette collection d'interférogrammes est produite par le CNES en collaboration avec ISTerre, le LGL, l'IPGP et ForM@Ter à partir de la chaîne de traitement NSBAS. <br />Elle génère, à partir de l'analyse en série temporelle de l'archive TOPSAR Sentinel-1 (ESA Copernicus???), les produits suivants:\n<ul><li>Par couple d'image (\"INTERFEROGRAM\"): Interférogrammes différentiels, enroulés ou déroulés, en géométrie radar ou terrain, filtrés ou non filtrés; les corrections atmosphériques utilisées; les cohérences spatiales;<\/li>\n<li>Pour la pile d'image, des champs auxiliaires (\"AUXILIARY DATA\") : e.g., tables de transcodage, vecteur LOS;<\/li>\n<li>Pour l'ensemble de la série temporelle (\"TIME SERIE\"): l'évolution de la phase par acquisition, la vitesse en ligne de visée,<\/li><\/ul>",
+      "link": "API opensearch Flatsim|API opensearch du cnes|https://flatsim.cnes.fr/atdistrib/resto2/api/collections/TIBET/describe.xml|OpenSearch|OpenSearch|1|OpenSearch",
+      "defaultTitle":       [
+        "Collection d'interférogrammes Sentinel-1 sur le Tibet",
+        "Sentinel-1 Interferograms collection on Tibet"
+      ],
+      "datasetLang": "eng",
+      "userinfo": "admin|Pointal|Elisabeth|Administrator",
+      "topicCat": "geoscientificInformation",
+      "status_text": "Mise à jour continue",
+      "standardName": "ISO 19115:2003/19139",
+      "crs": "WGS 1984::\n              ::",
+      "logo": "https://www7.obs-mip.fr/wp-content-aeris/uploads/sites/4/2017/06/cnes_logo_essai-100x33.png",
+      "draft": "n",
+      "keywordGroup":       {
+        "ForM@Ter | Solid Earth variable ontology": [        {
+          "value": "Géodésie",
+          "link": ""
+        }],
+        " ":         [
+                    {
+            "value": "Géodésie",
+            "link": ""
+          },
+                    {
+            "value": "Altitude",
+            "link": ""
+          },
+                    [
+                        {
+              "value": "Géodésie",
+              "link": ""
+            },
+                        {
+              "value": "Altitude",
+              "link": ""
+            }
+          ]
+        ],
+        "GEMET - INSPIRE themes, version 1.0": [        {
+          "value": "Altitude",
+          "link": ""
+        }]
+      },
+      "groupOwner": "871",
+      "_locale": "fre",
+      "geonet:info":       {
+        "@xmlns:geonet": "http://www.fao.org/geonetwork",
+        "id": "870",
+        "uuid": "86a28260-dc26-4b40-8433-9d06e9b9e628",
+        "schema": "iso19139",
+        "createDate": "2019-12-04T09:20:34",
+        "changeDate": "2020-08-26T16:28:00",
+        "source": "2895254d-24be-4856-98f3-4e9d1899f673",
+        "ownerId": "1",
+        "edit": "true",
+        "owner": "true",
+        "isPublishedToAll": "true",
+        "view": "true",
+        "notify": "true",
+        "download": "true",
+        "dynamic": "true",
+        "featured": "true",
+        "selected": "false"
+      }
+    }
