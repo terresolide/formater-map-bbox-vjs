@@ -2,11 +2,8 @@
 <div class="fmt-popup" :class="'popup_' + properties.index">
 	     <h3 :style="{color: $shadeColor(color, -0.3)}">{{properties.name.toUpperCase()}}</h3>
 	     <div style="text-align:justify;">
-	     <a v-if="properties.image && properties.image.page" target="_blank"
-	     :href="properties.image.page" :title="properties.image.attribution">
-	       <img  :src="imageUrl(properties.image.src)" />
-	     </a>
-	      <img v-if="properties.image && !properties.image.page" :src="imageUrl(properties.image.src)" />
+	      <img v-if="properties.image" :src="imageUrl(properties.image.src)"
+	       :title="properties.image.attribution" :alt="'[' + properties.image.attribution + ']'"/>
 	     <span v-html="properties.description" style="text-align:justify;"></span>
 	     </div>
 	     <div style="clear:left;text-align:right;margin-top:5px;" >
@@ -66,7 +63,7 @@ export default {
 }
 .fmt-popup{
   display:none;
-  max-width: 300px;
+  max-width: 400px;
   text-align: left;
   line-height:1;
   font-size: 0.9rem;

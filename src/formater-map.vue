@@ -68,7 +68,7 @@
 
 var L = require('leaflet');
 L.Control.Fullscreen = require('formater-metadata-vjs/src/modules/leaflet.control.fullscreen.js')
-
+L.Control.Reset = require('./leaflet.control.reset.js')
 import FormaterPopup from './formater-popup.vue'
 // import turfUnion from '@turf/union'
 export default {
@@ -183,6 +183,10 @@ export default {
            }
       )
       fullscreen.addTo(this.map)
+      console.log(L.Control.Reset)
+      var reset = new L.Control.Reset(_this.lang)
+      reset.addTo(_this.map)
+   
       this.$http.get(this.jsonUrl).then(
         response => { this.addGeojsonLayer(response.body)}
       )
@@ -229,7 +233,7 @@ export default {
 	               _this.map.closePopup()
 	             } else {
 		             var node = document.querySelector('.popup_' + feature.properties.index)
-		             this.bindPopup(node.cloneNode(true))
+		             this.bindPopup(node.cloneNode(true), {maxWidth:360})
 		             this.openPopup()
 		             _this.selectedFeature = feature
 		             
@@ -249,7 +253,7 @@ export default {
                      _this.map.closePopup()
                    } else {
                      var node = document.querySelector('.popup_' + layer.feature.properties.index)
-                     this.bindPopup(node.cloneNode(true))
+                     this.bindPopup(node.cloneNode(true), {maxWidth: 360})
                      this.openPopup()
                      _this.selectedFeature = layer.feature
                      
@@ -257,6 +261,7 @@ export default {
                  })
                }
              })
+                
 	       if (_this.first !== null) {
 	         var next = function () {
 	           
