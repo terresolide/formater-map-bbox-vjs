@@ -12,15 +12,15 @@
    {{ lang === 'en' ? 'Selected Areas' : 'Zones sélectionnées' }}
    </h4>
     <div class="fmt-feature feature-header">
+     
       <div class="feature-column-1">
-         <span>Code</span>
-         <div class="button" @click="sort('id', 1)">&darr;</div>
-         <div class="button" @click="sort('id', -1)">&uarr;</div>
+        <span>{{lang === 'en' ? 'Location' : 'Localisation'}}</span>
+      <!--     <div class="button" @click="sort('location', 1)">&darr;</div>
+         <div class="button" @click="sort('location', -1)">&uarr;</div>
+         -->
       </div>
       <div class="feature-column-2">
-        <span>{{lang === 'en' ? 'Location' : 'Localisation'}}</span>
-         <div class="button" @click="sort('location', 1)">&darr;</div>
-         <div class="button" @click="sort('location', -1)">&uarr;</div>
+       <span>  {{ lang === 'en' ? 'Themes' : 'Thèmes' }}</span>
       </div>
      <!--  <div class="feature-column-3">
         <span>Lat</span>
@@ -32,18 +32,21 @@
         <div class="button" @click="sort('lng', 1)">&darr;</div>
         <div class="button" @click="sort('lng', -1)">&uarr;</div>
       </div>  -->
-      <div class="feature-column-5">
-         <span>{{lang === 'en' ? 'Data': 'Données'}}</span>
+      <div class="feature-column-3">
+         <span>{{lang === 'en' ? 'Products': 'Produits'}}</span>
+       <!--  
          <div class="button" @click="sort('id', 1)">&darr;</div>
          <div class="button" @click="sort('id', -1)">&uarr;</div>
+      --> 
       </div>
     </div>
     <div class="fmt-feature" v-for="feature in features" @click="openPopup(feature)" :class="{selected: isSelected(feature)}">
+     
       <div class="feature-column-1">
-        {{feature.properties.id}}
+        {{feature.properties.location}}
       </div>
       <div class="feature-column-2">
-        {{feature.properties.location}}
+      {{feature.properties.theme.join(', ')}}
       </div>
       <!--   <div class="feature-column-3">
         {{feature.geometry.coordinates[1].toFixed(2)}}
@@ -51,9 +54,9 @@
        <div class="feature-column-4">
         {{feature.geometry.coordinates[0].toFixed(2)}}
       </div> -->
-      <div class="feature-column-5">
+      <div class="feature-column-3">
       <a   v-if="feature.properties.link"  :href="feature.properties.link" target="_blank" >
-         {{lang === 'en' ? 'Data Access': 'Accès Données'}}
+         {{lang === 'en' ? 'Access to products': 'Accès aux produits'}}
       </a>
      
       <em v-if="!feature.properties.link" v-html="lang === 'en' ? 'on Going' : '&Agrave; venir'">
@@ -115,7 +118,7 @@ export default {
     }
   },
   mounted () {
-   // this.union()
+    // this.union()
     this.initialize()
   },
   methods: {
@@ -128,7 +131,7 @@ export default {
       return true
     },
 //     union ()  {
-//       this.$http.get('http://api.formater/data/tarim-mini.json')
+//       this.$http.get('/public/traces_osark.json')
 //       .then(function (resp) {
 //         var geojson = resp.body
 //         console.log(geojson)
@@ -183,7 +186,7 @@ export default {
            }
       )
       fullscreen.addTo(this.map)
-      console.log(L.Control.Reset)
+      L.control.scale().addTo(this.map)
       var reset = new L.Control.Reset(_this.lang)
       reset.addTo(_this.map)
    
@@ -211,12 +214,13 @@ export default {
       this.popups = []
       var _this = this
       this.features.map(function (feature, index) {
+        feature.properties.theme = feature.properties.theme.sort()
         feature.properties.index = index
         feature.properties.data = feature.properties.link ? 1 : 0
         _this.popups[index] = feature.properties
       } )
       this.features.sort(function (a, b) {
-        return a.properties.id > b.properties.id ? 1 : -1
+        return a.properties.name > b.properties.name ? 1 : -1
       })
       var _this = this
       this.layers = L.geoJSON(features, {
@@ -277,6 +281,12 @@ export default {
 	       }
 	    })
       this.layers.addTo(this.map)
+//       this.map.on('moveend', function (e) {
+//         console.log('MOVEND')
+        
+//         var nodes = document.querySelectorAll('.leaflet-popup')
+//         console.log(nodes)
+//       })
     },
     isSelected (feature) {
       return (this.selectedFeature && this.selectedFeature.properties.id === feature.properties.id)
@@ -313,6 +323,25 @@ export default {
 }
 </script>
 <style>
+.leaflet-popup.fmt-under {top: 45px !important;}
+/* I moved the "tip" to the right location, but don't succeed in making it visible. */
+.leaflet-popup.fmt-under .leaflet-popup-tip-container {
+      top: 0px !important;
+      overflow: auto important!;
+ }
+.leaflet-popup.fmt-under .leaflet-popup-tip {
+      box-shadow: none !important;
+      background-clip: none !important;
+ }
+.leaflet-popup.fmt-under .leaflet-popup:before 
+        {
+        content: "";
+        position: absolute;
+        border: 13px solid transparent;
+        border-bottom-color: white;
+        bottom: 0px;
+        margin-left: -13px;
+        }
 div.fmt-wrapper{
   width: 100%;
      max-width:1200px;
@@ -344,7 +373,7 @@ div[id="fmtMap"].mtdt-small {
 }
 div.fmt-feature {
   display: grid;
-  grid-template-columns: minmax(253px,2fr) minmax(130px,2fr) minmax(70px, 1fr) minmax(70px, 1fr) 130px;
+  grid-template-columns: minmax(253px,1fr) minmax(250px,2fr) 140px;
   grid-gap: 3px;
   min-height:26px;
   /*grid-auto-rows: minmax(100px, auto);*/
@@ -394,13 +423,13 @@ div.fmt-feature .feature-column-3 {
   grid-column: 3;
   grid-row: 1/2;
 }
-div.fmt-feature .feature-column-4 {
+/* div.fmt-feature .feature-column-4 {
   grid-column: 4;
   grid-row: 1/2;
 }
 div.fmt-feature .feature-column-5 {
   grid-column: 5;
   grid-row: 1/2;
-}
+}*/
 
 </style>

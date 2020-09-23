@@ -12,7 +12,7 @@ Vue.use(vueCustomElement);
 import {VueTools} from 'formater-commons-components-vjs'
 Vue.use(VueTools)
 
-console.log(process.env)
+// console.log(process.env)
 import FormaterMap from './formater-map.vue'
 
 

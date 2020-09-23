@@ -2,7 +2,7 @@
 <div class="fmt-popup" :class="'popup_' + properties.index">
 	     <h3 :style="{color: $shadeColor(color, -0.3)}">{{properties.name.toUpperCase()}}</h3>
 	     <div style="text-align:justify;">
-	      <img v-if="properties.image" :src="imageUrl(properties.image.src)"
+	      <img v-if="properties.image" :src="imageUrl(properties.image.src)" :style="{width: properties.width + 'px'}"
 	       :title="properties.image.attribution" :alt="'[' + properties.image.attribution + ']'"/>
 	     <span v-html="properties.description" style="text-align:justify;"></span>
 	     </div>
@@ -73,8 +73,6 @@ export default {
 }
 .fmt-popup img{
   float: left;
-  max-width:150px;
-  max-height:150px;
   margin-right: 5px;
   margin-bottom: 5px;
 }
