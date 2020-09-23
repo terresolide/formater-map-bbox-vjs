@@ -111,14 +111,14 @@ export default {
       layers: null,
       features: [],
       popups: [],
-      popupLayer: null,
+      selectedLayer: null,
       selectedFeature: null,
       dataUrl: process.env.DATA_URL,
       geojsonUrl: null
     }
   },
   mounted () {
-    // this.union()
+  //  this.union()
     this.initialize()
   },
   methods: {
@@ -131,7 +131,7 @@ export default {
       return true
     },
 //     union ()  {
-//       this.$http.get('/public/traces_osark.json')
+//       this.$http.get('/public/traces_tibet.json')
 //       .then(function (resp) {
 //         var geojson = resp.body
 //         console.log(geojson)
@@ -194,7 +194,6 @@ export default {
         response => { this.addGeojsonLayer(response.body)}
       )
       this.map.on('zoomend', function (e) {
-        console.log(_this.map.getZoom())
         if(_this.map.getZoom() > 3) {
           _this.layers.getLayers().forEach(function (layer) {
             if (layer.center)
@@ -207,7 +206,25 @@ export default {
           })
         }
       })
+      this.map.on('moveend', function (e) {
+        _this.updatePopup()
+      })
     
+    },
+    updatePopup () {
+      if (this.selectedLayer) {
+        var popup = document.querySelector('.leaflet-popup')
+       if (popup) {
+         var latlng =  this.selectedLayer.getLatLng()
+         var containerPoint = this.map.latLngToContainerPoint(latlng);
+         var mapHeight = document.querySelector('#fmtMap').clientHeight;
+	      if (containerPoint && containerPoint.y < 250) {
+	        popup.classList.add('fmt-under')
+	      } else {
+	        popup.classList.remove('fmt-under')
+	      }
+       }
+      }
     },
     addGeojsonLayer (features) {
       this.features = features.features
@@ -235,10 +252,12 @@ export default {
 	             this.unbindPopup()
 	             if (_this.isSelected(feature)) {
 	               _this.map.closePopup()
+	               _this.selectedLayer = null
 	             } else {
 		             var node = document.querySelector('.popup_' + feature.properties.index)
-		             this.bindPopup(node.cloneNode(true), {maxWidth:360})
+		             this.bindPopup(node.cloneNode(true), {maxWidth:360, className: feature.properties.popup})
 		             this.openPopup()
+		             _this.selectedLayer = this
 		             _this.selectedFeature = feature
 		             
 	             }
@@ -255,10 +274,12 @@ export default {
                    this.unbindPopup()
                    if (_this.isSelected(layer.feature)) {
                      _this.map.closePopup()
+                     _this.selectedLayer = null
                    } else {
                      var node = document.querySelector('.popup_' + layer.feature.properties.index)
-                     this.bindPopup(node.cloneNode(true), {maxWidth: 360})
+                     this.bindPopup(node.cloneNode(true), {maxWidth: 360, className: layer.feature.properties.popup})
                      this.openPopup()
+                     _this.selectedLayer = this
                      _this.selectedFeature = layer.feature
                      
                    }
@@ -281,12 +302,6 @@ export default {
 	       }
 	    })
       this.layers.addTo(this.map)
-//       this.map.on('moveend', function (e) {
-//         console.log('MOVEND')
-        
-//         var nodes = document.querySelectorAll('.leaflet-popup')
-//         console.log(nodes)
-//       })
     },
     isSelected (feature) {
       return (this.selectedFeature && this.selectedFeature.properties.id === feature.properties.id)
@@ -323,25 +338,10 @@ export default {
 }
 </script>
 <style>
-.leaflet-popup.fmt-under {top: 45px !important;}
-/* I moved the "tip" to the right location, but don't succeed in making it visible. */
-.leaflet-popup.fmt-under .leaflet-popup-tip-container {
-      top: 0px !important;
-      overflow: auto important!;
- }
-.leaflet-popup.fmt-under .leaflet-popup-tip {
-      box-shadow: none !important;
-      background-clip: none !important;
- }
-.leaflet-popup.fmt-under .leaflet-popup:before 
-        {
-        content: "";
-        position: absolute;
-        border: 13px solid transparent;
-        border-bottom-color: white;
-        bottom: 0px;
-        margin-left: -13px;
-        }
+.fmt-wrapper h4 {
+ margin: 5px 0 3px 0;
+}
+
 div.fmt-wrapper{
   width: 100%;
      max-width:1200px;
@@ -349,9 +349,7 @@ div.fmt-wrapper{
 }
 div.fmt-container{
    position:relative;
-
    height:500px;
-   max-height:500px;
    margin: auto;
 }
 div[id="fullMap"] {
@@ -364,7 +362,6 @@ div[id="fullMap"] {
 div[id="fmtMap"] {
   position:relative;
   min-height: 500px;
-  height:500px;
   width:100%;
   z-index:20;
 }
@@ -375,7 +372,6 @@ div.fmt-feature {
   display: grid;
   grid-template-columns: minmax(253px,1fr) minmax(250px,2fr) 140px;
   grid-gap: 3px;
-  min-height:26px;
   /*grid-auto-rows: minmax(100px, auto);*/
   border-bottom:1px solid lightgrey;
   cursor: pointer;
@@ -386,7 +382,7 @@ div.fmt-feature.feature-header{
   border-top: 1px solid darkgrey;
 }
 div.fmt-feature.feature-header span {
-  line-height: 36px;
+  line-height: 1;
   vertical-align: middle;
 }
 div.fmt-feature div.button {
@@ -412,7 +408,7 @@ div.fmt-feature .feature-column-1 {
   grid-row: 1/2;
   color:#darkgrey;
   font-size:0.9rem;
-  padding:2px 4px;
+  padding:0px 4px;
   word-break:break-all;
 }
 div.fmt-feature .feature-column-2 {
@@ -431,5 +427,23 @@ div.fmt-feature .feature-column-5 {
   grid-column: 5;
   grid-row: 1/2;
 }*/
-
+.leaflet-popup.fmt-under {top: 40px !important;}
+/* I moved the "tip" to the right location, but don't succeed in making it visible. */
+.leaflet-popup.fmt-under .leaflet-popup-tip-container {
+      top: 0px !important;
+      overflow: auto important!;
+ }
+.leaflet-popup.fmt-under .leaflet-popup-tip {
+      box-shadow: none !important;
+      background-clip: none !important;
+ }
+.leaflet-popup.fmt-under:before 
+        {
+        content: "";
+        position: absolute;
+        border: 7px solid transparent;
+        border-bottom-color: white;
+        bottom: 0px;
+        margin-left: -13px;
+        }
 </style>
