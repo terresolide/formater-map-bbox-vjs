@@ -38,9 +38,6 @@ export default {
       }
     }
   },
-  created () {
-    console.log(this.index)
-  },
   methods: {
     isAbsoluteUrl(string) {
       var res = string.match(/^(http(s)?:\/\/.).*$/g);
@@ -74,6 +71,6 @@ export default {
 .fmt-popup img{
   float: left;
   margin-right: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
 }
 </style>

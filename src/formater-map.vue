@@ -3,7 +3,7 @@
     <div style="display:none;">
       <formater-popup v-for="(popup, index) in popups" :key="index" :properties="popup" :color="color" :lang="lang"></formater-popup>
     </div>
-    <div id="fullMap"></div>
+    <div id="fullMap" :style="{height: windowHeight + 'px'}"></div>
     <div class="fmt-container">
       <div id="fmtMap" class="mtdt-small"/>
     </div>
@@ -114,14 +114,35 @@ export default {
       selectedLayer: null,
       selectedFeature: null,
       dataUrl: process.env.DATA_URL,
-      geojsonUrl: null
+      geojsonUrl: null,
+      windowHeight: null,
+      resizeListener: null
     }
+  },
+  created() {
+    this.windowHeight = window.innerHeight + 'px'
+    this.resizeListener = this.resize.bind(this)
+    window.addEventListener('resize', this.resizeListener)
   },
   mounted () {
   //  this.union()
     this.initialize()
   },
+  destroyed () {
+    window.removeEventListener('resize', this.resizeListener)
+    this.resizeListener = null
+  },
   methods: {
+    resize () {
+      this.windowHeight = window.innerHeight
+      var node = this.$el.querySelector('#fullMap > div')
+      if (node) {
+        node.style.height = this.windowHeight + 'px'
+      }
+      if (this.map) {
+        this.map.invalidateSize()
+      }
+    },
     isUrl (url) {
       try  {
         new URL(url)
@@ -338,6 +359,9 @@ export default {
 }
 </script>
 <style>
+.fmt-wrapper {
+  line-height: 1.7;
+}
 .fmt-wrapper h4 {
  margin: 5px 0 3px 0;
 }
@@ -446,4 +470,22 @@ div.fmt-feature .feature-column-5 {
         bottom: 0px;
         margin-left: -13px;
         }
+        @media screen and (max-height: 800px) {
+        div.fmt-feature {
+   line-height:1.2;
+  }
+        }
+@media screen and (max-height: 700px) {
+  div.fmt-container{
+   height:400px;
+  }
+
+	div[id="fmtMap"] {
+	  min-height: 400px;
+	}
+	div[id="fmtMap"].mtdt-small {
+	  max-height:400px;
+	}
+	
+}
 </style>
