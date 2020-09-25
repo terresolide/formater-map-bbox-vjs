@@ -3,7 +3,7 @@
     <div style="display:none;">
       <formater-popup v-for="(popup, index) in popups" :key="index" :properties="popup" :color="color" :lang="lang"></formater-popup>
     </div>
-    <div id="fullMap" :style="{height: windowHeight + 'px'}"></div>
+    <div id="fullMap" ></div>
     <div class="fmt-container">
       <div id="fmtMap" class="mtdt-small"/>
     </div>
