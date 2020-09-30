@@ -1,40 +1,55 @@
-
-  {
-      "title": "Collection d'interférogrammes Sentinel-1 sur le Tibet",
-      "abstract": "Cette collection d'interférogrammes est produite par le CNES en collaboration avec ISTerre, le LGL, l'IPGP et ForM@Ter à partir de la chaîne de traitement NSBAS. <br />Elle génère, à partir de l'analyse en série temporelle de l'archive TOPSAR Sentinel-1 (ESA Copernicus???), les produits suivants:\n<ul><li>Par couple d'image (\"INTERFEROGRAM\"): Interférogrammes différentiels, enroulés ou déroulés, en géométrie radar ou terrain, filtrés ou non filtrés; les corrections atmosphériques utilisées; les cohérences spatiales;<\/li>\n<li>Pour la pile d'image, des champs auxiliaires (\"AUXILIARY DATA\") : e.g., tables de transcodage, vecteur LOS;<\/li>\n<li>Pour l'ensemble de la série temporelle (\"TIME SERIE\"): l'évolution de la phase par acquisition, la vitesse en ligne de visée,<\/li><\/ul>\nL’objectif du projet est de quantifier et de modéliser les déformations actuelles en bordure est du plateau tibétain, en se focalisant sur les déformations d’origine tectonique, à l’échelle des failles actives comme à l’échelle continentale. Outre les problématiques de cycle sismique et de mécanismes de surrection du plateau tibétain, ce projet s’intéresse également aux signaux non tectoniques présents dans les séries temporelles (surcharges hydrologiques notamment). ",
-      "lineage": "Cette collection d'interférogrammes est produite par le CNES en collaboration avec ISTerre, le LGL, l'IPGP et ForM@Ter à partir de la chaîne de traitement NSBAS.\r\nElle génère, à partir de l'analyse en série temporelle de l'archive TOPSAR Sentinel-1 (ESA Copernicus???), les produits suivants:\r\n-  Par couple d'image (\"INTERFEROGRAM\"): Interférogrammes différentiels, enroulés ou déroulés, en géométrie radar ou terrain, filtrés ou non filtrés; les corrections atmosphériques utilisées; les cohérences spatiales;\r\n- Pour la pile d'image, des champs auxiliaires (\"AUXILIARY DATA\") : e.g., tables de transcodage, vecteur LOS;\r\n- Pour l'ensemble de la série temporelle (\"TIME SERIE\"): l'évolution de la phase par acquisition, la vitesse en ligne de visée,", 
-      "responsibleParty": "Distributeur|resource|CNES||||||",
+{
+      "title": "Collection d'interférogrammes et séries temporelles Sentinel-1 sur le Tibet",
+      "abstract": "L’objectif du projet est de quantifier et de modéliser les déformations actuelles en bordure est du plateau tibétain, en se focalisant sur les déformations d’origine tectonique, à l’échelle des failles actives comme à l’échelle continentale. Outre les problématiques de cycle sismique et de mécanismes de surrection du plateau tibétain, ce projet s’intéresse également aux signaux non tectoniques présents dans les séries temporelles (surcharges hydrologiques notamment).\n\nLes produits disponibles son divisés en trois groupes:\n- « INTERFEROGRAM » : ceci rassemble les interférogrammes différentiels, enroulés et déroulés, en géométrie radar ou terrain, filtrés ou non, à différentes résolutions, ainsi que les cartes de corrections atmosphériques utilisées et de cohérence spatiale pour chaque interférogramme.\n- « TIMESERIES » : ceci inclut des cartes de déplacement en série temporelle et de vitesse moyenne, selon la ligne de visée du satellite (LOS), et des indices qualité du traitement en série temporelle.\n- « AUXILIARYDATA » : ce repertoire contient des cartes indiquant le vecteur LOS, le MNT en géométrie radar, à différentes résolutions, les tables de transcodage géométrie radarterrain, et la cohérence temporelle, ainsi qu’un ensemble de figures et fichiers de paramètres spécifiques au traitement de la série temporelle.",
+      "lineage": "Ces collections d'interférogrammes et de séries temporelles de déplacement sont produites par le CNES dans le cadre du service FLATSIM. Ce service est développé en collaboration avec le pôle de Données et Services ForM@Ter et les laboratoires ISTerre, LGL-TPE et IPGP. Les images radar utilisées proviennent de l’archive TOPSAR Sentinel-1 (données Copernicus). Les calculs sont faits à partir de  la chaîne de traitement interférométrique NSBAS",
+      "responsibleParty":       [
+        "Distributeur|resource|CNES||||||",
+        "Distributeur|resource|CNES||||||||1",
+        "Point de contact|metadata|ForM@Ter||contact@poleterresolide.fr||||",
+        "Point de contact|metadata|ForM@Ter||contact@poleterresolide.fr||||||1"
+      ],
       "type": "series",
+      "legalConstraints":       [
+        "Accès réservé aux utilisateurs authentifiés",
+        "Comment citer les produits: \"ForM@Ter - INSAR FLATSIM Products, https://www.doi.org/10.24400/253171/FLATSIM2020 , Durand, P., Donadieu, J., Proy, C., Clesse, D., Grandin, R., Ostanciaux, E, Pointal, E, Lasserre, C., Doin, MP., Pathier, E., Thollard, F., Laurent, C. (2019). FLATSIM Form@ter LArge-scale multi-Temporal Sentinel-1 Interferometry processing chain in MUSCATE NSBAS, MDIS workshop, La Petite Pierre, France, 16-18 October 2019\"",
+        "Licence: https://creativecommons.org/licenses/by-nc/4.0/"
+      ],
       "isHarvested": "n",
       "displayOrder": "0",
-      "docLocale": "eng",
-      "popularity": "29",
+      "docLocale": "fre",
+      "popularity": "129",
       "keyword":       [
-        "Géodésie",
-        "MNT",
-        "Deformation",
-        "Interférogramme",
-        "InSar",
         "CNES",
-        "SENTINEL-1",
-        "Altitude",
-        "Asie",
         "Chine",
+        "Déformation",
+        "Geodetics",
+        "Géodésie",
+        "InSar",
+        "Informations géoscientifiques",
+        "Interférogramme",
         "Qinghai",
-        "Xizang",
+        "SENTINEL-1",
         "Tibet",
-        "Information géoscientifique"
+        "Xizang"
       ],
       "publishedForGroup":       [
         "1",
         "130"
       ],
-       "image": [
-        "thumbnail|https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.2.0/public/images/atmospheric_tibet.png|Phase atmosphérique (Tibet juin 2019)",
-        "overview|https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.2.0/public/images/unwrapped_tibet.png|Interférogramme déroulé (Tibet juin 2019)",
-        "overview|https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.2.0/public/images/wrapped_tibet.png|Interférogramme enroulé (Tibet juin 2019)"
+      "identifier": "urn:ogc:def:EOP:CNES::TIBET:",
+      "image":       [
+        "overview|https://api.poleterresolide.fr/images/flatsim/unwrapped_tibet.png|Interférogramme déroulé sur le Tibet (juin 2019)",
+        "overview|https://api.poleterresolide.fr/images/flatsim/wrapped_tibet.png|Interférogramme enroulé sur le Tibet (juin 2019)",
+        "thumbnail|https://api.poleterresolide.fr/images/flatsim/atmospheric_tibet.png|Phase atmosphérique Tibet (juin 2019)"
       ],
-      "tempExtentBegin": "2014-10-01",
+      "tempExtentBegin":       [
+        "2014-09-30t22:00:00.000z",
+        "2014-10-01"
+      ],
+      "mdLanguage":       [
+        "eng",
+        "fre"
+      ],
       "crsDetails":       {
         "code": "WGS 1984 ",
         "codeSpace": "",
@@ -43,68 +58,113 @@
       },
       "maintenanceAndUpdateFrequency_text": "Lorsque nécessaire",
       "format":       [
-        "GEOTIFF",
-        "CSV"
+        "CSV",
+        "GEOTIFF"
       ],
       "spatialRepresentationType_text": "Raster",
-      "inspirethemewithac": "el|Altitude",
       "denominator": "120",
       "root": "gmd:MD_Metadata",
       "isTemplate": "n",
       "valid": "-1",
       "feedbackCount": "0",
+      "tempExtentEnd": "2020-09-29t21:59:59.000z",
       "rating": "0",
       "source": "2895254d-24be-4856-98f3-4e9d1899f673",
       "status": "onGoing",
+      "updateFrequency": "asNeeded",
       "groupWebsite": "https://cnes.fr/",
       "geoBox": "93.00|36.39988439|98.00|37.73231868",
       "owner": "1",
       "recordOwner": "Elisabeth Pointal",
       "revisionDate": "2019-12-04",
-      "defaultAbstract": "Cette collection d'interférogrammes est produite par le CNES en collaboration avec ISTerre, le LGL, l'IPGP et ForM@Ter à partir de la chaîne de traitement NSBAS. <br />Elle génère, à partir de l'analyse en série temporelle de l'archive TOPSAR Sentinel-1 (ESA Copernicus???), les produits suivants:\n<ul><li>Par couple d'image (\"INTERFEROGRAM\"): Interférogrammes différentiels, enroulés ou déroulés, en géométrie radar ou terrain, filtrés ou non filtrés; les corrections atmosphériques utilisées; les cohérences spatiales;<\/li>\n<li>Pour la pile d'image, des champs auxiliaires (\"AUXILIARY DATA\") : e.g., tables de transcodage, vecteur LOS;<\/li>\n<li>Pour l'ensemble de la série temporelle (\"TIME SERIE\"): l'évolution de la phase par acquisition, la vitesse en ligne de visée,<\/li><\/ul>",
-      "link": "API opensearch Flatsim|API opensearch du cnes|https://flatsim.cnes.fr/atdistrib/resto2/api/collections/TIBET/describe.xml|OpenSearch|OpenSearch|1|OpenSearch",
-      "defaultTitle":       [
-        "Collection d'interférogrammes Sentinel-1 sur le Tibet",
-        "Sentinel-1 Interferograms collection on Tibet"
+      "defaultAbstract": "L’objectif du projet est de quantifier et de modéliser les déformations actuelles en bordure est du plateau tibétain, en se focalisant sur les déformations d’origine tectonique, à l’échelle des failles actives comme à l’échelle continentale. Outre les problématiques de cycle sismique et de mécanismes de surrection du plateau tibétain, ce projet s’intéresse également aux signaux non tectoniques présents dans les séries temporelles (surcharges hydrologiques notamment).\n\nLes produits disponibles son divisés en trois groupes:\n- « INTERFEROGRAM » : ceci rassemble les interférogrammes différentiels, enroulés et déroulés, en géométrie radar ou terrain, filtrés ou non, à différentes résolutions, ainsi que les cartes de corrections atmosphériques utilisées et de cohérence spatiale pour chaque interférogramme.\n- « TIMESERIES » : ceci inclut des cartes de déplacement en série temporelle et de vitesse moyenne, selon la ligne de visée du satellite (LOS), et des indices qualité du traitement en série temporelle.\n- « AUXILIARYDATA » : ce repertoire contient des cartes indiquant le vecteur LOS, le MNT en géométrie radar, à différentes résolutions, les tables de transcodage géométrie radarterrain, et la cohérence temporelle, ainsi qu’un ensemble de figures et fichiers de paramètres spécifiques au traitement de la série temporelle.",
+      "link":       [
+        "API opensearch Flatsim||https://flatsim.cnes.fr/atdistrib/resto2/api/collections/TIBET/describe.xml|OpenSearch|OpenSearch|1",
+        "API opensearch Flatsim||https://flatsim.cnes.fr/atdistrib/resto2/api/collections/TIBET/describe.xml|OpenSearch|OpenSearch|1|OpenSearch",
+        "Doin & al. 2011|Doin, M.-P., Lodge, F., Guillaso, S., Jolivet, R., Lasserre, C., Ducret, G., Grandin, R., Pathier, E., Pinel, V. (2011). Presentation of the small baseline NSBAS processing chain on a case example: The Etna deformation monitoring from 2003 to 2010 using Envisat data. In Proceedings of FRINGE 2011 ESA Workshop, Frascati, Italy,19–23 September 2011, ESA Publication SP-697.|https://earth.esa.int/documents/10174/1573056/Presentation_small_baseline_NSBAS_Etna_deformation_Envisat.pdf|WWW:LINK-1.0-http--link|text/html|1",
+        "Doin & al. 2011|Doin, M.-P., Lodge, F., Guillaso, S., Jolivet, R., Lasserre, C., Ducret, G., Grandin, R., Pathier, E., Pinel, V. (2011). Presentation of the small baseline NSBAS processing chain on a case example: The Etna deformation monitoring from 2003 to 2010 using Envisat data. In Proceedings of FRINGE 2011 ESA Workshop, Frascati, Italy,19–23 September 2011, ESA Publication SP-697.|https://earth.esa.int/documents/10174/1573056/Presentation_small_baseline_NSBAS_Etna_deformation_Envisat.pdf|WWW:LINK-1.0-http--link|text/html|1|",
+        "Grandin. 2015|Grandin R. (2015). Interferometric Processing of SLC Sentinel-1 TOPS Data. In Proceedings of FRINGE’15: Advances in the Science and Applications of SAR Interferometry and Sentinel-1 InSAR Workshop, Frascati, Italy, 23-27 March 2015, ESA Publication SP-731. doi:10.5270/Fringe2015.116|http://proceedings.esa.int/files/116.pdf|WWW:LINK-1.0-http--link|text/html|1",
+        "Grandin. 2015|Grandin R. (2015). Interferometric Processing of SLC Sentinel-1 TOPS Data. In Proceedings of FRINGE’15: Advances in the Science and Applications of SAR Interferometry and Sentinel-1 InSAR Workshop, Frascati, Italy, 23-27 March 2015, ESA Publication SP-731. doi:10.5270/Fringe2015.116|http://proceedings.esa.int/files/116.pdf|WWW:LINK-1.0-http--link|text/html|1|",
+        "MDIS Durand 2019|Durand, P., Donadieu, J., Proy, C., Clesse, D., Grandin, R., Ostanciaux, E., Pointal, E., Lasserre, C., Doin, M.-P., Pathier, E., Thollard, F., Laurent, C. (2019). FLATSIM Form@ter LArge-scale multi-Temporal Sentinel-1 Interferometry processing chain in MUSCATE NSBAS, MDIS workshop, La Petite Pierre, France, 16-18 October 2019|https://eost.unistra.fr/fileadmin/upload/EOST/MDIS_presentation/MDIS2019_Durand.pdf|WWW:LINK-1.0-http--link|text/html|1",
+        "MDIS Durand 2019|Durand, P., Donadieu, J., Proy, C., Clesse, D., Grandin, R., Ostanciaux, E., Pointal, E., Lasserre, C., Doin, M.-P., Pathier, E., Thollard, F., Laurent, C. (2019). FLATSIM Form@ter LArge-scale multi-Temporal Sentinel-1 Interferometry processing chain in MUSCATE NSBAS, MDIS workshop, La Petite Pierre, France, 16-18 October 2019|https://eost.unistra.fr/fileadmin/upload/EOST/MDIS_presentation/MDIS2019_Durand.pdf|WWW:LINK-1.0-http--link|text/html|1|",
+        "Table des produits FLATSIM|Détails des produits|https://www7.obs-mip.fr/wp-content-aeris/uploads/sites/4/2020/04/Tableau-produits.pdf|WWW:LINK-1.0-http--link|text/html|1",
+        "Table des produits FLATSIM|Détails des produits|https://www7.obs-mip.fr/wp-content-aeris/uploads/sites/4/2020/04/Tableau-produits.pdf|WWW:LINK-1.0-http--link|text/html|1|"
       ],
+      "defaultTitle": "Collection d'interférogrammes et séries temporelles Sentinel-1 sur le Tibet",
       "datasetLang": "eng",
       "userinfo": "admin|Pointal|Elisabeth|Administrator",
       "topicCat": "geoscientificInformation",
       "status_text": "Mise à jour continue",
       "standardName": "ISO 19115:2003/19139",
-      "crs": "WGS 1984::\n              ::",
+      "crs": "WGS 1984::\n              ::\n              ::",
       "logo": "https://www7.obs-mip.fr/wp-content-aeris/uploads/sites/4/2017/06/cnes_logo_essai-100x33.png",
       "draft": "n",
-      "keywordGroup":       {
-        "ForM@Ter | Solid Earth variable ontology": [        {
-          "value": "Géodésie",
-          "link": ""
-        }],
-        " ":         [
+      "keywordGroup":       [
+        {" ":         [
                     {
-            "value": "Géodésie",
+            "value": "Geodetics",
             "link": ""
           },
-                    {
-            "value": "Altitude",
+          [          {
+            "value": "Geodetics",
             "link": ""
-          },
-                    [
+          }]
+        ]},
+                {
+          " ":           [
+                        {
+              "value": "Geodetics",
+              "link": "https://w3id.org/formater/variable/geodetics"
+            },
+            [            {
+              "value": "Geodetics",
+              "link": "https://w3id.org/formater/variable/geodetics"
+            }]
+          ],
+          "otherKeywords":           [
+                        {
+              "value": "SENTINEL-1",
+              "link": ""
+            },
+                        {
+              "value": "InSar",
+              "link": ""
+            },
+                        {
+              "value": "Déformation",
+              "link": ""
+            },
                         {
               "value": "Géodésie",
               "link": ""
             },
                         {
-              "value": "Altitude",
+              "value": "Interférogramme",
+              "link": ""
+            },
+                        {
+              "value": "Chine",
+              "link": ""
+            },
+                        {
+              "value": "Xizang",
+              "link": ""
+            },
+                        {
+              "value": "Qinghai",
+              "link": ""
+            },
+                        {
+              "value": "Tibet",
+              "link": ""
+            },
+                        {
+              "value": "CNES",
               "link": ""
             }
           ]
-        ],
-        "GEMET - INSPIRE themes, version 1.0": [        {
-          "value": "Altitude",
-          "link": ""
-        }]
-      },
+        }
+      ],
       "groupOwner": "871",
       "_locale": "fre",
       "geonet:info":       {
@@ -113,17 +173,15 @@
         "uuid": "86a28260-dc26-4b40-8433-9d06e9b9e628",
         "schema": "iso19139",
         "createDate": "2019-12-04T09:20:34",
-        "changeDate": "2020-08-26T16:28:00",
+        "changeDate": "2020-09-29T19:29:36",
         "source": "2895254d-24be-4856-98f3-4e9d1899f673",
-        "ownerId": "1",
-        "edit": "true",
-        "owner": "true",
         "isPublishedToAll": "true",
         "view": "true",
-        "notify": "true",
-        "download": "true",
-        "dynamic": "true",
-        "featured": "true",
+        "notify": "false",
+        "download": "false",
+        "dynamic": "false",
+        "featured": "false",
+        "guestdownload": "false",
         "selected": "false"
       }
     }
