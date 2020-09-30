@@ -43,7 +43,6 @@
         "thumbnail|https://api.poleterresolide.fr/images/flatsim/atmospheric_tibet.png|Phase atmosphérique Tibet (juin 2019)"
       ],
       "tempExtentBegin":       [
-        "2014-09-30t22:00:00.000z",
         "2014-10-01"
       ],
       "mdLanguage":       [
@@ -67,7 +66,7 @@
       "isTemplate": "n",
       "valid": "-1",
       "feedbackCount": "0",
-      "tempExtentEnd": "2020-09-29t21:59:59.000z",
+      "tempExtentEnd": "2019-12-31",
       "rating": "0",
       "source": "2895254d-24be-4856-98f3-4e9d1899f673",
       "status": "onGoing",
