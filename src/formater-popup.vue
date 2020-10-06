@@ -48,7 +48,9 @@ export default {
         return url
       } else {
         var location = new URL(window.location.href)
-        return location.protocol + '//' + location.hostname + ':' + location.port + location.pathname + url
+        var pathname = location.pathname.match(/(.*)(\/[^/]*\.php)$/i)
+        var path = pathname && pathname.length > 2 ? pathname[1] : location.pathname
+        return location.protocol + '//' + location.hostname +  (location.port ? ':' + location.port : '') + path + url
       }
     }
   }
