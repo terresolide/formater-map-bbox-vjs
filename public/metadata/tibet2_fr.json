@@ -88,8 +88,10 @@
         "Grandin. 2015|Grandin R. (2015). Interferometric Processing of SLC Sentinel-1 TOPS Data. In Proceedings of FRINGE’15: Advances in the Science and Applications of SAR Interferometry and Sentinel-1 InSAR Workshop, Frascati, Italy, 23-27 March 2015, ESA Publication SP-731. doi:10.5270/Fringe2015.116|http://proceedings.esa.int/files/116.pdf|WWW:LINK-1.0-http--link|text/html|1|",
         "MDIS Durand 2019|Durand, P., Donadieu, J., Proy, C., Clesse, D., Grandin, R., Ostanciaux, E., Pointal, E., Lasserre, C., Doin, M.-P., Pathier, E., Thollard, F., Laurent, C. (2019). FLATSIM Form@ter LArge-scale multi-Temporal Sentinel-1 Interferometry processing chain in MUSCATE NSBAS, MDIS workshop, La Petite Pierre, France, 16-18 October 2019|https://eost.unistra.fr/fileadmin/upload/EOST/MDIS_presentation/MDIS2019_Durand.pdf|WWW:LINK-1.0-http--link|text/html|1",
         "MDIS Durand 2019|Durand, P., Donadieu, J., Proy, C., Clesse, D., Grandin, R., Ostanciaux, E., Pointal, E., Lasserre, C., Doin, M.-P., Pathier, E., Thollard, F., Laurent, C. (2019). FLATSIM Form@ter LArge-scale multi-Temporal Sentinel-1 Interferometry processing chain in MUSCATE NSBAS, MDIS workshop, La Petite Pierre, France, 16-18 October 2019|https://eost.unistra.fr/fileadmin/upload/EOST/MDIS_presentation/MDIS2019_Durand.pdf|WWW:LINK-1.0-http--link|text/html|1|",
-        "Table des produits FLATSIM|Détails des produits|https://www7.obs-mip.fr/wp-content-aeris/uploads/sites/4/2020/04/Tableau-produits.pdf|WWW:LINK-1.0-http--link|text/html|1",
-        "Table des produits FLATSIM|Détails des produits|https://www7.obs-mip.fr/wp-content-aeris/uploads/sites/4/2020/04/Tableau-produits.pdf|WWW:LINK-1.0-http--link|text/html|1|"
+        "Documentation FLATSIM|Description des produits|https://formater.pages.in2p3.fr/flatsim/|WWW:LINK-1.0-http--link|text/html|1",
+        "FLATSIM documentation|Product description|https://www7.obs-mip.fr/https://formater.pages.in2p3.fr/flatsim/|WWW:LINK-1.0-http--link|text/html|1|",
+        "Table des produits FLATSIM|Liste des produits|https://www7.obs-mip.fr/wp-content-aeris/uploads/sites/4/2020/04/Tableau-produits.pdf|WWW:LINK-1.0-http--link|text/html|1",
+        "FLATSIM product table|Product list|https://www7.obs-mip.fr/wp-content-aeris/uploads/sites/4/2020/04/Tableau-produits.pdf|WWW:LINK-1.0-http--link|text/html|1|"
       ],
       "defaultTitle": "Collection d'interférogrammes et séries temporelles Sentinel-1 sur le Tibet",
       "datasetLang": "eng",
