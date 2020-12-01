@@ -214,19 +214,19 @@ export default {
       this.$http.get(this.jsonUrl).then(
         response => { this.addGeojsonLayer(response.body)}
       )
-      this.map.on('zoomend', function (e) {
-        if(_this.map.getZoom() > 3) {
-          _this.layers.getLayers().forEach(function (layer) {
-            if (layer.center)
-            layer.setStyle({opacity: 1, fillOpacity: 0.2})
-          })
-        } else {
-          _this.layers.getLayers().forEach(function (layer) {
-            if (layer.center)
-            layer.setStyle({opacity: 0, fillOpacity: 0})
-          })
-        }
-      })
+//       this.map.on('zoomend', function (e) {
+//         if(_this.map.getZoom() > 3) {
+//           _this.layers.getLayers().forEach(function (layer) {
+//             if (layer.center)
+//             layer.setStyle({opacity: 1, fillOpacity: 0.2})
+//           })
+//         } else {
+//           _this.layers.getLayers().forEach(function (layer) {
+//             if (layer.center)
+//             layer.setStyle({opacity: 0, fillOpacity: 0})
+//           })
+//         }
+//       })
       this.map.on('moveend', function (e) {
         _this.updatePopup()
       })
@@ -263,25 +263,25 @@ export default {
       var _this = this
       this.layers = L.geoJSON(features, {
          style: function (feature) {
-           return {color: 'red', width: 1, fillOpacity: 0, opacity:0}
+           return {color: 'red', width: 1, fillOpacity: 0.2, opacity:1}
          },
          onEachFeature: function (feature, layer) {
            layer.id = feature.properties.id
           
            if (feature.geometry.type !== 'Polygon') {
-	           layer.on('click', function (layer) {
-	             this.unbindPopup()
-	             if (_this.isSelected(feature)) {
-	               _this.map.closePopup()
-	               _this.selectedLayer = null
-	             } else {
+	           layer.on('mouseover', function (layer) {
+// 	             this.unbindPopup()
+// 	             if (_this.isSelected(feature)) {
+// 	               _this.map.closePopup()
+// 	               _this.selectedLayer = null
+// 	             } else {
 		             var node = document.querySelector('.popup_' + feature.properties.index)
 		             this.bindPopup(node.cloneNode(true), {maxWidth:360, className: feature.properties.popup})
 		             this.openPopup()
 		             _this.selectedLayer = this
 		             _this.selectedFeature = feature
 		             
-	             }
+	             // }
 	           })
            }
         }
@@ -291,19 +291,22 @@ export default {
                if (layer.feature.geometry.type === 'Polygon') {
                  var marker = L.marker(layer.getCenter()).addTo(_this.map)
                  layer.center = marker
-                 marker.on('click', function (truc) {
+                 marker.on('click', function (event) {
+                   event.preventDefault()
+                 })
+                 marker.on('mouseover', function (truc) {
                    this.unbindPopup()
-                   if (_this.isSelected(layer.feature)) {
-                     _this.map.closePopup()
-                     _this.selectedLayer = null
-                   } else {
+//                    if (_this.isSelected(layer.feature)) {
+//                      _this.map.closePopup()
+//                      _this.selectedLayer = null
+//                    } else {
                      var node = document.querySelector('.popup_' + layer.feature.properties.index)
                      this.bindPopup(node.cloneNode(true), {maxWidth: 360, className: layer.feature.properties.popup})
                      this.openPopup()
                      _this.selectedLayer = this
                      _this.selectedFeature = layer.feature
                      
-                   }
+                  // }
                  })
                }
              })
@@ -313,9 +316,9 @@ export default {
 	           
 	           if (_this.layers.getLayers()[_this.first]) {
 	             if (_this.layers.getLayers()[_this.first].center) {
-	               _this.layers.getLayers()[_this.first].center.fire('click')
+	               _this.layers.getLayers()[_this.first].center.fire('mouseover')
 	             } else {
-	               _this.layers.getLayers()[_this.first].fire('click')
+	               _this.layers.getLayers()[_this.first].fire('mouseover')
 	             }
 	           }
 	         }
@@ -331,9 +334,9 @@ export default {
       // find the good layer
       var selectedLayer = this.layers.getLayers().find(obj => obj.id === feature.properties.id)
       if (selectedLayer.center) {
-        selectedLayer.center.fire('click')
+        selectedLayer.center.fire('mouseover')
       } else {
-        selectedLayer.fire('click')
+        selectedLayer.fire('mouseover')
       }
     },
     sort (column, direction) {
