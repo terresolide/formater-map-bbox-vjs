@@ -1,0 +1,152 @@
+ {
+    "title": "Collection d'interférogrammes et séries temporelles Sentinel-1 sur Afar",
+    "abstract": "Ce projet vise à caractériser la distribution spatiale et temporelle de la déformation dans la région de la dépression Afar. Il s’agit de mieux comprendre la tectonique grande échelle (localisation des frontières divergentes, cinématique du point triple), mais aussi la dynamique des évènements volcaniques, sismiques et asismiques, et la mécanique des failles actives. La problématique de l’aléa gravitaire sera également abordée.\n\nLes produits disponibles son divisés en trois groupes:\n- « INTERFEROGRAM » : ceci rassemble les interférogrammes différentiels, enroulés et déroulés, en géométrie radar ou terrain, filtrés ou non, à différentes résolutions, ainsi que les cartes de corrections atmosphériques utilisées et de cohérence spatiale pour chaque interférogramme.\n- « TIMESERIES » : ceci inclut des cartes de déplacement en série temporelle et de vitesse moyenne, selon la ligne de visée du satellite (LOS), et des indices qualité du traitement en série temporelle.\n- « AUXILIARYDATA » : ce repertoire contient des cartes indiquant le vecteur LOS, le MNT en géométrie radar, à différentes résolutions, les tables de transcodage géométrie radarterrain, et la cohérence temporelle, ainsi qu’un ensemble de figures et fichiers de paramètres spécifiques au traitement de la série temporelle.",
+    "lineage": "Ces collections d'interférogrammes et de séries temporelles de déplacement sont produites par le CNES dans le cadre du service FLATSIM. Ce service est développé en collaboration avec le pôle de Données et Services ForM@Ter et les laboratoires ISTerre, LGL-TPE et IPGP. Les images radar utilisées proviennent de l’archive TOPSAR Sentinel-1 (données Copernicus). Les calculs sont faits à partir de  la chaîne de traitement interférométrique NSBAS",
+    "responsibleParty":     [
+      "Distributeur|resource|CNES||||||",
+      "Distributeur|resource|CNES||||||||1",
+      "Point de contact|metadata|ForM@Ter||contact@poleterresolide.fr||||",
+      "Point de contact|metadata|ForM@Ter||contact@poleterresolide.fr||||||1"
+    ],
+    "type": "series",
+    "legalConstraints":     [
+      "Comment citer les produits: \"ForM@Ter (2020): FLATSIM Data Products. CNES. (Dataset), doi: https://www.doi.org/10.24400/253171/FLATSIM2020 \"",
+      "Données FAIR,  en phase de validation, accessibles uniquement à la communauté ForM@Ter.",
+      "Licence: https://creativecommons.org/licenses/by-nc/4.0/"
+    ],
+    "isHarvested": "n",
+    "displayOrder": "0",
+    "docLocale": "fre",
+    "popularity": "0",
+    "keyword":     [
+      "CNES",
+      "Déformation",
+      "Ethiopie",
+      "Geodetics",
+      "Géodésie",
+      "InSar",
+      "Informations géoscientifiques",
+      "Interférogramme",
+      "SENTINEL-1"
+    ],
+    "publishedForGroup":     [
+      "1",
+      "871"
+    ],
+    "identifier": "urn:ogc:def:EOP:CNES::AFAR:",
+    "image": "thumbnail|https://api.poleterresolide.fr/images/flatsim/afar.png|Vue google earth",
+    "tempExtentBegin":     [
+      "2014-09-30t22:00:00.000z",
+      "2014-10-01"
+    ],
+    "mdLanguage":     [
+      "eng",
+      "fre"
+    ],
+    "crsDetails":     {
+      "code": "WGS 1984 ",
+      "codeSpace": "",
+      "name": "",
+      "url": ""
+    },
+    "maintenanceAndUpdateFrequency_text": "Lorsque nécessaire",
+    "format":     [
+      "CSV",
+      "GEOTIFF"
+    ],
+    "spatialRepresentationType_text": "Raster",
+    "denominator": "120",
+    "isTemplate": "n",
+    "valid": "-1",
+    "feedbackCount": "0",
+    "tempExtentEnd":     [
+      "2019-12-31t23:00:00.000z",
+      "2020-01-01"
+    ],
+    "rating": "0",
+    "source": "2895254d-24be-4856-98f3-4e9d1899f673",
+    "status": "onGoing",
+    "updateFrequency": "asNeeded",
+    "groupWebsite": "https://cnes.fr/",
+    "geoBox": "38.40012313|8.43728787|45.04005546|15.26167812",
+    "owner": "1",
+    "recordOwner": "Elisabeth Pointal",
+    "revisionDate": "2019-12-04",
+    "defaultAbstract": "Ce projet vise à caractériser la distribution spatiale et temporelle de la déformation dans la région de la dépression Afar. Il s’agit de mieux comprendre la tectonique grande échelle (localisation des frontières divergentes, cinématique du point triple), mais aussi la dynamique des évènements volcaniques, sismiques et asismiques, et la mécanique des failles actives. La problématique de l’aléa gravitaire sera également abordée.\n\nLes produits disponibles son divisés en trois groupes:\n- « INTERFEROGRAM » : ceci rassemble les interférogrammes différentiels, enroulés et déroulés, en géométrie radar ou terrain, filtrés ou non, à différentes résolutions, ainsi que les cartes de corrections atmosphériques utilisées et de cohérence spatiale pour chaque interférogramme.\n- « TIMESERIES » : ceci inclut des cartes de déplacement en série temporelle et de vitesse moyenne, selon la ligne de visée du satellite (LOS), et des indices qualité du traitement en série temporelle.\n- « AUXILIARYDATA » : ce repertoire contient des cartes indiquant le vecteur LOS, le MNT en géométrie radar, à différentes résolutions, les tables de transcodage géométrie radarterrain, et la cohérence temporelle, ainsi qu’un ensemble de figures et fichiers de paramètres spécifiques au traitement de la série temporelle.",
+    "link":     [
+      "API opensearch Flatsim||https://flatsim.cnes.fr/atdistrib/resto2/api/collections/AFAR/describe.xml|OpenSearch|OpenSearch|1",
+      "API opensearch Flatsim||https://flatsim.cnes.fr/atdistrib/resto2/api/collections/AFAR/describe.xml|OpenSearch|OpenSearch|1|OpenSearch",
+      "Documentation Produits||https://formater.pages.in2p3.fr/flatsim/|WWW:LINK-1.0-http--link|text/html|1",
+      "Documentation Produits||https://formater.pages.in2p3.fr/flatsim/|WWW:LINK-1.0-http--link|text/html|1|",
+      "Doin & al. 2011|Doin, M.-P., Lodge, F., Guillaso, S., Jolivet, R., Lasserre, C., Ducret, G., Grandin, R., Pathier, E., Pinel, V. (2011). Presentation of the small baseline NSBAS processing chain on a case example: The Etna deformation monitoring from 2003 to 2010 using Envisat data. In Proceedings of FRINGE 2011 ESA Workshop, Frascati, Italy,19–23 September 2011, ESA Publication SP-697.|https://earth.esa.int/documents/10174/1573056/Presentation_small_baseline_NSBAS_Etna_deformation_Envisat.pdf|WWW:LINK-1.0-http--link|text/html|1",
+      "Doin & al. 2011|Doin, M.-P., Lodge, F., Guillaso, S., Jolivet, R., Lasserre, C., Ducret, G., Grandin, R., Pathier, E., Pinel, V. (2011). Presentation of the small baseline NSBAS processing chain on a case example: The Etna deformation monitoring from 2003 to 2010 using Envisat data. In Proceedings of FRINGE 2011 ESA Workshop, Frascati, Italy,19–23 September 2011, ESA Publication SP-697.|https://earth.esa.int/documents/10174/1573056/Presentation_small_baseline_NSBAS_Etna_deformation_Envisat.pdf|WWW:LINK-1.0-http--link|text/html|1|",
+      "Grandin. 2015|Grandin R. (2015). Interferometric Processing of SLC Sentinel-1 TOPS Data. In Proceedings of FRINGE’15: Advances in the Science and Applications of SAR Interferometry and Sentinel-1 InSAR Workshop, Frascati, Italy, 23-27 March 2015, ESA Publication SP-731. doi:10.5270/Fringe2015.116|http://proceedings.esa.int/files/116.pdf|WWW:LINK-1.0-http--link|text/html|1",
+      "Grandin. 2015|Grandin R. (2015). Interferometric Processing of SLC Sentinel-1 TOPS Data. In Proceedings of FRINGE’15: Advances in the Science and Applications of SAR Interferometry and Sentinel-1 InSAR Workshop, Frascati, Italy, 23-27 March 2015, ESA Publication SP-731. doi:10.5270/Fringe2015.116|http://proceedings.esa.int/files/116.pdf|WWW:LINK-1.0-http--link|text/html|1|",
+      "MDIS Durand 2019|Durand, P., Donadieu, J., Proy, C., Clesse, D., Grandin, R., Ostanciaux, E., Pointal, E., Lasserre, C., Doin, M.-P., Pathier, E., Thollard, F., Laurent, C. (2019). FLATSIM Form@ter LArge-scale multi-Temporal Sentinel-1 Interferometry processing chain in MUSCATE NSBAS, MDIS workshop, La Petite Pierre, France, 16-18 October 2019|https://eost.unistra.fr/fileadmin/upload/EOST/MDIS_presentation/MDIS2019_Durand.pdf|WWW:LINK-1.0-http--link|text/html|1",
+      "MDIS Durand 2019|Durand, P., Donadieu, J., Proy, C., Clesse, D., Grandin, R., Ostanciaux, E., Pointal, E., Lasserre, C., Doin, M.-P., Pathier, E., Thollard, F., Laurent, C. (2019). FLATSIM Form@ter LArge-scale multi-Temporal Sentinel-1 Interferometry processing chain in MUSCATE NSBAS, MDIS workshop, La Petite Pierre, France, 16-18 October 2019|https://eost.unistra.fr/fileadmin/upload/EOST/MDIS_presentation/MDIS2019_Durand.pdf|WWW:LINK-1.0-http--link|text/html|1|",
+      "Produits FLATSIM|Landing page produits FLATSIM doi:10.24400/253171/FLATSIM2020|https://api.poleterresolide.fr/flatsim|WWW:LINK-1.0-http--link|text/html|1",
+      "Produits FLATSIM|Landing page produits FLATSIM doi:10.24400/253171/FLATSIM2020|https://api.poleterresolide.fr/flatsim|WWW:LINK-1.0-http--link|text/html|1|",
+      "Table des produits FLATSIM|Détails des produits|https://www7.obs-mip.fr/wp-content-aeris/uploads/sites/4/2020/04/Tableau-produits.pdf|WWW:LINK-1.0-http--link|text/html|1",
+      "Table des produits FLATSIM|Détails des produits|https://www7.obs-mip.fr/wp-content-aeris/uploads/sites/4/2020/04/Tableau-produits.pdf|WWW:LINK-1.0-http--link|text/html|1|"
+    ],
+    "defaultTitle": "Collection d'interférogrammes et séries temporelles Sentinel-1 sur Afar",
+    "datasetLang": "eng",
+    "userinfo": "admin|Pointal|Elisabeth|Administrator",
+    "topicCat": "geoscientificInformation",
+    "status_text": "Mise à jour continue",
+    "standardName": "ISO 19115:2003/19139",
+    "crs": "WGS 1984::\n              ::\n              ::",
+    "logo": "https://www7.obs-mip.fr/wp-content-aeris/uploads/sites/4/2017/06/cnes_logo_essai-100x33.png",
+    "draft": "n",
+    "keywordGroup":     [
+      {"otherKeywords":       [
+                {
+          "value": "SENTINEL-1",
+          "link": ""
+        },
+                {
+          "value": "InSar",
+          "link": ""
+        },
+                {
+          "value": "Déformation",
+          "link": ""
+        },
+                {
+          "value": "Géodésie",
+          "link": ""
+        },
+                {
+          "value": "Interférogramme",
+          "link": ""
+        },
+                {
+          "value": "Ethiopie",
+          "link": ""
+        },
+                {
+          "value": "CNES",
+          "link": ""
+        }
+      ]},
+      {}
+    ],
+    "groupOwner": "871",
+    "_locale": "fre",
+    "geonet:info":     {
+      "@xmlns:geonet": "http://www.fao.org/geonetwork",
+      "id": "2061",
+      "uuid": "d313f77c-76f9-45e8-8c6d-c41e8d129f9f",
+      "schema": "iso19139",
+      "createDate": "2021-02-09T12:12:42",
+      "changeDate": "2021-02-09T12:32:15",
+      "source": "2895254d-24be-4856-98f3-4e9d1899f673",
+      "isPublishedToAll": "true",
+      "view": "true",
+      "notify": "false",
+      "download": "true",
+      "dynamic": "true",
+      "featured": "false",
+      "selected": "false"
+    }
+  }
