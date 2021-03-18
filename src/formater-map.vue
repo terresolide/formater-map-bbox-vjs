@@ -72,6 +72,13 @@
 var L = require('leaflet');
 L.Control.Fullscreen = require('formater-metadata-vjs/src/modules/leaflet.control.fullscreen.js')
 L.Control.Reset = require('./leaflet.control.reset.js')
+import { Icon } from 'leaflet';
+delete Icon.Default.prototype._getIconUrl;
+Icon.Default.mergeOptions({
+  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconUrl: require('leaflet/dist/images/marker-icon.png'),
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+});
 import FormaterPopup from './formater-popup.vue'
 // import turfUnion from '@turf/union'
 export default {
