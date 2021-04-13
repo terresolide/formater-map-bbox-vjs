@@ -307,7 +307,6 @@ export default {
                  })
                  marker.on('mouseover', function (truc) {
                    this.unbindPopup()
-                   console.log(layer.getBounds())
 //                    if (_this.isSelected(layer.feature)) {
 //                      _this.map.closePopup()
 //                      _this.selectedLayer = null
