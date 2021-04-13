@@ -1,7 +1,7 @@
 <template>
   <div class="fmt-wrapper">
     <div style="display:none;">
-      <formater-popup v-for="(popup, index) in popups" :key="index" :properties="popup" :color="color" :lang="lang"></formater-popup>
+      <formater-popup v-for="(popup, index) in popups" :key="index" :properties="popup" :catalog-url="catalogUrl" :color="color" :lang="lang"></formater-popup>
     </div>
     <div id="fullMap" ></div>
     <div class="fmt-container">
@@ -55,11 +55,11 @@
         {{feature.geometry.coordinates[0].toFixed(2)}}
       </div> -->
       <div class="feature-column-3">
-      <a   v-if="feature.properties.link"  :href="feature.properties.link" target="_blank" >
+      <a   v-if="feature.properties.uuid"  :href="catalogUrl + 'metadata/' + feature.properties.uuid" target="_blank" >
          {{lang === 'en' ? 'Access to products': 'Accès aux produits'}}
       </a>
      
-      <em v-if="!feature.properties.link" v-html="lang === 'en' ? 'on Going' : '&Agrave; venir'">
+      <em v-if="!feature.properties.uuid" v-html="lang === 'en' ? 'on Going' : '&Agrave; venir'">
        {}
       </em>
        </div>
@@ -110,6 +110,10 @@ export default {
     full: {
       type: Boolean,
       default: true
+    },
+    catalogUrl: {
+      type: String,
+      default: 'https://www.poleterresolide.fr/acces-aux-donnees/catalogue/#/'
     }
   },
   data () {
@@ -303,6 +307,7 @@ export default {
                  })
                  marker.on('mouseover', function (truc) {
                    this.unbindPopup()
+                   console.log(layer.getBounds())
 //                    if (_this.isSelected(layer.feature)) {
 //                      _this.map.closePopup()
 //                      _this.selectedLayer = null

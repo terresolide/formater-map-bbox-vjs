@@ -1,151 +1,1733 @@
 {
-  "type": "FeatureCollection",
-  "properties": {},
-  "features": [
-    {
+ "type": "FeatureCollection",
+ "features": [
+  {
       "type": "Feature",
-      "geometry":
-        {
-          "type":"Point",
-          "coordinates":[96.000695873, 34.213187865]
-        },
+       "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              89.53,
+              39.8,
+              0
+            ],
+            [
+              89.778091,
+              39.076443,
+              0
+            ],
+            [
+              90.147011,
+              37.584911,
+              0
+            ],
+            [
+              90.541885,
+              36.097237,
+              0
+            ],
+            [
+              90.66226144364207,
+              35.58163191875811
+            ],
+            [
+              90.65,
+              35.58,
+              0
+            ],
+            [
+              90.80255571789496,
+              34.96085590065838
+            ],
+            [
+              90.681999,
+              34.37711,
+              0
+            ],
+            [
+              90.05,
+              31.2,
+              0
+            ],
+            [
+              91.7143513930826,
+              31.00231841691356
+            ],
+            [
+              91.83,
+              30.47,
+              0
+            ],
+            [
+              93.85524039829194,
+              30.66178412862613
+            ],
+            [
+              93.961777,
+              30.180113,
+              0
+            ],
+            [
+              95.76223443379747,
+              30.461034546833456
+            ],
+            [
+              95.96446304062871,
+              30.419795772107086
+            ],
+            [
+              96.0301311992706,
+              30.11789579269689
+            ],
+            [
+              95.956108,
+              29.720049,
+              0
+            ],
+            [
+              96.13481654887238,
+              29.69179092364901
+            ],
+            [
+              96.19,
+              29.47,
+              0
+            ],
+            [
+              97.03714696955034,
+              29.549111001047503
+            ],
+            [
+              97.94468496360007,
+              29.40560763711165
+            ],
+            [
+              97.925018,
+              29.303429,
+              0
+            ],
+            [
+              98.26869112883669,
+              29.248804591811815
+            ],
+            [
+              98.33,
+              28.95,
+              0
+            ],
+            [
+              99.46313858747477,
+              29.058955633411035
+            ],
+            [
+              99.92164354922977,
+              28.986079519203358
+            ],
+            [
+              99.8,
+              28.4,
+              0
+            ],
+            [
+              100.51885768899388,
+              28.284982769760976
+            ],
+            [
+              100.52,
+              28.28,
+              0
+            ],
+            [
+              100.5377906976744,
+              28.281953488372093
+            ],
+            [
+              102.3,
+              28,
+              0
+            ],
+            [
+              102.42294358340901,
+              28.488950667982166
+            ],
+            [
+              103.07,
+              28.56,
+              0
+            ],
+            [
+              102.908157,
+              29.479845,
+              0
+            ],
+            [
+              102.79375072927725,
+              30.07220287191893
+            ],
+            [
+              102.84565,
+              30.297915,
+              0
+            ],
+            [
+              103.02147292924172,
+              31.088612944803174
+            ],
+            [
+              104.581451,
+              31.330137,
+              0
+            ],
+            [
+              104.49522898842423,
+              31.81151638142392
+            ],
+            [
+              106.482056,
+              32.115574,
+              0
+            ],
+            [
+              106.223175,
+              33.475964,
+              0
+            ],
+            [
+              105.95768345605863,
+              34.82348088427591
+            ],
+            [
+              106.257263,
+              36.04269,
+              0
+            ],
+            [
+              106.59536,
+              37.406101,
+              0
+            ],
+            [
+              105.39788259345555,
+              37.573723780971996
+            ],
+            [
+              105.28318,
+              38.137173,
+              0
+            ],
+            [
+              105.27,
+              38.32,
+              0
+            ],
+            [
+              104.74648128466089,
+              38.26262808599024
+            ],
+            [
+              104.79,
+              38.44,
+              0
+            ],
+            [
+              103.11985209241116,
+              38.65824809745615
+            ],
+            [
+              103.107841,
+              38.715809,
+              0
+            ],
+            [
+              102.95847894524807,
+              39.35122061057332
+            ],
+            [
+              102.976097,
+              39.411388,
+              0
+            ],
+            [
+              102.94329107176732,
+              39.41583241017407
+            ],
+            [
+              102.9,
+              39.6,
+              0
+            ],
+            [
+              102.0924698798077,
+              39.53109811261158
+            ],
+            [
+              100.95582167523057,
+              39.68508646523261
+            ],
+            [
+              100.995178,
+              39.831638,
+              0
+            ],
+            [
+              100.80908646727403,
+              39.85663246013513
+            ],
+            [
+              100.782669,
+              39.9818,
+              0
+            ],
+            [
+              100.64,
+              40.71,
+              0
+            ],
+            [
+              98.63500653272742,
+              40.48276740704244
+            ],
+            [
+              98.608208,
+              40.600494,
+              0
+            ],
+            [
+              98.57,
+              40.79,
+              0
+            ],
+            [
+              97.11468812877261,
+              40.66470824949698
+            ],
+            [
+              96.50980405394894,
+              40.74535945947347
+            ],
+            [
+              96.477913,
+              40.899048,
+              0
+            ],
+            [
+              94.65992124819111,
+              40.65704236669406
+            ],
+            [
+              94.50396403559125,
+              40.67785215430624
+            ],
+            [
+              94.5,
+              40.7,
+              0
+            ],
+            [
+              94.41895926245749,
+              40.689194568327665
+            ],
+            [
+              94.079414,
+              40.734501,
+              0
+            ],
+            [
+              94.06003914717965,
+              40.641338552957286
+            ],
+            [
+              93.25207986688852,
+              40.53361064891847
+            ],
+            [
+              92,
+              40.7,
+              0
+            ],
+            [
+              91.950523,
+              40.396637,
+              0
+            ],
+            [
+              91.94273272203118,
+              40.359031029604154
+            ],
+            [
+              91.5,
+              40.3,
+              0
+            ],
+            [
+              91.56344828543422,
+              40.071126438057895
+            ],
+            [
+              89.53,
+              39.8,
+              0
+            ]
+          ]
+        ]
+      },
       "properties": {
         "id": "urn:ogc:def:EOP:CNES::TIBET:",
-        "location": "East Tibet",
-        "name": "Series of interferograms over Tibet",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-        "link": "https://www.poleterresolide.fr/acces-aux-donnees/collection-dinterferogrammes/interferogram-tibet/",
+        "location": "Eastern border of the Tibetan plateau",
+        "width": 110,
+        "popup": "fmt-under",
+        "theme": ["Tectonic"],
+        "name": "Eastern border of the Tibetan plateau",
+        "description": "The objective of the project is to quantify and model the current deformations on the eastern edge of the Tibetan plateau. It focuses on deformations of tectonic origin, at the scale of active faults as well as at the continental scale, to address issues of the seismic cycle and uplift mechanisms of the Tibetan plateau. This project is also interested in non-tectonic signals present in time series (hydrological overloads in particular)",
+        "link": "https://en.poleterresolide.fr/data-access/catalog/#/metadata/86a28260-dc26-4b40-8433-9d06e9b9e628",
+        "uuid": "86a28260-dc26-4b40-8433-9d06e9b9e628",
         "image": {
-           "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.3.3/public/images/tibet.png"
+           "src": "/data/images/tibet_area.png",
+           "attribution": "Capture Google Earth"
          }
       }
     },
     {
       "type": "Feature",
-      "geometry":
-        {
-          "type":"Point",
-          "coordinates":[23.08, -19.645]
-        },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              20.10865956253383,
+              -21.7134137485704,
+              0
+            ],
+            [
+              20.78759073454652,
+              -21.717672540559647
+            ],
+            [
+              20.7880157635243,
+              -21.71934311210763,
+              0
+            ],
+            [
+              20.97762292962563,
+              -21.71886457242306
+            ],
+            [
+              21.40588028022759,
+              -21.72155094042215,
+              0
+            ],
+            [
+              21.40486591346895,
+              -21.717786276033067
+            ],
+            [
+              22.868810577349443,
+              -21.714091502084973
+            ],
+            [
+              22.86970293001531,
+              -21.7176122992031,
+              0
+            ],
+            [
+              24.93307301519896,
+              -21.700120290286613
+            ],
+            [
+              24.9330754232489,
+              -21.70012964363875,
+              0
+            ],
+            [
+              24.935070267642015,
+              -21.700103358783245
+            ],
+            [
+              25.48961810619824,
+              -21.69540223618469,
+              0
+            ],
+            [
+              25.488933371506448,
+              -21.692805440357198
+            ],
+            [
+              26.969917663197197,
+              -21.673291407962537
+            ],
+            [
+              26.97072544037124,
+              -21.67646132271725,
+              0
+            ],
+            [
+              27.44102890708334,
+              -21.66718917670821,
+              0
+            ],
+            [
+              27.34601985059896,
+              -16.55969280481747,
+              0
+            ],
+            [
+              25.980825867960103,
+              -16.57429275295795
+            ],
+            [
+              23.92317331475951,
+              -16.581968853543177
+            ],
+            [
+              21.79483606938851,
+              -16.56930343111761
+            ],
+            [
+              20.18697358099797,
+              -16.54635991472248,
+              0
+            ],
+            [
+              20.161101539779946,
+              -18.27579730252862
+            ],
+            [
+              20.10865956253383,
+              -21.7134137485704,
+              0
+            ]
+          ]
+        ]
+      },
       "properties": {
         "id": "urn:ogc:def:EOP:CNES::OKAVANGO:",
-        "location": "Okavango, Bostwana",
-        "name": "Series of interferograms over Okavango",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "location": "Okavango Delta",
+        "name": "Okavango Delta",
+        "width": 195,
+        "popup": "",
+        "theme": ["Tectonic","Hydrology"],
+        "description": "This project aims to better understand the deformations of tectonic origin in the area of ​​the Okavango Delta (associated with the functioning of the Okavango rift and the East African rift), or of hydrological origin (linked in particular to the flood cycle. ), and the possible interactions between tectonics and hydrology in this region.",
+        "uuid": "5e794c9c-c74a-4edd-bedb-139eb7e5b836",
         "image": {
-           "src": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Okavango_Delta%2C_Botswana.jpg",
-           "attribution": "Joachim Huber / CC BY-SA (https://creativecommons.org/licenses/by-sa/2.0)",
-           "page": "https://commons.wikimedia.org/wiki/File:Okavango_Delta,_Botswana.jpg"
+           "src": "/data/images/okavango.png",
+           "attribution": "Google Earth Screenshot"
          }
       }
     },
 {
       "type": "Feature",
-      "geometry":
-        {
-          "type":"Point",
-          "coordinates":[40.73, 11.75]
-        },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              38.40012313187285,
+              8.777403013345726,
+              0
+            ],
+            [
+              40.65555503458354,
+              8.437287872552252,
+              0
+            ],
+            [
+              40.91038053361507,
+              9.638787855873298
+            ],
+            [
+              41.430781090103714,
+              9.749668651660553
+            ],
+            [
+              42.75907991901854,
+              9.508175103367888
+            ],
+            [
+              42.76030704359157,
+              9.502136003668296,
+              0
+            ],
+            [
+              42.77520126936025,
+              9.50524413481432
+            ],
+            [
+              42.98195530052183,
+              9.467654878901318,
+              0
+            ],
+            [
+              42.99890303784929,
+              9.551926281631482
+            ],
+            [
+              45.04005546405987,
+              9.977874533539186,
+              0
+            ],
+            [
+              44.16604491369429,
+              14.47666520025934,
+              0
+            ],
+            [
+              42.29669084030209,
+              14.1300510562447
+            ],
+            [
+              42.06829022431653,
+              14.182598766488557
+            ],
+            [
+              41.97414134857726,
+              14.654410728357298
+            ],
+            [
+              42.08952644556669,
+              15.19845044430089,
+              0
+            ],
+            [
+              41.85509872582512,
+              15.25097370317427
+            ],
+            [
+              41.85296268591778,
+              15.26167812392702,
+              0
+            ],
+            [
+              41.828963610201974,
+              15.256829245535357
+            ],
+            [
+              39.78135907319047,
+              15.71559266859095,
+              0
+            ],
+            [
+              39.600391057983344,
+              14.806558684257642
+            ],
+            [
+              39.56805059005835,
+              14.80002447444245,
+              0
+            ],
+            [
+              39.583790031913935,
+              14.723168827466504
+            ],
+            [
+              38.40012313187285,
+              8.777403013345726,
+              0
+            ]
+          ]
+        ]
+      },
       "properties": {
         "id": "urn:ogc:def:EOP:CNES::AFAR:",
-        "location": "Afar, Ethiopia",
-        "name": "Series of interferograms over Afar",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-         "image": {
-           "src": "https://upload.wikimedia.org/wikipedia/commons/d/d4/ET_Afar_asv2018-01_img48_Dallol.jpg",
-           "attribution": "A.Savin (Wikimedia Commons · WikiPhotoSpace) / FAL",
-           "page": "https://commons.wikimedia.org/wiki/File:ET_Afar_asv2018-01_img48_Dallol.jpg"
+        "name": "Afar",
+        "width": 100,
+        "location": "Afar",
+        "popup": "",
+        "theme": ["Tectonic", "Volcanology", "Gravity hazard"],
+       "description": "This project aims to characterize the spatial and temporal distribution of the deformation in the region of the Afar depression. The aim is to better understand large-scale tectonics (localization of divergent borders, kinematics of the triple point), but also the dynamics of volcanic, seismic and aseismic events, and the mechanics of active faults. The issue of gravity hazard will also be addressed.",
+       "uuid": "d313f77c-76f9-45e8-8c6d-c41e8d129f9f",
+       "image": {
+           "src": "/data/images/afar.png",
+           "attribution": "Google Earth Screenshot"
          }
       }
     },
 {
       "type": "Feature",
-      "geometry":
-        {
-          "type":"Point",
-          "coordinates":[22.022, 43.137]
-        },
+     "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              12.96274911931207,
+              44.97689261648867,
+              0
+            ],
+            [
+              14.400240203985199,
+              44.154585330120625
+            ],
+            [
+              14.40686813198015,
+              44.13131857441406,
+              0
+            ],
+            [
+              14.764607309074536,
+              43.94615153277577
+            ],
+            [
+              14.781711463180594,
+              43.93636721432084
+            ],
+            [
+              16.32563323687595,
+              43.02187771880607,
+              0
+            ],
+            [
+              17.40787128373709,
+              42.55782718633504,
+              0
+            ],
+            [
+              17.408545975617752,
+              42.560448793599825
+            ],
+            [
+              17.631442531060607,
+              42.46226765617271
+            ],
+            [
+              18.03708357175893,
+              42.25230644341639,
+              0
+            ],
+            [
+              18.03012455893164,
+              42.28665679987053
+            ],
+            [
+              19.110903506125975,
+              41.81059692477737
+            ],
+            [
+              19.100764267306893,
+              41.70736610478163
+            ],
+            [
+              19.09118473927133,
+              41.7065229228463,
+              0
+            ],
+            [
+              18.90557351843705,
+              40.33176754996902,
+              0
+            ],
+            [
+              19.63460123868455,
+              39.48688712240005,
+              0
+            ],
+            [
+              19.87648532377941,
+              38.90485921099917
+            ],
+            [
+              19.92240660634649,
+              38.71435042913519,
+              0
+            ],
+            [
+              20.49017418610332,
+              37.32329697969683,
+              0
+            ],
+            [
+              22.02288777509395,
+              36.13260185060005,
+              0
+            ],
+            [
+              22.599328504051407,
+              36.105869728198314
+            ],
+            [
+              22.60355076029601,
+              36.08849899508874,
+              0
+            ],
+            [
+              23.378744221962506,
+              36.06702557471091
+            ],
+            [
+              23.41639846037834,
+              36.06402932327378,
+              0
+            ],
+            [
+              23.737977302002225,
+              36.60946242545022
+            ],
+            [
+              24.63688957424557,
+              38.01903622330639,
+              0
+            ],
+            [
+              24.52888244498394,
+              38.64974174815298,
+              0
+            ],
+            [
+              22.880905589234533,
+              40.011456958514636
+            ],
+            [
+              22.88308685305076,
+              40.02079078829573,
+              0
+            ],
+            [
+              22.521590352881997,
+              40.67157163846456
+            ],
+            [
+              21.69215846342371,
+              42.27787312153137,
+              0
+            ],
+            [
+              21.517465734291605,
+              42.47923802709253
+            ],
+            [
+              21.501920421784213,
+              42.50722333728219
+            ],
+            [
+              21.50627960044414,
+              42.52303841914684,
+              0
+            ],
+            [
+              21.34248571090672,
+              42.76756610936669
+            ],
+            [
+              21.23668747881879,
+              42.97366438854734,
+              0
+            ],
+            [
+              20.929705840155187,
+              43.188207486532455
+            ],
+            [
+              20.853086407093006,
+              43.245055134322904
+            ],
+            [
+              20.79193142429535,
+              43.3155472915914,
+              0
+            ],
+            [
+              20.799692403540252,
+              43.28467071729942
+            ],
+            [
+              20.70288996774643,
+              43.35649310693781
+            ],
+            [
+              20.58449966403622,
+              43.47722580940422,
+              0
+            ],
+            [
+              20.57854712936041,
+              43.44874904775241
+            ],
+            [
+              19.820598675393448,
+              44.0111075126011
+            ],
+            [
+              19.8307728320888,
+              44.05038059751915,
+              0
+            ],
+            [
+              19.17946649481226,
+              44.58733421779488,
+              0
+            ],
+            [
+              18.994275133869596,
+              44.68139947712502
+            ],
+            [
+              18.91481874315808,
+              44.74363342474985,
+              0
+            ],
+            [
+              18.12940014771675,
+              45.12070015209444
+            ],
+            [
+              17.378732447365692,
+              45.50199089667806
+            ],
+            [
+              17.37694412299197,
+              45.51081823774174,
+              0
+            ],
+            [
+              17.16107401163592,
+              45.61254733461391
+            ],
+            [
+              16.96194191404239,
+              45.71369358844423,
+              0
+            ],
+            [
+              16.960501064636507,
+              45.70706762103552
+            ],
+            [
+              16.623179142683938,
+              45.86603105631545
+            ],
+            [
+              16.289153700422677,
+              46.03494172127266
+            ],
+            [
+              16.28981812129717,
+              46.03743515518411,
+              0
+            ],
+            [
+              16.251756610797145,
+              46.05385275760975
+            ],
+            [
+              15.95526910491452,
+              46.20378116255732,
+              0
+            ],
+            [
+              15.05865180921057,
+              46.33663628584845,
+              0
+            ],
+            [
+              15.057981199598558,
+              46.333544928335826
+            ],
+            [
+              14.4602652158814,
+              46.42811508937923,
+              0
+            ],
+            [
+              14.426412009440451,
+              46.395501341530704
+            ],
+            [
+              14.41869932478054,
+              46.3965503443424,
+              0
+            ],
+            [
+              13.89597558157027,
+              45.92476173972069,
+              0
+            ],
+            [
+              13.9049782427517,
+              45.89315869294998
+            ],
+            [
+              13.02856509807557,
+              45.04883343349597,
+              0
+            ],
+            [
+              13.034051877155296,
+              45.04546054852953
+            ],
+            [
+              12.96274911931207,
+              44.97689261648867,
+              0
+            ]
+          ]
+        ]
+      },
       "properties": {
         "id": "urn:ogc:def:EOP:CNES::BALKANS:",
-        "name": "Series of interferograms over the Balkans",
-        "location": "Balkans, southeastern Europe",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-         "image": {
-           "src": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Balkan_topo_en.jpg",
-           "attribution": "Captain Blood~commonswiki / CC BY-SA (http://creativecommons.org/licenses/by-sa/3.0/)",
-           "page": "https://commons.wikimedia.org/wiki/File:Balkan_topo_en.jpg"
-         }
-      }
-    },
-{
-      "type": "Feature",
-      "geometry":
-        {
-          "type":"Point",
-          "coordinates":[32.193, 38.87]
-        },
-      "properties": {
-        "id": "urn:ogc:def:EOP:CNES::ANATOLIA:",
-        "location": "Anatolia, Turkey",
-        "name": "Series of interferograms over Anatolia",
-       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "location": "The Balkan region",
+        "name": "The Balkan region",
+        "width": 140,
+        "popup": "fmt-under",
+        "theme": ["Tectonic", "Anthropogenic and climatic hazards"],
+        "description": "The Balkan region is one of the most seismic zones in Europe, with intense industrial and demographic development. This project aims to better quantify the deformations of tectonic origin in this region (kinematics and localization of active faults, study of earthquakes). He is also interested in deformations of anthropogenic or climatic origin (linked to the exploitation of natural resources or to variations in sea level)",
+        "uuid": "bf63b034-0fbc-40e4-af72-a254dc852cca",
         "image": {
-           "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.3.3/public/images/tibet.png"
+           "src": "/data/images/balkans.png",
+           "attribution": "Google Earth Screenshot"
          }
       }
     },
 {
       "type": "Feature",
-      "geometry":
-        {
-          "type":"Point",
-          "coordinates":[84.791, 40.75]
-        },
+      "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          25.55025867682917,
+          36.9899015586893,
+          0
+        ],
+        [
+          26.525858784635886,
+          36.88780218322868
+        ],
+        [
+          26.70190971177893,
+          36.08606370594278,
+          0
+        ],
+        [
+          29.45433162087517,
+          36.48773924120653,
+          0
+        ],
+        [
+          28.979612962167874,
+          39.152571191402785
+        ],
+        [
+          29.88848155512187,
+          39.25828524529344
+        ],
+        [
+          29.88794714469836,
+          39.25573734163181,
+          0
+        ],
+        [
+          30.047132275085414,
+          39.23411214590506
+        ],
+        [
+          30.07215228197825,
+          39.11561683271027,
+          0
+        ],
+        [
+          30.555912837533537,
+          39.16499463965209
+        ],
+        [
+          32.82292203239427,
+          38.85702292499508,
+          0
+        ],
+        [
+          32.94499903195738,
+          39.32944331287941
+        ],
+        [
+          34.392198393557564,
+          39.11460826246558
+        ],
+        [
+          34.89541685325052,
+          36.81280008384829,
+          0
+        ],
+        [
+          35.69643252697151,
+          36.9065321079368
+        ],
+        [
+          35.63768559583549,
+          36.66472440361972,
+          0
+        ],
+        [
+          38.41514527575265,
+          36.20478387984331,
+          0
+        ],
+        [
+          38.70463886974973,
+          37.372801129548165
+        ],
+        [
+          40.76021466892945,
+          37.01304125491897,
+          0
+        ],
+        [
+          41.137118782223915,
+          38.65556551567231
+        ],
+        [
+          41.45402717980678,
+          38.6776337104932,
+          0
+        ],
+        [
+          41.32773580461702,
+          39.48626242968721
+        ],
+        [
+          41.5308795689814,
+          40.37155009203906,
+          0
+        ],
+        [
+          41.181032777115576,
+          40.42558454136847
+        ],
+        [
+          41.03561222246527,
+          41.35669513126165,
+          0
+        ],
+        [
+          39.662781662950536,
+          41.238611404266074
+        ],
+        [
+          39.67370854452545,
+          41.28269799695629,
+          0
+        ],
+        [
+          38.875890451582414,
+          41.40217714852756
+        ],
+        [
+          38.7397549213125,
+          42.13423362087799,
+          0
+        ],
+        [
+          36.753357056176846,
+          41.9393558837675
+        ],
+        [
+          36.731736362230535,
+          41.94225333067801
+        ],
+        [
+          36.65817472841912,
+          42.30457438075914,
+          0
+        ],
+        [
+          35.05296025569994,
+          42.16723059807648
+        ],
+        [
+          34.76746903084671,
+          42.20549003921569,
+          0
+        ],
+        [
+          34.76014161095468,
+          42.17535987843918
+        ],
+        [
+          32.68140594209942,
+          42.44563560489502,
+          0
+        ],
+        [
+          32.6383595762928,
+          42.25102614982944
+        ],
+        [
+          30.57148693230342,
+          42.51464370103912,
+          0
+        ],
+        [
+          30.441539768618025,
+          41.89509580375423
+        ],
+        [
+          28.918342795538393,
+          41.72279347300774
+        ],
+        [
+          28.54747595835054,
+          41.76052730536497,
+          0
+        ],
+        [
+          28.531457672423823,
+          41.67902946242872
+        ],
+        [
+          27.63813652995493,
+          41.5779779781671,
+          0
+        ],
+        [
+          27.65305816376314,
+          41.50888849201759
+        ],
+        [
+          26.4090803651867,
+          41.64418005097922,
+          0
+        ],
+        [
+          26.32183290680384,
+          41.171353183000484
+        ],
+        [
+          25.60564293677038,
+          41.07847850975879,
+          0
+        ],
+        [
+          25.98549654704645,
+          39.34861965563963
+        ],
+        [
+          25.55025867682917,
+          36.9899015586893,
+          0
+        ]
+      ]
+    ]
+  },
       "properties": {
-        "id": "urn:ogc:def:EOP:CNES::TARIM:",
-        "location": "Tarim, China",
-        "name": "Series of interferograms over Tarim",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "id": "urn:ogc:def:EOP:CNES::TURQUIE:",
+        "location": "Turkey",
+        "theme": ["Tectonic"],
+        "name": "Turkey",
+        "popup": "fmt-under",
+        "width": 180,
+        "description": "The objective of this project is to characterize the seismic and aseismic functioning of the North Anatolian and East Anatolian faults, in order to better assess their seismic hazard and understand the physical processes governing the dynamics of a fault. It also includes the monitoring of deformations in an area of ​​grabens in western Turkey, major geological structures with high seismic potential.",
+        "uuid": "f0789803-7de0-4661-a8e8-8c8f339f9ab9",
         "image": {
-           "src": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Wfm_tarim_basin.jpg",
-           "attribution": "NASA / Public domain",
-           "page": "https://commons.wikimedia.org/wiki/File:Wfm_tarim_basin.jpg"
+           "src": "/data/images/anatolie.png",
+           "attribution": "Google Earth Screenshot"
          }
       }
     },
-{
-      "type": "Feature",
-      "geometry":
-        {
-          "type":"Point",
-          "coordinates":[-93.2, 37]
-        },
-      "properties": {
-        "id": "urn:ogc:def:EOP:CNES::OSARK:",
-        "location": "Osark, USA",
-        "name": "Series of interferograms over Osark",
-       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+ {
+  "type":"Feature",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -99.73221602989342,
+          40.31449001698218,
+          0
+        ],
+        [
+          -98.80671916250525,
+          36.66058884838409
+        ],
+        [
+          -98.02830334390988,
+          33.35343325219582,
+          0
+        ],
+        [
+          -96.08171967924898,
+          33.702803589026686
+        ],
+        [
+          -96.02605298222542,
+          33.46814332674796,
+          0
+        ],
+        [
+          -94.0778065767326,
+          33.793134730550875
+        ],
+        [
+          -94.00380056825203,
+          33.47933507188206,
+          0
+        ],
+        [
+          -91.95555453250199,
+          33.795242762449305
+        ],
+        [
+          -91.91871268535293,
+          33.63944114302866,
+          0
+        ],
+        [
+          -90.00558260483892,
+          33.904180391344184
+        ],
+        [
+          -89.94224070775786,
+          33.62588462313004,
+          0
+        ],
+        [
+          -87.279365850268,
+          33.9665737677308,
+          0
+        ],
+        [
+          -87.92225676030988,
+          37.30826289041058
+        ],
+        [
+          -87.9111962568656,
+          37.30961298996565,
+          0
+        ],
+        [
+          -88.54846644840612,
+          40.38734836750061,
+          0
+        ],
+        [
+          -90.46925541931282,
+          40.143303939883936
+        ],
+        [
+          -90.56538281639317,
+          40.58114645103809,
+          0
+        ],
+        [
+          -92.63460668138937,
+          40.26690673042271
+        ],
+        [
+          -92.7046204493565,
+          40.59872481587531,
+          0
+        ],
+        [
+          -94.69939343327424,
+          40.336541989993236
+        ],
+        [
+          -94.79548512332792,
+          40.7717866696714,
+          0
+        ],
+        [
+          -96.7703122670389,
+          40.51957726987351
+        ],
+        [
+          -96.8092554571153,
+          40.69561280808334,
+          0
+        ],
+        [
+          -99.73221602989342,
+          40.31449001698218,
+          0
+        ]
+      ]
+    ]
+  },
+   "properties": {
+        "id": "urn:ogc:def:EOP:CNES::OZARK:",
+        "location": "Ozark aquifer",
+        "name": "Ozark aquifer",
+        "popup": "fmt-under",
+        "theme": ["Hydrology"],
+        "width": 120,
+        "description": "This project focuses on the study of the deformations associated with the Ozark aquifer (south of the Mississippi basin) subjected to strong variations in groundwater level, and in neighboring regions where significant seismicity is observed, at strong seasonal component (New Madrid), or linked to wastewater injections (Oklahoma). The objective is to better understand the geodesic signature of the hydrological cycle.",
+        "uuid": "4d79a6b6-57e6-466f-b196-04d7fd93a641",
         "image": {
-           "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.3.3/public/images/tibet.png"
+           "src": "/data/images/osark.png",
+           "attribution": "Google Earth Screenshot"
          }
-      }
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+          "id": "urn:ogc:def:EOP:CNES::TARIM:",
+          "location": "Tarim",
+          "name": "Tarim",
+          "width": 140,
+          "popup": "fmt-under",
+          "theme": ["Tectonic"],
+          "description": "This project focuses on the analysis of tectonic deformations along the Western Kunlun Range, on the northwestern edge of the Tibetan Plateau. This region is marked by the interaction between large setbacks and overlaps, with in particular the existence of one of the largest overlapping aquifers in the world, whose intersismic loading and the capacity to produce “mega-earthquakes” will be among the parameters to be considered.",
+          "uuid": "b2a5ed57-5c4e-4596-b803-d2ac7f5b9991",
+          "image": {
+             "src": "/data/images/tarim-orbit.png",
+             "attribution": "Google Earth Screenshot"
+           }
     },
-{
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [
+            75.49043003527,
+            38.8179344854154,
+            0
+          ],
+          [
+            76.46505991546705,
+            34.9314000991837
+          ],
+          [
+            76.4190290875022,
+            34.6921659754518,
+            0
+          ],
+          [
+            76.52834978342256,
+            34.679018910070766
+          ],
+          [
+            76.7017092786903,
+            33.9877127504426,
+            0
+          ],
+          [
+            78.5820600903681,
+            34.24238457345404
+          ],
+          [
+            78.6258990363417,
+            34.0523592580381,
+            0
+          ],
+          [
+            80.0608582930575,
+            34.23908896180969
+          ],
+          [
+            81.10501772016,
+            34.0759226931131,
+            0
+          ],
+          [
+            81.15228352698604,
+            34.2749874892093
+          ],
+          [
+            83.1238532504447,
+            33.9562880141562,
+            0
+          ],
+          [
+            83.28299016151831,
+            34.64093374669405
+          ],
+          [
+            83.43008849825283,
+            34.65796553728766
+          ],
+          [
+            85.2929842917387,
+            34.3970572041857,
+            0
+          ],
+          [
+            85.50981578178799,
+            35.31204248405972
+          ],
+          [
+            85.65497513237077,
+            35.32919333899662
+          ],
+          [
+            87.5143924768472,
+            35.0287311778787,
+            0
+          ],
+          [
+            88.3459749525267,
+            38.386258862034,
+            0
+          ],
+          [
+            86.73122740726377,
+            38.56974323967048
+          ],
+          [
+            86.6645592699758,
+            38.9672250208569,
+            0
+          ],
+          [
+            85.41786439900974,
+            38.799519827841586
+          ],
+          [
+            83.4131365622661,
+            39.0393257577581,
+            0
+          ],
+          [
+            83.30544786548622,
+            38.487679452679174
+          ],
+          [
+            82.69768313699332,
+            38.56061337782731
+          ],
+          [
+            82.515045654851,
+            39.51517925064,
+            0
+          ],
+          [
+            80.37699484727936,
+            39.28468526849318
+          ],
+          [
+            80.3577376228582,
+            39.3818490069413,
+            0
+          ],
+          [
+            78.95861306466799,
+            39.22506289662834
+          ],
+          [
+            77.327576334835,
+            39.4141211127923,
+            0
+          ],
+          [
+            77.25269804947318,
+            39.024959288487146
+          ],
+          [
+            75.49043003527,
+            38.8179344854154,
+            0
+          ]
+        ]
+      ]
+    }
+  },
+  {
       "type": "Feature",
-      "geometry":
-        {
-          "type":"Point",
-          "coordinates":[-67.38, -21.7]
-        },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -78.65,
+              -12.55
+            ],
+            [
+              -77.95035546938115,
+              -12.728978833414125
+            ],
+            [
+              -77.64552258552258,
+              -14.116650916650912
+            ],
+            [
+              -77.85,
+              -14.98
+            ],
+            [
+              -77.43735374457704,
+              -15.06428519259703
+            ],
+            [
+              -77.1,
+              -16.6
+            ],
+            [
+              -75.14934965570008,
+              -16.11233741392502
+            ],
+            [
+              -74.75,
+              -17.8
+            ],
+            [
+              -72.79000353857042,
+              -17.299575371549892
+            ],
+            [
+              -71.67335907556776,
+              -22.495390423888804
+            ],
+            [
+              -71.99,
+              -23.68
+            ],
+            [
+              -71.39067945537523,
+              -23.810716003560135
+            ],
+            [
+              -71.35,
+              -24
+            ],
+            [
+              -70.94967721384583,
+              -23.906901677638565
+            ],
+            [
+              -69.56,
+              -24.21
+            ],
+            [
+              -69.53120801678311,
+              -24.09567183330957
+            ],
+            [
+              -67.55,
+              -24.5
+            ],
+            [
+              -67.17825556820029,
+              -23.007608518940007
+            ],
+            [
+              -67.13,
+              -23.2
+            ],
+            [
+              -64.71,
+              -22.64
+            ],
+            [
+              -65.92707792810923,
+              -17.98467692498221
+            ],
+            [
+              -65.49,
+              -16.23
+            ],
+            [
+              -67.44713675978224,
+              -15.820172216968675
+            ],
+            [
+              -67.16,
+              -14.68
+            ],
+            [
+              -68.98024964633437,
+              -14.24888824165765
+            ],
+            [
+              -69.02188062036255,
+              -14.088854345298362
+            ],
+            [
+              -69,
+              -14
+            ],
+            [
+              -69.04760784608116,
+              -13.98995615061579
+            ],
+            [
+              -69.43,
+              -12.52
+            ],
+            [
+              -70.86437844217151,
+              -12.819348544453185
+            ],
+            [
+              -70.86,
+              -12.8
+            ],
+            [
+              -71.44216451058587,
+              -12.669205330220795
+            ],
+            [
+              -71.56,
+              -12.1
+            ],
+            [
+              -72.77176780539212,
+              -12.370483885132167
+            ],
+            [
+              -72.80729760417849,
+              -12.362501419325536
+            ],
+            [
+              -72.77,
+              -12.19
+            ],
+            [
+              -73.6854700187383,
+              -11.972421923797624
+            ],
+            [
+              -73.9,
+              -11.1
+            ],
+            [
+              -74.58933485761796,
+              -11.25815907988637
+            ],
+            [
+              -74.36,
+              -10.2
+            ],
+            [
+              -75.72734426833763,
+              -9.868894213048286
+            ],
+            [
+              -75.4,
+              -8.5
+            ],
+            [
+              -77.6,
+              -8
+            ],
+            [
+              -78.16256820662059,
+              -10.437795562022554
+            ],
+            [
+              -78.44,
+              -10.5
+            ],
+            [
+              -78.31170212765957,
+              -11.08404255319148
+            ],
+            [
+              -78.65,
+              -12.55
+            ]
+          ]
+        ]
+      },
       "properties": {
         "id": "urn:ogc:def:EOP:CNES::ANDES:",
-        "location": "Andes, South America",
-        "name": "Series of interferograms over Andes Mountains",
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        "location": "Central Andes, Peru-Chile",
+        "name": "Central Andes, Peru-Chile",
+        "width": 130,
+        "popup": "",
+        "theme": ["Tectonic", "Volcanology", "Gravity hazard"],
+        "description": "This project aims to better understand the seismic cycle of the Andean subduction zone in Peru and Chile and the crustal faults in the Andes, to follow the functioning of the large active volcanoes in the region (and to detect possible precursors to eruptions) , and to study the seismic, climatic and anthropogenic forcing on the dynamics of landslides in the Andes.",
+        "link": "https://en.poleterresolide.fr/data-access/catalog/#/metadata/20703094-44fc-47ae-933e-7df39f083133",
+        "uuid": "20703094-44fc-47ae-933e-7df39f083133",
         "image": {
-           "src": "https://cdn.jsdelivr.net/gh/terresolide/formater-map-bbox-vjs@0.3.3/public/images/tibet.png"
-         }
+           "src": "/data/images/andes.png",
+           "attribution": "Google Earth Screenshot"
+        }
       }
-    }
-  ]
+    }]
 }
