@@ -8,7 +8,7 @@
       <div id="fmtMap" class="mtdt-small"/>
     </div>
    <div v-show="full" style="text-align:left;">
-   <h4>
+   <h4 id="flatsim_site">
    {{ lang === 'en' ? 'Selected Areas' : 'Zones sélectionnées' }}
    </h4>
     <div class="fmt-feature feature-header">
@@ -21,6 +21,9 @@
       </div>
       <div class="feature-column-2">
        <span>  {{ lang === 'en' ? 'Themes' : 'Thèmes' }}</span>
+      </div>
+      <div class="feature-column-2-bis">
+       <span>  {{ lang === 'en' ? 'Leaders' : 'Porteurs' }}</span>
       </div>
      <!--  <div class="feature-column-3">
         <span>Lat</span>
@@ -47,6 +50,17 @@
       </div>
       <div class="feature-column-2">
       {{feature.properties.theme.join(', ')}}
+      </div>
+      <div class="feature-column-2-bis">
+        <span v-if="feature.properties.leaders && contact">
+          <a :href="'mailto:' + contact + '?subject=[FLATSIM] ' + feature.properties.name">
+              {{ feature.properties.leaders.join(',')}}
+          </a>
+        </span>
+        <span v-else-if="feature.properties.leaders && !contact" >
+          {{ feature.properties.leaders.join(',')}}
+        </span>
+        
       </div>
       <!--   <div class="feature-column-3">
         {{feature.geometry.coordinates[1].toFixed(2)}}
@@ -110,6 +124,10 @@ export default {
     full: {
       type: Boolean,
       default: true
+    },
+    contact: {
+      type: String,
+      default: null
     },
     catalogUrl: {
       type: String,
@@ -408,7 +426,7 @@ div[id="fmtMap"].mtdt-small {
 }
 div.fmt-feature {
   display: grid;
-  grid-template-columns: minmax(253px,1fr) minmax(250px,2fr) 140px;
+  grid-template-columns: minmax(253px,1fr) minmax(250px,2fr) minmax(200px, 1fr) 140px;
   grid-gap: 3px;
   /*grid-auto-rows: minmax(100px, auto);*/
   border-bottom:1px solid lightgrey;
@@ -453,8 +471,12 @@ div.fmt-feature .feature-column-2 {
   grid-column: 2;
   grid-row: 1/2;
 }
-div.fmt-feature .feature-column-3 {
+div.fmt-feature .feature-column-2-bis {
   grid-column: 3;
+  grid-row: 1/2;
+}
+div.fmt-feature .feature-column-3 {
+  grid-column: 4;
   grid-row: 1/2;
 }
 /* div.fmt-feature .feature-column-4 {

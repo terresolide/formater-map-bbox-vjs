@@ -378,6 +378,7 @@
         "width": 110,
         "popup": "fmt-under",
         "theme": ["Tectonic"],
+        "leaders": ["M-P. Doin"],
         "name": "Eastern border of the Tibetan plateau",
         "description": "The objective of the project is to quantify and model the current deformations on the eastern edge of the Tibetan plateau. It focuses on deformations of tectonic origin, at the scale of active faults as well as at the continental scale, to address issues of the seismic cycle and uplift mechanisms of the Tibetan plateau. This project is also interested in non-tectonic signals present in time series (hydrological overloads in particular)",
         "link": "https://en.poleterresolide.fr/data-access/catalog/#/metadata/86a28260-dc26-4b40-8433-9d06e9b9e628",
