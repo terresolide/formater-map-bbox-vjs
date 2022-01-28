@@ -426,7 +426,7 @@ div[id="fmtMap"].mtdt-small {
 }
 div.fmt-feature {
   display: grid;
-  grid-template-columns: minmax(253px,1fr) minmax(250px,2fr) minmax(200px, 1fr) 140px;
+  grid-template-columns: minmax(253px,1fr) minmax(250px,1fr) minmax(200px, 1fr) 140px;
   grid-gap: 3px;
   /*grid-auto-rows: minmax(100px, auto);*/
   border-bottom:1px solid lightgrey;

@@ -36,9 +36,9 @@ export default {
   computed: {
     seePage () {
       if (this.lang === 'fr') {
-        return 'Voir la page des données'
+        return 'Voir la page des produits'
       } else {
-        return 'See the data page'
+        return 'See the product page'
       }
     }
   },
