@@ -42,7 +42,7 @@ module.exports = {
       {
         resourceQuery: /blockType=i18n/,
         type: 'javascript/auto',
-        loader: '@kazupon/vue-i18n-loader',
+        loader: '@intlify/vue-i18n-loader',
       },
       {
         test: /\.js$/,

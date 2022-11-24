@@ -43,48 +43,50 @@
       --> 
       </div>
     </div>
-    <div class="fmt-feature" v-for="feature in features" @click="openPopup(feature)" :class="{selected: isSelected(feature)}">
-     
-      <div class="feature-column-1">
-        {{feature.properties.location}}
-      </div>
-      <div class="feature-column-2">
-      {{feature.properties.theme.join(', ')}}
-      </div>
-      <div class="feature-column-2-bis">
-        <span v-if="feature.properties.leaders && contact">
-          <a :href="'mailto:' + contact + '?subject=[FLATSIM] ' + feature.properties.name">
-              {{ feature.properties.leaders.join(',')}}
-          </a>
-        </span>
-        <span v-else-if="feature.properties.leaders && !contact" >
-          {{ feature.properties.leaders.join(',')}}
-        </span>
-        
-      </div>
-      <!--   <div class="feature-column-3">
-        {{feature.geometry.coordinates[1].toFixed(2)}}
-      </div>
-       <div class="feature-column-4">
-        {{feature.geometry.coordinates[0].toFixed(2)}}
-      </div> -->
-      <div class="feature-column-3">
-      <a   v-if="feature.properties.uuid"  :href="catalogUrl + 'metadata/' + feature.properties.uuid" target="_blank" >
-         {{lang === 'en' ? 'Access to products': 'Accès aux produits'}}
-      </a>
-     
-      <em v-if="!feature.properties.uuid" v-html="lang === 'en' ? 'on Going' : '&Agrave; venir'">
-       {}
-      </em>
-       </div>
-     </div>
+    <div v-for="collection, i in features">
+	    <div class="fmt-feature" v-for="feature in collection" @click="openPopup(feature, i)" :class="{selected: isSelected(feature)}">
+	     
+	      <div class="feature-column-1">
+	        {{feature.properties.location}}
+	      </div>
+	      <div class="feature-column-2">
+	      {{feature.properties.theme.join(', ')}}
+	      </div>
+	      <div class="feature-column-2-bis">
+	        <span v-if="feature.properties.leaders && contact">
+	          <a :href="'mailto:' + contact + '?subject=[FLATSIM] ' + feature.properties.name">
+	              {{ feature.properties.leaders.join(',')}}
+	          </a>
+	        </span>
+	        <span v-else-if="feature.properties.leaders && !contact" >
+	          {{ feature.properties.leaders.join(',')}}
+	        </span>
+	        
+	      </div>
+	      <!--   <div class="feature-column-3">
+	        {{feature.geometry.coordinates[1].toFixed(2)}}
+	      </div>
+	       <div class="feature-column-4">
+	        {{feature.geometry.coordinates[0].toFixed(2)}}
+	      </div> -->
+	      <div class="feature-column-3">
+	      <a   v-if="feature.properties.uuid"  :href="catalogUrl + 'metadata/' + feature.properties.uuid" target="_blank" >
+	         {{lang === 'en' ? 'Access to products': 'Accès aux produits'}}
+	      </a>
+	     
+	      <em v-if="!feature.properties.uuid" v-html="lang === 'en' ? 'on Going' : '&Agrave; venir'">
+	       {}
+	      </em>
+	       </div>
+	     </div>
+	   </div>
     </div>
   </div>
 </template>
 <script>
 
 var L = require('leaflet');
-L.Control.Fullscreen = require('formater-metadata-vjs/src/modules/leaflet.control.fullscreen.js')
+L.Control.Fullscreen = require('formater-commons-components-vjs/src/leaflet/leaflet.control.fullscreen.js')
 L.Control.Reset = require('./leaflet.control.reset.js')
 import { Icon } from 'leaflet';
 delete Icon.Default.prototype._getIconUrl;
@@ -137,13 +139,13 @@ export default {
   data () {
     return {
       map: null,
-      layers: null,
+      layers: [],
       features: [],
       popups: [],
       selectedLayer: null,
       selectedFeature: null,
       dataUrl: process.env.DATA_URL,
-      geojsonUrl: null,
+      geojsonUrl: [],
       windowHeight: null,
       resizeListener: null
     }
@@ -154,7 +156,7 @@ export default {
     window.addEventListener('resize', this.resizeListener)
   },
   mounted () {
-  //  this.union()
+    this.initUrl()
     this.initialize()
   },
   destroyed () {
@@ -162,6 +164,25 @@ export default {
     this.resizeListener = null
   },
   methods: {
+    initUrl () {
+      var self = this
+      
+      if (!this.geojson) {
+        this.geojsonUrl[0] = this.dataUrl + 'interfero_areas_' + this.lang + '.json'
+      } else {
+        var geojson = eval(this.geojson)
+        geojson.forEach(function (url, i) {
+          if (self.isUrl(url)) {
+            self.geojsonUrl[i] = url
+          } else {
+            var base = new URL(window.location.href)
+            var r = /[^\/]*\.[a-zA-Z]{2,4}$/;
+            var path = base.pathname.replace(r, '')
+            self.geojsonUrl[i] = base.protocol + '//' + base.host + path + url
+          }
+        })
+      }
+    },
     resize () {
       this.windowHeight = window.innerHeight
       var node = this.$el.querySelector('#fullMap > div')
@@ -180,20 +201,54 @@ export default {
       }
       return true
     },
-//     union ()  {
-//       this.$http.get('/public/traces_tibet.json')
-//       .then(function (resp) {
-//         var geojson = resp.body
-//         console.log(geojson)
-//         var myUnion = null
-//         geojson.features.forEach(function (feature) {
-//           if (!myUnion) {
-//             myUnion = feature
-//           }
+//     finalUnion (result, name) {
+//       var myUnion = null
+//       result.forEach(function (feature) {
+//         if (!myUnion) {
+//           myUnion = feature
+//         } else {
 //           myUnion = turfUnion(myUnion, feature)
-//         })
-//         console.log(myUnion)
-//         L.geoJSON(myUnion).addTo(this.map)
+//         }
+//       })
+//       L.geoJSON(myUnion, {style: {color: '#F07814'}}).addTo(this.map)
+//       myUnion.properties = {}
+//       let dataStr = JSON.stringify(myUnion);
+//       let dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+
+//       let exportFileDefaultName = name + '.json';
+
+//       let linkElement = document.createElement('a');
+//       linkElement.setAttribute('href', dataUri);
+//       linkElement.setAttribute('download', exportFileDefaultName);
+//       linkElement.click();
+//     },
+//     union (data, name)  {
+//       var self = this
+//       var result = Array(data.length).fill(false, 0, data.length)
+//       console.log(result)
+//       data.forEach(function (file, i) {
+// 	      self.$http.get('/public/ai2/' + name + '/' + file)
+// 	      .then(function (resp) {
+// 	        var geojson = resp.body
+// 	        var myUnion = null
+// 	        if (geojson.type === 'FeatureCollection') {
+// 		        geojson.features.forEach(function (feature) {
+// 		          if (!myUnion) {
+// 		            myUnion = feature
+// 		          }
+// 		          myUnion = turfUnion(myUnion, feature)
+// 		        })
+// 	        } else {
+// 	          myUnion = geojson
+// 	        }
+// 	        result[i] = myUnion
+// 	        console.log(result[i])
+// 	        var terminated = result.every(element => element !== false)
+// 	        console.log(terminated)
+// 	        if (terminated) {
+// 	           self.finalUnion(result, name)
+// 	        }
+// 	      })
 //       })
 //     },
     initialize () {
@@ -204,16 +259,7 @@ export default {
 	        node.innerHTML = ''
 	      }
       }
-      if (!this.geojson) {
-        this.jsonUrl = this.dataUrl + 'interfero_areas_' + this.lang + '.json'
-      } else if (this.isUrl(this.geojson)){
-         this.jsonUrl = this.geojson
-      } else {
-        var base = new URL(window.location.href)
-        var r = /[^\/]*\.[a-zA-Z]{2,4}$/;
-        var path = base.pathname.replace(r, '')
-        this.jsonUrl = base.protocol + '//' + base.host + path + this.geojson
-      }
+     
       this.map = L.map( "fmtMap", {scrollWheelZoom: false}).setView([20, -0.09], 3);
       var _this = this
       this.map.on('popupclose', function (e) {
@@ -239,10 +285,13 @@ export default {
       L.control.scale().addTo(this.map)
       var reset = new L.Control.Reset(_this.lang)
       reset.addTo(_this.map)
-   
-      this.$http.get(this.jsonUrl).then(
-        response => { this.addGeojsonLayer(response.body)}
-      )
+      var self = this
+      this.geojsonUrl.forEach(function(url, i) {
+        self.$http.get(url).then(
+            response => { self.addGeojsonLayer(response.body, i)}
+        )
+      })
+     
 //       this.map.on('zoomend', function (e) {
 //         if(_this.map.getZoom() > 3) {
 //           _this.layers.getLayers().forEach(function (layer) {
@@ -276,21 +325,22 @@ export default {
        }
       }
     },
-    addGeojsonLayer (features) {
-      this.features = features.features
+    addGeojsonLayer (features, i) {
+      console.log(features)
+      this.features[i]= features.features
       this.popups = []
       var _this = this
-      this.features.map(function (feature, index) {
+      this.features[i].map(function (feature, index) {
         feature.properties.theme = feature.properties.theme.sort()
         feature.properties.index = index
         feature.properties.data = feature.properties.link ? 1 : 0
         _this.popups[index] = feature.properties
       } )
-      this.features.sort(function (a, b) {
+      this.features[i].sort(function (a, b) {
         return a.properties.name > b.properties.name ? 1 : -1
       })
       var _this = this
-      this.layers = L.geoJSON(features, {
+      this.layers[i] = L.geoJSON(features, {
          style: function (feature) {
            return {color: 'red', width: 1, fillOpacity: 0.2, opacity:1}
          },
@@ -315,8 +365,8 @@ export default {
            }
         }
 	    }).on('add', function () {
-	       _this.map.fitBounds(_this.layers.getBounds(), {padding: [50, 50]})
-	       _this.layers.getLayers().forEach(function (layer) {
+	       _this.map.fitBounds(_this.layers[i].getBounds(), {padding: [50, 50]})
+	       _this.layers[i].getLayers().forEach(function (layer) {
                if (layer.feature.geometry.type === 'Polygon') {
                  var marker = L.marker(layer.getCenter()).addTo(_this.map)
                  layer.center = marker
@@ -343,25 +393,25 @@ export default {
 	       if (_this.first !== null) {
 	         var next = function () {
 	           
-	           if (_this.layers.getLayers()[_this.first]) {
-	             if (_this.layers.getLayers()[_this.first].center) {
-	               _this.layers.getLayers()[_this.first].center.fire('mouseover')
+	           if (_this.layers[i].getLayers()[_this.first]) {
+	             if (_this.layers[i].getLayers()[_this.first].center) {
+	               _this.layers[i].getLayers()[_this.first].center.fire('mouseover')
 	             } else {
-	               _this.layers.getLayers()[_this.first].fire('mouseover')
+	               _this.layers[i].getLayers()[_this.first].fire('mouseover')
 	             }
 	           }
 	         }
 	         setTimeout(next, 1000)
 	       }
 	    })
-      this.layers.addTo(this.map)
+      this.layers[i].addTo(this.map)
     },
     isSelected (feature) {
       return (this.selectedFeature && this.selectedFeature.properties.id === feature.properties.id)
     },
-    openPopup (feature) {
+    openPopup (feature,i) {
       // find the good layer
-      var selectedLayer = this.layers.getLayers().find(obj => obj.id === feature.properties.id)
+      var selectedLayer = this.layers[i].getLayers().find(obj => obj.id === feature.properties.id)
       if (selectedLayer.center) {
         selectedLayer.center.fire('mouseover')
       } else {
