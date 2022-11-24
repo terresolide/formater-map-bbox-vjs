@@ -1,5 +1,5 @@
 <template>
-<div class="fmt-popup" :class="'popup_' + properties.index">
+<div class="fmt-popup" :class="'popup_' + group + '_' + properties.index">
 	     <h3 :style="{color: $shadeColor(color, -0.3)}">{{properties.name.toUpperCase()}}</h3>
 	     <div style="text-align:justify;">
 	      <img v-if="properties.image" :src="imageUrl(properties.image.src)" :style="{width: properties.width + 'px'}"
@@ -19,6 +19,10 @@ export default {
     lang: {
       type: String,
       default: 'en'
+    },
+    group: {
+      type: Number,
+      default: 0
     },
     properties: {
       type: Object,
@@ -41,6 +45,11 @@ export default {
         return 'See the product page'
       }
     }
+  },
+  mounted () {
+    console.log(this.group)
+    console.log(this.properties)
+    console.log(this.color)
   },
   methods: {
     isAbsoluteUrl(string) {

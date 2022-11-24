@@ -1,7 +1,12 @@
 <template>
   <div class="fmt-wrapper">
-    <div style="display:none;">
-      <formater-popup v-for="(popup, index) in popups" :key="index" :properties="popup" :catalog-url="catalogUrl" :color="color" :lang="lang"></formater-popup>
+    <div style="display:block;">
+    <span v-for="group, i in popups">
+      {{i}}
+      <span v-for="(popup, index) in group">
+         <formater-popup  :key="index" :group="i" :properties="popup" :catalog-url="catalogUrl" :color="colors[i]" :lang="lang"></formater-popup>
+      </span>
+    </span>
     </div>
     <div id="fullMap" ></div>
     <div class="fmt-container">
@@ -44,6 +49,7 @@
       </div>
     </div>
     <div v-for="collection, i in features">
+      <div class="fmt-feature">Groupe {{i}}</div>
 	    <div class="fmt-feature" v-for="feature in collection" @click="openPopup(feature, i)" :class="{selected: isSelected(feature)}">
 	     
 	      <div class="feature-column-1">
@@ -139,6 +145,7 @@ export default {
   data () {
     return {
       map: null,
+      colors: ['#8B0000', '#F07814'],
       layers: [],
       features: [],
       popups: [],
@@ -326,37 +333,40 @@ export default {
       }
     },
     addGeojsonLayer (features, i) {
-      console.log(features)
       this.features[i]= features.features
-      this.popups = []
+      var popups = []
       var _this = this
       this.features[i].map(function (feature, index) {
         feature.properties.theme = feature.properties.theme.sort()
         feature.properties.index = index
         feature.properties.data = feature.properties.link ? 1 : 0
-        _this.popups[index] = feature.properties
-      } )
+        popups[index] = feature.properties
+      })
+      this.$set(this.popups, i, popups)
       this.features[i].sort(function (a, b) {
         return a.properties.name > b.properties.name ? 1 : -1
       })
       var _this = this
       this.layers[i] = L.geoJSON(features, {
          style: function (feature) {
-           return {color: 'red', width: 1, fillOpacity: 0.2, opacity:1}
+           return {color: _this.colors[i], width: 1, fillOpacity: 0.2, opacity:1}
          },
          onEachFeature: function (feature, layer) {
            layer.id = feature.properties.id
           
            if (feature.geometry.type !== 'Polygon') {
+             console.log('ne passe jamais par ici')
 	           layer.on('mouseover', function (layer) {
 // 	             this.unbindPopup()
 // 	             if (_this.isSelected(feature)) {
 // 	               _this.map.closePopup()
 // 	               _this.selectedLayer = null
 // 	             } else {
-		             var node = document.querySelector('.popup_' + feature.properties.index)
+                 console.log('.popup_' + i + '_' + feature.properties.index)
+		             var node = document.querySelector('.popup_' + i + '_' + feature.properties.index)
+		            
 		             this.bindPopup(node.cloneNode(true), {maxWidth:360, className: feature.properties.popup})
-		             this.openPopup()
+		             this.openPopup(feature, i)
 		             _this.selectedLayer = this
 		             _this.selectedFeature = feature
 		             
@@ -379,31 +389,31 @@ export default {
 //                      _this.map.closePopup()
 //                      _this.selectedLayer = null
 //                    } else {
-                     var node = document.querySelector('.popup_' + layer.feature.properties.index)
+                     console.log('.popup_' + i + '_' + layer.feature.properties.index)
+                     var node = document.querySelector('.popup_' + i + '_' + layer.feature.properties.index)
                      this.bindPopup(node.cloneNode(true), {maxWidth: 360, className: layer.feature.properties.popup})
                      this.openPopup()
                      _this.selectedLayer = this
                      _this.selectedFeature = layer.feature
-                     
-                  // }
                  })
                }
              })
                 
 	       if (_this.first !== null) {
-	         var next = function () {
+// 	         var next = function () {
 	           
-	           if (_this.layers[i].getLayers()[_this.first]) {
-	             if (_this.layers[i].getLayers()[_this.first].center) {
-	               _this.layers[i].getLayers()[_this.first].center.fire('mouseover')
-	             } else {
-	               _this.layers[i].getLayers()[_this.first].fire('mouseover')
-	             }
-	           }
-	         }
-	         setTimeout(next, 1000)
+// 	           if (_this.layers[i].getLayers()[_this.first]) {
+// 	             if (_this.layers[i].getLayers()[_this.first].center) {
+// 	               _this.layers[i].getLayers()[_this.first].center.fire('mouseover')
+// 	             } else {
+// 	               _this.layers[i].getLayers()[_this.first].fire('mouseover')
+// 	             }
+// 	           }
+// 	         }
+//	         setTimeout(next, 1000)
 	       }
 	    })
+	    console.log(this.popups)
       this.layers[i].addTo(this.map)
     },
     isSelected (feature) {
