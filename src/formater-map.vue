@@ -366,7 +366,7 @@ export default {
 		             var node = document.querySelector('.popup_' + i + '_' + feature.properties.index)
 		            
 		             this.bindPopup(node.cloneNode(true), {maxWidth:360, className: feature.properties.popup})
-		             this.openPopup(feature, i)
+		             this.openPopup()
 		             _this.selectedLayer = this
 		             _this.selectedFeature = feature
 		             
