@@ -1,5 +1,8 @@
 {
  "type": "FeatureCollection",
+ "properties": {
+   "name": "Chantiers 2021"
+ },
  "features": [
   {
       "type": "Feature",
@@ -377,6 +380,7 @@
         "location": "Bordure Est du plateau Tibetain",
         "width": 110,
         "theme": ["Tectonique"],
+        "leaders": ["M.-P. Doin (ISTerre)"],
         "popup": "fmt-under",
         "name": "Bordure Est du plateau Tibetain",
         "description": "L’objectif du projet est de quantifier et de modéliser les déformations actuelles en bordure est du plateau tibétain. Il se focalise sur les déformations d’origine tectonique, à l’échelle des failles actives comme à l’échelle continentale, pour aborder des problématiques de cycle sismique et de mécanismes de surrection du plateau tibétain. Ce projet s’intéresse aussi aux signaux non tectoniques présents dans les séries temporelles (surcharges hydrologiques notamment).",
@@ -507,6 +511,7 @@
         "width": 150,
         "popup": "",
         "theme": ["Tectonique","Hydrologie"],
+        "leaders": ["M. Jolivet (Géosciences Rennes)"],
         "description": "Ce projet vise à mieux comprendre les déformations d’origine tectonique dans la zone du Delta de l'Okavango (associées au fonctionnement du rift de l’Okavango et du rift Est Africain), ou d’origine hydrologique (liées notamment au cycle des crues), et les éventuelles interactions entre tectonique et hydrologie dans cette région.",
         "uuid": "5e794c9c-c74a-4edd-bedb-139eb7e5b836",
         "image": {
@@ -633,6 +638,7 @@
         "width": 100,
         "location": "Afar",
         "popup": "",
+        "leaders": ["R. Grandin (IPGP)"],
         "theme": ["Tectonique", "Volcanologie", "Aléa gravitaire"],
         "description": "Ce projet vise à caractériser la distribution spatiale et temporelle de la déformation dans la région de la dépression Afar. Il s’agit de mieux comprendre la tectonique grande échelle (localisation des frontières divergentes, cinématique du point triple), mais aussi la dynamique des évènements volcaniques, sismiques et asismiques, et la mécanique des failles actives. La problématique de l’aléa gravitaire sera également abordée.",
         "link": "https://www.poleterresolide.fr/acces-aux-donnees/catalogue/#/metadata/d313f77c-76f9-45e8-8c6d-c41e8d129f9f",
@@ -969,6 +975,7 @@
         "popup": "fmt-under",
         "width": 140,
         "theme": ["Tectonique", "Aléa anthropique et climatique"],
+        "leaders": ["M. Métois (LGLTPE)"],
         "description": "La région des Balkans est une des zones les plus sismiques d'Europe, avec un intense développement industriel et démographique. Ce projet a pour objectif de mieux quantifier les déformations d’origine tectonique dans cette région (cinématique et localisation des failles actives, étude des séismes). Il s’intéresse aussi aux déformations d’origine anthropique ou climatique (liées à l’exploitation de ressources naturelles ou aux variations du niveau marin).",
         "link": "https://www.poleterresolide.fr/acces-aux-donnees/catalogue/#/metadata/bf63b034-0fbc-40e4-af72-a254dc852cca",
         "uuid": "bf63b034-0fbc-40e4-af72-a254dc852cca",
@@ -1211,6 +1218,7 @@
         "id": "urn:ogc:def:EOP:CNES::ANATOLIA:",
         "location": "Turquie",
         "theme": ["Tectonique"],
+        "leaders": ["R. Jolivet (Laboratoire de Géologie, ENS Paris)"],
         "name": "Turquie",
         "popup": "fmt-under",
         "width": 180,
@@ -1346,6 +1354,7 @@
         "location": "Aquifère d'Ozark",
         "name": "Aquifère d'Ozark",
         "theme": ["Hydrologie"],
+        "leaders": ["K. Chanard (IPGP, IGN)"],
         "width": 120,
         "popup": "fmt-under",
         "description": "Ce projet se focalise sur l’étude des déformations associées à l’aquifère d’Ozark (sud du bassin du Mississipi) soumis à de fortes variations de niveau d’eaux souterraines, et dans les régions voisines où une sismicité importante est observée, à forte composante saisonnière (New Madrid), ou liée à des injections d’eaux usées (Oklahoma). L’objectif est de mieux comprendre la signature géodésique du cycle hydrologique.",
@@ -1365,6 +1374,7 @@
           "popup": "fmt-under",
           "width": 140,
           "theme": ["Tectonique"],
+          "leaders": ["M. Simoes (IPGP)"],
           "description": "Ce projet porte sur l’analyse des déformations tectoniques le long de la chaîne du Kunlun Occidental, en bordure nord-ouest du plateau tibétain. Cette région est marquée par l’interaction entre grands décrochements et chevauchements, avec notamment l’existence d’une des plus grandes nappes chevauchantes au monde, dont le chargement intersismique et la capacité à produire des « méga-séismes » seront parmi les paramètres à évaluer.",
           "uuid": "b2a5ed57-5c4e-4596-b803-d2ac7f5b9991",
           "image": {
@@ -1721,6 +1731,7 @@
         "location": "Andes centrales, Pérou-Chili",
         "name": "Andes centrales, Pérou-Chili",
         "width": 130,
+        "leaders": ["M. Chlieh (ISTerre)"],
         "theme": ["Tectonique", "Volcanologie", "Aléa gravitaire"],
         "description": "Ce projet a pour objectifs de mieux comprendre le cycle sismique de la zone de subduction andine au Pérou et Chili et des failles crustales dans les Andes, de suivre le fonctionnement des grands volcans actifs de la région (et détecter d’éventuels précurseurs aux éruptions), et d'étudier le forçage sismique, climatique et anthropique sur la dynamique des glissements de terrain dans les Andes.",
         "link": "https://www.poleterresolide.fr/acces-aux-donnees/catalogue/#/metadata/20703094-44fc-47ae-933e-7df39f083133",

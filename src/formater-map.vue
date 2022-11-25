@@ -1,10 +1,9 @@
 <template>
   <div class="fmt-wrapper">
-    <div style="display:block;">
+    <div style="display:none;">
     <span v-for="group, i in popups">
-      {{i}}
       <span v-for="(popup, index) in group">
-         <formater-popup  :key="index" :group="i" :properties="popup" :catalog-url="catalogUrl" :color="colors[i]" :lang="lang"></formater-popup>
+         <formater-popup  :key="index" :group="i" :properties="popup" :catalog-url="catalogUrl" :color="color" :lang="lang"></formater-popup>
       </span>
     </span>
     </div>
@@ -49,41 +48,47 @@
       </div>
     </div>
     <div v-for="collection, i in features">
-      <div class="fmt-feature">Groupe {{i}}</div>
-	    <div class="fmt-feature" v-for="feature in collection" @click="openPopup(feature, i)" :class="{selected: isSelected(feature)}">
-	     
-	      <div class="feature-column-1">
-	        {{feature.properties.location}}
-	      </div>
-	      <div class="feature-column-2">
-	      {{feature.properties.theme.join(', ')}}
-	      </div>
-	      <div class="feature-column-2-bis">
-	        <span v-if="feature.properties.leaders && contact">
-	          <a :href="'mailto:' + contact + '?subject=[FLATSIM] ' + feature.properties.name">
-	              {{ feature.properties.leaders.join(',')}}
-	          </a>
-	        </span>
-	        <span v-else-if="feature.properties.leaders && !contact" >
-	          {{ feature.properties.leaders.join(',')}}
-	        </span>
-	        
-	      </div>
-	      <!--   <div class="feature-column-3">
-	        {{feature.geometry.coordinates[1].toFixed(2)}}
-	      </div>
-	       <div class="feature-column-4">
-	        {{feature.geometry.coordinates[0].toFixed(2)}}
-	      </div> -->
-	      <div class="feature-column-3">
-	      <a   v-if="feature.properties.uuid"  :href="catalogUrl + 'metadata/' + feature.properties.uuid" target="_blank" >
-	         {{lang === 'en' ? 'Access to products': 'Accès aux produits'}}
-	      </a>
-	     
-	      <em v-if="!feature.properties.uuid" v-html="lang === 'en' ? 'on Going' : '&Agrave; venir'">
-	       {}
-	      </em>
-	       </div>
+      <div class="feature-group" :class="{hidden: !onMap[i]}" >
+       
+        {{groups[i]}}
+         <span class="clickable" @click="toggleGroup(i)">{{onMap[i] ? '-' : '+' }}</span>
+      </div>
+      <div>
+		    <div class="fmt-feature" v-for="feature in collection" @click="openPopup(feature, i)" :class="{selected: isSelected(feature)}">
+		     
+		      <div class="feature-column-1">
+		        {{feature.properties.location}}
+		      </div>
+		      <div class="feature-column-2">
+		      {{feature.properties.theme.join(', ')}}
+		      </div>
+		      <div class="feature-column-2-bis">
+		        <span v-if="feature.properties.leaders && contact">
+		          <a :href="'mailto:' + contact + '?subject=[FLATSIM] ' + feature.properties.name">
+		              {{ feature.properties.leaders.join(',')}}
+		          </a>
+		        </span>
+		        <span v-else-if="feature.properties.leaders && !contact" >
+		          {{ feature.properties.leaders.join(',')}}
+		        </span>
+		        
+		      </div>
+		      <!--   <div class="feature-column-3">
+		        {{feature.geometry.coordinates[1].toFixed(2)}}
+		      </div>
+		       <div class="feature-column-4">
+		        {{feature.geometry.coordinates[0].toFixed(2)}}
+		      </div> -->
+		      <div class="feature-column-3">
+		      <a   v-if="feature.properties.uuid"  :href="catalogUrl + 'metadata/' + feature.properties.uuid" target="_blank" >
+		         {{lang === 'en' ? 'Access to products': 'Accès aux produits'}}
+		      </a>
+		     
+		      <em v-if="!feature.properties.uuid" v-html="lang === 'en' ? 'on Going' : '&Agrave; venir'">
+		       {}
+		      </em>
+		       </div>
+		     </div>
 	     </div>
 	   </div>
     </div>
@@ -126,7 +131,7 @@ export default {
       default: null
     },
     first: {
-      type: Number,
+      type: Number|String,
       default: null
     },
     full: {
@@ -145,16 +150,20 @@ export default {
   data () {
     return {
       map: null,
-      colors: ['#8B0000', '#F07814'],
+      colors: ['#E50000', '#F07814'],
+      icons: [],
       layers: [],
       features: [],
       popups: [],
+      groups: [],
       selectedLayer: null,
       selectedFeature: null,
       dataUrl: process.env.DATA_URL,
       geojsonUrl: [],
       windowHeight: null,
-      resizeListener: null
+      resizeListener: null,
+      controlLayers: null,
+      onMap: [],
     }
   },
   created() {
@@ -272,14 +281,32 @@ export default {
       this.map.on('popupclose', function (e) {
         _this.selectedFeature = null
       })
+      this.controlLayers = L.control.layers({}, {})
+      var tiles = {
+        osm: {
+          name: 'OpenStreetMap',
+          url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+          attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        },
+        arcgisTopo: {
+          name: 'ArcGIS World Topo Map',
+          url: 'https://services.arcgisonline.com/arcgis/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
+          attribution: 'Tiles © <a href="https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer">ArcGIS</a>'
+        },
+        arcgisSatellite: {
+          name: 'ArcGIS Satellite Tiles',
+          url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+          attribution: 'Tiles © <a href="https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer">Arcgis</a>'
+        }
+      }
+      for (var key in tiles) {
+        var layer = L.tileLayer(tiles[key].url, {attribution: tiles[key].attribution})
+        this.controlLayers.addBaseLayer(layer, tiles[key].name)
+        if (key === 'arcgisTopo') {
+          layer.addTo(this.map)
+        }
+      }
       
-      // this.map.on( "zoom", function(e){ this.updateAllPolygons();})
-      L.tileLayer('//server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
-        {
-          attribution: 'Tiles © <a href="https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer">ArcGIS</a>',
-          maxZoom: 18,
-          minZoom:2
-         }).addTo( this.map )
       var fullscreen = new L.Control.Fullscreen(
           'fullMap',
           {
@@ -288,10 +315,25 @@ export default {
             mouseWheel: true
            }
       )
+      var colors = ['red', 'orange']
+      for (var i in colors) {
+        this.icons[i] = new L.Icon({
+         // iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+          iconUrl: require('./assets/img/marker-icon-' + colors[i] + '.png'),
+          shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+          iconRetinaUrl: require('./assets/img/marker-icon-2x-' + colors[i]+ '.png'),
+         // shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+          iconSize: [25, 41],
+          iconAnchor: [12, 41],
+          popupAnchor: [1, -34],
+          shadowSize: [41, 41]
+        });
+      }
       fullscreen.addTo(this.map)
       L.control.scale().addTo(this.map)
-      var reset = new L.Control.Reset(_this.lang)
-      reset.addTo(_this.map)
+      var reset = new L.Control.Reset(this.lang)
+      reset.addTo(this.map)
+      this.controlLayers.addTo(this.map)
       var self = this
       this.geojsonUrl.forEach(function(url, i) {
         self.$http.get(url).then(
@@ -317,6 +359,13 @@ export default {
       })
     
     },
+    toggleGroup (i) {
+      if (this.map.hasLayer(this.layers[i])) {
+        this.layers[i].remove()
+      } else {
+        this.layers[i].addTo(this.map)
+      }
+    },
     updatePopup () {
       if (this.selectedLayer) {
         var popup = document.querySelector('.leaflet-popup')
@@ -334,6 +383,7 @@ export default {
     },
     addGeojsonLayer (features, i) {
       this.features[i]= features.features
+      this.groups[i] = features.properties.name
       var popups = []
       var _this = this
       this.features[i].map(function (feature, index) {
@@ -376,9 +426,10 @@ export default {
         }
 	    }).on('add', function () {
 	       _this.map.fitBounds(_this.layers[i].getBounds(), {padding: [50, 50]})
+	       
 	       _this.layers[i].getLayers().forEach(function (layer) {
                if (layer.feature.geometry.type === 'Polygon') {
-                 var marker = L.marker(layer.getCenter()).addTo(_this.map)
+                 var marker = L.marker(layer.getCenter(), {icon: _this.icons[i]}).addTo(_this.map)
                  layer.center = marker
                  marker.on('click', function (event) {
                    event.preventDefault()
@@ -389,7 +440,6 @@ export default {
 //                      _this.map.closePopup()
 //                      _this.selectedLayer = null
 //                    } else {
-                     console.log('.popup_' + i + '_' + layer.feature.properties.index)
                      var node = document.querySelector('.popup_' + i + '_' + layer.feature.properties.index)
                      this.bindPopup(node.cloneNode(true), {maxWidth: 360, className: layer.feature.properties.popup})
                      this.openPopup()
@@ -398,23 +448,37 @@ export default {
                  })
                }
              })
-                
-	       if (_this.first !== null) {
-// 	         var next = function () {
-	           
-// 	           if (_this.layers[i].getLayers()[_this.first]) {
-// 	             if (_this.layers[i].getLayers()[_this.first].center) {
-// 	               _this.layers[i].getLayers()[_this.first].center.fire('mouseover')
-// 	             } else {
-// 	               _this.layers[i].getLayers()[_this.first].fire('mouseover')
-// 	             }
-// 	           }
-// 	         }
-//	         setTimeout(next, 1000)
+         _this.$set(_this.onMap, i, true)
+	       if (_this.first !== null && i === _this.geojsonUrl.length - 1) {
+	         var next = function () {
+	           var position = _this.first.split(',')
+	           var x = parseInt(position[0])
+	           var y = parseInt(position[1])
+	           if (_this.layers[x].getLayers()[y]) {
+	             if (_this.layers[x].getLayers()[y].center) {
+	               _this.layers[x].getLayers()[y].center.fire('mouseover')
+	             } else {
+	               _this.layers[x].getLayers()[y].fire('mouseover')
+	             }
+	           }
+	         }
+	         setTimeout(next, 1000)
 	       }
 	    })
-	    console.log(this.popups)
+	    this.layers[i].on('remove', function() {
+	      _this.layers[i].getLayers().forEach(function (layer) {
+           if (!layer.center) {
+             return
+           }
+	         layer.center.off('click')
+	         layer.center.off('mouseover')
+	         layer.center.remove()
+        })
+        _this.$set(_this.onMap, i, false)
+	    })
       this.layers[i].addTo(this.map)
+      this.onMap[i] = true
+      this.controlLayers.addOverlay(this.layers[i],  this.groups[i] +'<span class="square" style="background:' + this.colors[i] + '">')
     },
     isSelected (feature) {
       return (this.selectedFeature && this.selectedFeature.properties.id === feature.properties.id)
@@ -451,6 +515,26 @@ export default {
 }
 </script>
 <style>
+.fmt-wrapper .leaflet-touch .leaflet-control-layers-toggle {
+  width: 30px;
+  height: 30px;
+}
+.fmt-wrapper .leaflet-control-layers-list {
+  text-align:left;
+}
+div.feature-group.hidden + div {
+  display: none;
+}
+span.square {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  margin: 0 3px;
+}
+.clickable {
+  cursor: pointer;
+}
 .fmt-wrapper {
   line-height: 1.7;
 }
@@ -492,10 +576,14 @@ div.fmt-feature {
   border-bottom:1px solid lightgrey;
   cursor: pointer;
 }
-div.fmt-feature.feature-header{
+
+div.feature-group {
+  background-color:#e1e1e1;
+  padding: 1px 4px;
   font-weight:800;
-  border-bottom: 1px solid darkgrey;
-  border-top: 1px solid darkgrey;
+  border-bottom: 1px dotted darkgrey;
+  border-top: 1px dotted darkgrey;
+  font-size:0.9rem;
 }
 div.fmt-feature.feature-header span {
   line-height: 1;
@@ -513,8 +601,14 @@ div.fmt-feature div.button:hover {
  opacity:1;
  border: 1px dotted grey;
 }
-div.fmt-feature:nth-child(2n) {
+div.fmt-feature:nth-child(2n ) {
   background-color:#f3F3F3;
+}
+div.fmt-feature.feature-header {
+  font-weight:800;
+  border-bottom: 1px solid darkgrey;
+  border-top: 1px solid darkgrey;
+  background-color:#e1e1e1;
 }
 div.fmt-feature.selected {
   background-color:#faebd7;

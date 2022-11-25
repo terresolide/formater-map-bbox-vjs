@@ -46,11 +46,6 @@ export default {
       }
     }
   },
-  mounted () {
-    console.log(this.group)
-    console.log(this.properties)
-    console.log(this.color)
-  },
   methods: {
     isAbsoluteUrl(string) {
       var res = string.match(/^(http(s)?:\/\/.).*$/g);
