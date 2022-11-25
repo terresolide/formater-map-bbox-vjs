@@ -3,7 +3,7 @@
     <div style="display:none;">
     <span v-for="group, i in popups">
       <span v-for="(popup, index) in group">
-         <formater-popup  :key="index" :group="i" :properties="popup" :catalog-url="catalogUrl" :color="color" :lang="lang"></formater-popup>
+         <formater-popup  :key="index" :group="i" :properties="popup" :catalog-url="catalogUrl" :color="colors[i]" :lang="lang"></formater-popup>
       </span>
     </span>
     </div>
