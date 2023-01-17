@@ -122,6 +122,10 @@ export default {
       type: String,
       default: null
     },
+    bbox: {
+      type: String,
+      default: null
+    },
     color: {
       type: String,
       default:'#3d5c7a'
@@ -152,6 +156,7 @@ export default {
       map: null,
       colors: ['#E50000', '#F07814'],
       icons: [],
+      bounds: null,
       layers: [],
       features: [],
       popups: [],
@@ -334,6 +339,14 @@ export default {
       var reset = new L.Control.Reset(this.lang)
       reset.addTo(this.map)
       this.controlLayers.addTo(this.map)
+      if (this.bbox) {
+        var bounds = this.bbox.split(',')
+        if(bounds.length === 4) {
+           this.bounds = [[parseFloat(bounds[1]), parseFloat(bounds[0])],
+                          [parseFloat(bounds[3]), parseFloat(bounds[2])]]
+        }
+        this.map.fitBounds(this.bounds)
+      }
       var self = this
       this.geojsonUrl.forEach(function(url, i) {
         self.$http.get(url).then(
@@ -425,8 +438,15 @@ export default {
            }
         }
 	    }).on('add', function () {
-	       _this.map.fitBounds(_this.layers[i].getBounds(), {padding: [50, 50]})
-	       
+	      if (!_this.bbox) {
+	       console.log(_this.bbox)
+	       if (!_this.bounds) {
+	         _this.bounds = _this.layers[i].getBounds()
+	       } else {
+	         _this.bounds.extend(_this.layers[i].getBounds())
+	       }
+	       _this.map.fitBounds(_this.bounds, {padding: [50, 50]})
+	      }
 	       _this.layers[i].getLayers().forEach(function (layer) {
                if (layer.feature.geometry.type === 'Polygon') {
                  var marker = L.marker(layer.getCenter(), {icon: _this.icons[i]}).addTo(_this.map)
