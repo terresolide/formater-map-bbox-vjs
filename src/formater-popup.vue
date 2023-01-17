@@ -6,7 +6,7 @@
 	       :title="properties.image.attribution" :alt="'[' + properties.image.attribution + ']'"/>
 	     <span v-html="properties.description" style="text-align:justify;"></span>
 	     </div>
-	     <div style="clear:left;text-align:right;margin-top:5px;" >
+	     <div v-if="properties.hasOwnProperty('uuid')" style="clear:left;text-align:right;margin-top:5px;" >
 	     <a v-if="properties.uuid" :href="catalogUrl + 'metadata/' + properties.uuid" target="_blank">{{seePage}}</a>
 	     <em v-if="!properties.uuid" style="color:blue;" v-html="lang === 'en' ? 'On Going': '&Agrave; venir'"></em>
 	     </div>
