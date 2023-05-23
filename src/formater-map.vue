@@ -555,7 +555,18 @@ span.square {
   margin: 0 3px;
 }
 .clickable {
+  display:inline-block;
+  padding:1px 2px;
+  line-height:1.1;
+  min-width:15px;
+  text-align:center;
+  border-radius:4px;
+  border:1px dotted transparent;
   cursor: pointer;
+}
+.clickable:hover {
+  border-color:black;
+  background:lightgrey;
 }
 .fmt-wrapper {
   line-height: 1.7;
