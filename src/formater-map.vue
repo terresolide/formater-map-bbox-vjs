@@ -50,7 +50,7 @@
     <div v-for="collection, i in features">
       <div class="feature-group" :class="{hidden: !onMap[i]}" >
        
-        {{groups[i]}}
+        {{groups[i].name}}
          <span class="clickable" @click="toggleGroup(i)">{{onMap[i] ? '-' : '+' }}</span>
       </div>
       <div>
@@ -396,7 +396,11 @@ export default {
     },
     addGeojsonLayer (features, i) {
       this.features[i]= features.features
-      this.groups[i] = features.properties.name
+      this.groups[i] = {
+          name: features.properties.name, 
+          short: features.properties.short ? features.properties.short : features.properties.name
+            
+      }
       var popups = []
       var _this = this
       this.features[i].map(function (feature, index) {
@@ -418,14 +422,13 @@ export default {
            layer.id = feature.properties.id
           
            if (feature.geometry.type !== 'Polygon') {
-             console.log('ne passe jamais par ici')
 	           layer.on('mouseover', function (layer) {
 // 	             this.unbindPopup()
 // 	             if (_this.isSelected(feature)) {
 // 	               _this.map.closePopup()
 // 	               _this.selectedLayer = null
 // 	             } else {
-                 console.log('.popup_' + i + '_' + feature.properties.index)
+//                console.log('.popup_' + i + '_' + feature.properties.index)
 		             var node = document.querySelector('.popup_' + i + '_' + feature.properties.index)
 		            
 		             this.bindPopup(node.cloneNode(true), {maxWidth:360, className: feature.properties.popup})
@@ -439,7 +442,6 @@ export default {
         }
 	    }).on('add', function () {
 	      if (!_this.bbox) {
-	       console.log(_this.bbox)
 	       if (!_this.bounds) {
 	         _this.bounds = _this.layers[i].getBounds()
 	       } else {
@@ -498,7 +500,7 @@ export default {
 	    })
       this.layers[i].addTo(this.map)
       this.onMap[i] = true
-      this.controlLayers.addOverlay(this.layers[i],  this.groups[i] +'<span class="square" style="background:' + this.colors[i] + '">')
+      this.controlLayers.addOverlay(this.layers[i],  this.groups[i].short +'<span class="square" style="background:' + this.colors[i] + '">')
     },
     isSelected (feature) {
       return (this.selectedFeature && this.selectedFeature.properties.id === feature.properties.id)

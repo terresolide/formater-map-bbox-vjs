@@ -1,7 +1,8 @@
 {
  "type": "FeatureCollection",
  "properties": {
-   "name": "Chantiers 2021"
+   "name": "Chantiers 2021",
+   "short": "AI 2021"
  },
  "features": [
   {
