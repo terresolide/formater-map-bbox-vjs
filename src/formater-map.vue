@@ -69,7 +69,9 @@
 		          </a>
 		        </span>
 		        <span v-else-if="feature.properties.leaders && !contact" >
-		          {{ feature.properties.leaders.join(',')}}
+		           <span v-for="leader in feature.properties.leaders" class="leader">
+		             {{leader}}
+		           </span>
 		        </span>
 		        
 		      </div>
@@ -574,7 +576,17 @@ span.square {
 .fmt-wrapper h4 {
  margin: 5px 0 3px 0;
 }
-
+.leader {
+  display: inline-block;
+}
+.leader::after {
+  content:', ';
+  margin-right:5px;
+}
+.leader:last-child::after {
+  content: '';
+  margin:0;
+}
 div.fmt-wrapper{
   width: 100%;
      max-width:1200px;
