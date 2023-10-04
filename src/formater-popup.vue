@@ -4,7 +4,7 @@
 	     <div style="text-align:justify;">
 	      <img v-if="properties.image" :src="imageUrl(properties.image.src)" :style="{width: properties.width + 'px'}"
 	       :title="properties.image.attribution" :alt="'[' + properties.image.attribution + ']'"/>
-	     <span v-html="properties.description" style="text-align:justify;"></span>
+	     <span v-html="properties.description.replaceAll('\n','<br>')" style="text-align:justify;"></span>
 	     </div>
 	     <div v-if="properties.hasOwnProperty('uuid')" style="clear:left;text-align:right;margin-top:5px;" >
 	     <a v-if="properties.uuid" :href="catalogUrl + 'metadata/' + properties.uuid" target="_blank">{{seePage}}</a>
