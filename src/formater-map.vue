@@ -13,7 +13,7 @@
     </div>
    <div v-show="full" style="text-align:left;">
    <h4 id="flatsim_site">
-   {{ lang === 'en' ? 'Selected Areas' : 'Zones sélectionnées' }}
+   {{ lang === 'en' ? 'Areas covered on Call for Ideas' : 'Zones traitées sur Appel à Idées' }}
    </h4>
     <div class="fmt-feature feature-header">
      
@@ -48,6 +48,9 @@
       </div>
     </div>
     <div v-for="collection, i in features">
+      <div v-if="groups[i].chapter">
+      <h3>{{groups[i].chapter}}</h3>
+      </div>
       <div class="feature-group" :class="{hidden: !onMap[i]}" >
         <span class="square" :style="{background: colors[i]}"></span>
         <span style="vertical-align:middle;">{{groups[i].name}}</span>
@@ -156,7 +159,8 @@ export default {
   data () {
     return {
       map: null,
-      colors: ['#0d75ff', '#E50000', '#F07814'],
+      colors: [ '#E50000', '#F07814', '#0d75ff'],
+      markerColors: ['red', 'orange', 'blue'],
       icons: [],
       bounds: null,
       layers: [],
@@ -323,13 +327,13 @@ export default {
             mouseWheel: true
            }
       )
-      var colors = ['blue', 'red', 'orange']
-      for (var i in colors) {
+     
+      for (var i in this.markerColors) {
         this.icons[i] = new L.Icon({
          // iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-          iconUrl: require('./assets/img/marker-icon-' + colors[i] + '.png'),
+          iconUrl: require('./assets/img/marker-icon-' + this.markerColors[i] + '.png'),
           shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
-          iconRetinaUrl: require('./assets/img/marker-icon-2x-' + colors[i]+ '.png'),
+          iconRetinaUrl: require('./assets/img/marker-icon-2x-' + this.markerColors[i]+ '.png'),
          // shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
           iconSize: [25, 41],
           iconAnchor: [12, 41],
@@ -403,8 +407,8 @@ export default {
       this.features[i]= features.features
       this.groups[i] = {
           name: features.properties.name, 
-          short: features.properties.short ? features.properties.short : features.properties.name
-            
+          short: features.properties.short ? features.properties.short : features.properties.name,
+          chapter: features.properties.chapter ? features.properties.chapter : null
       }
       var popups = []
       var _this = this
@@ -661,7 +665,9 @@ div.fmt-feature.feature-header {
   font-weight:800;
   border-bottom: 1px solid darkgrey;
   border-top: 1px solid darkgrey;
+  font-size:0.9rem;
   background-color:#e1e1e1;
+  padding:4px;
 }
 div.fmt-feature.selected {
   background-color:#faebd7;
