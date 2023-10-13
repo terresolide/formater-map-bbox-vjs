@@ -156,7 +156,7 @@ export default {
   data () {
     return {
       map: null,
-      colors: ['#E50000', '#F07814'],
+      colors: ['#0d75ff', '#E50000', '#F07814'],
       icons: [],
       bounds: null,
       layers: [],
@@ -322,7 +322,7 @@ export default {
             mouseWheel: true
            }
       )
-      var colors = ['red', 'orange']
+      var colors = ['blue', 'red', 'orange']
       for (var i in colors) {
         this.icons[i] = new L.Icon({
          // iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
