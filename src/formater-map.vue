@@ -49,8 +49,8 @@
     </div>
     <div v-for="collection, i in features">
       <div class="feature-group" :class="{hidden: !onMap[i]}" >
-       
-        {{groups[i].name}}
+        <span class="square" :style="{background: colors[i]}"></span>
+        <span style="vertical-align:middle;">{{groups[i].name}}</span>
          <span class="clickable" @click="toggleGroup(i)">{{onMap[i] ? '-' : '+' }}</span>
       </div>
       <div>
@@ -171,6 +171,7 @@ export default {
       resizeListener: null,
       controlLayers: null,
       onMap: [],
+      loaded: 0
     }
   },
   created() {
@@ -397,6 +398,8 @@ export default {
       }
     },
     addGeojsonLayer (features, i) {
+      
+      
       this.features[i]= features.features
       this.groups[i] = {
           name: features.properties.name, 
@@ -449,7 +452,11 @@ export default {
 	       } else {
 	         _this.bounds.extend(_this.layers[i].getBounds())
 	       }
-	       _this.map.fitBounds(_this.bounds, {padding: [50, 50]})
+	       _this.loaded = _this.loaded + 1
+	       console.log(_this.loaded)
+	       if (_this.loaded === _this.geojsonUrl.length - 1) {
+	         _this.map.fitBounds(_this.bounds, {padding: [50, 50]})
+	       }
 	      }
 	       _this.layers[i].getLayers().forEach(function (layer) {
                if (layer.feature.geometry.type === 'Polygon') {
@@ -562,6 +569,7 @@ span.square {
   line-height:1.1;
   min-width:15px;
   text-align:center;
+  vertical-align:middle;
   border-radius:4px;
   border:1px dotted transparent;
   cursor: pointer;
