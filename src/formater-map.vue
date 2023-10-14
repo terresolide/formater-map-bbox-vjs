@@ -57,12 +57,13 @@
          <span class="clickable" @click="toggleGroup(i)">{{onMap[i] ? '-' : '+' }}</span>
       </div>
       <div>
-		    <div class="fmt-feature" v-for="feature in collection" @click="openPopup(feature, i)" :class="{selected: isSelected(feature)}">
+		    <div v-if="!groups[i].reference" class="fmt-feature" 
+		    v-for="feature in collection" @click="openPopup(feature, i)" :class="{selected: isSelected(feature)}">
 		     
 		      <div class="feature-column-1">
 		        {{feature.properties.location}}
 		      </div>
-		      <div class="feature-column-2">
+		      <div class="feature-column-2" >
 		      {{feature.properties.theme.join(', ')}}
 		      </div>
 		      <div class="feature-column-2-bis">
@@ -94,6 +95,16 @@
 		      </em>
 		       </div>
 		     </div>
+		     <div v-if="groups[i].reference"  class="fmt-feature-ref" 
+        v-for="feature in collection" @click="openPopup(feature, i)" :class="{selected: isSelected(feature)}">
+         
+          <div class="feature-column-1">
+            {{feature.properties.location}}
+          </div>
+          <div class="feature-column-2" v-html="feature.properties.description" >
+          </div>
+          
+         </div>
 	     </div>
 	   </div>
     </div>
@@ -408,7 +419,8 @@ export default {
       this.groups[i] = {
           name: features.properties.name, 
           short: features.properties.short ? features.properties.short : features.properties.name,
-          chapter: features.properties.chapter ? features.properties.chapter : null
+          chapter: features.properties.chapter ? features.properties.chapter : null,
+          reference: features.properties.reference ? features.properties.reference : null
       }
       var popups = []
       var _this = this
@@ -633,6 +645,14 @@ div.fmt-feature {
   border-bottom:1px solid lightgrey;
   cursor: pointer;
 }
+div.fmt-feature-ref {
+  display: grid;
+  grid-template-columns: minmax(253px,1fr) minmax(500px, 3fr);
+  grid-gap: 3px;
+  /*grid-auto-rows: minmax(100px, auto);*/
+  border-bottom:1px solid lightgrey;
+  cursor: pointer;
+}
 
 div.feature-group {
   background-color:#e1e1e1;
@@ -669,20 +689,27 @@ div.fmt-feature.feature-header {
   background-color:#e1e1e1;
   padding:4px;
 }
-div.fmt-feature.selected {
+div.fmt-feature.selected,
+div.fmt-feature-ref.selected {
   background-color:#faebd7;
 }
+div.fmt-feature-ref .feature-column-1,
 div.fmt-feature .feature-column-1 {
   grid-column: 1;
   grid-row: 1/2;
   color:#darkgrey;
-  font-size:0.9rem;
   padding:0px 4px;
   word-break:break-all;
 }
+div.fmt-feature-ref .feature-column-2,
 div.fmt-feature .feature-column-2 {
   grid-column: 2;
   grid-row: 1/2;
+}
+div.fmt-feature-ref .feature-column-2 {
+  line-height:1.2;
+  text-align:justify;
+  padding: 5px;
 }
 div.fmt-feature .feature-column-2-bis {
   grid-column: 3;

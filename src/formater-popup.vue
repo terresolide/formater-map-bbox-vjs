@@ -58,6 +58,9 @@ export default {
         var location = new URL(window.location.href)
         var pathname = location.pathname.match(/(.*)(\/[^/]*\.php)$/i)
         var path = pathname && pathname.length > 2 ? pathname[1] : location.pathname
+        if (path.slice(- 1) === '/') {
+          path =  path.slice(0, -1)
+        }
         return location.protocol + '//' + location.hostname +  (location.port ? ':' + location.port : '') + path + url
       }
     }
