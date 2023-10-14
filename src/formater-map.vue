@@ -647,7 +647,7 @@ div.fmt-feature {
 }
 div.fmt-feature-ref {
   display: grid;
-  grid-template-columns: minmax(253px,1fr) minmax(500px, 3fr);
+ /* grid-template-columns: minmax(253px,1fr) minmax(500px, 3fr);*/
   grid-gap: 3px;
   /*grid-auto-rows: minmax(100px, auto);*/
   border-bottom:1px solid lightgrey;
