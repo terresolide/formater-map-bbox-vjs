@@ -27,7 +27,7 @@
        <span>  {{ lang === 'en' ? 'Themes' : 'Thèmes' }}</span>
       </div>
       <div class="feature-column-2-bis">
-       <span>  {{ lang === 'en' ? 'Leaders' : 'Porteurs' }}</span>
+       <span>  {{ lang === 'en' ? 'Project leaders' : 'Porteurs de projet' }}</span>
       </div>
      <!--  <div class="feature-column-3">
         <span>Lat</span>
