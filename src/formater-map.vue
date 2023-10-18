@@ -101,7 +101,9 @@
           <div class="feature-column-1">
             {{feature.properties.location}}
           </div>
-          <div class="feature-column-2" v-html="feature.properties.description" >
+          <div  v-if="feature.properties.row" class="feature-column-2" v-html="feature.properties.row" >
+          </div>
+          <div  v-else class="feature-column-2" v-html="feature.properties.description" >
           </div>
           
          </div>
