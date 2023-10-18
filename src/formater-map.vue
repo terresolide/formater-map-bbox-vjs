@@ -662,7 +662,6 @@ div.feature-group {
   font-weight:800;
   border-bottom: 1px dotted darkgrey;
   border-top: 1px dotted darkgrey;
-  font-size:1rem;
 }
 div.fmt-feature.feature-header span {
   line-height: 1;
@@ -687,7 +686,6 @@ div.fmt-feature.feature-header {
   font-weight:800;
   border-bottom: 1px solid darkgrey;
   border-top: 1px solid darkgrey;
-  font-size:1rem;
   background-color:#e1e1e1;
   padding:4px;
 }
@@ -702,7 +700,6 @@ div.fmt-feature .feature-column-1 {
   color:black;
   padding:0px 4px;
   word-break:break-all;
-  font-weight:500;
 }
 div.fmt-feature-ref .feature-column-2,
 div.fmt-feature .feature-column-2 {
