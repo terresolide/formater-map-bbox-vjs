@@ -10,6 +10,7 @@
 	     <a v-if="properties.uuid" :href="catalogUrl + 'metadata/' + properties.uuid" target="_blank">{{seePage}}</a>
 	     <em v-if="!properties.uuid" style="color:blue;" v-html="lang === 'en' ? 'On Going': '&Agrave; venir'"></em>
 	     </div>
+       <div v-else style="clear:left;"></div>
 	    </div>
 </template>
 <script>
