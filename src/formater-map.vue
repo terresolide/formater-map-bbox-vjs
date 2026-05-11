@@ -172,8 +172,8 @@ export default {
   data () {
     return {
       map: null,
-      colors: [ '#E50000', '#F07814', '#0d75ff'],
-      markerColors: ['red', 'orange', 'blue'],
+      colors: ['#E50000', '#F07814', '#904128','#0d75ff','#a21f7b'],
+      markerColors: ['red', 'orange', 'braun', 'blue', 'purple'],
       icons: [],
       bounds: null,
       layers: [],
@@ -415,7 +415,6 @@ export default {
       }
     },
     addGeojsonLayer (features, i) {
-      
       
       this.features[i]= features.features
       this.groups[i] = {

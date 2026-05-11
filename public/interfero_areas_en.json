@@ -1,5 +1,9 @@
 {
  "type": "FeatureCollection",
+ "properties": {
+   "name": "Call for ideas 2020 (data October 2014 - end of April 2021)",
+   "short": "Call for ideas 2020"
+ },
  "features": [
   {
       "type": "Feature",
