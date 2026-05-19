@@ -174,6 +174,7 @@ export default {
       map: null,
       colors: ['#E50000', '#F07814', '#904128','#0d75ff','#a21f7b'],
       markerColors: ['red', 'orange', 'braun', 'blue', 'purple'],
+  //    markers: [],
       icons: [],
       bounds: null,
       layers: [],
@@ -368,6 +369,9 @@ export default {
         this.map.fitBounds(this.bounds)
       }
       var self = this
+      // this.markers = L.featureGroup()
+      // this.controlLayers.addOverlay(this.markers, 'Markers')
+      // this.markers.addTo(this.map)
       this.geojsonUrl.forEach(function(url, i) {
         self.$http.get(url).then(
             response => { self.addGeojsonLayer(response.body, i)}
@@ -479,6 +483,7 @@ export default {
                if (layer.feature.geometry.type === 'Polygon') {
                  var marker = L.marker(layer.getCenter(), {icon: _this.icons[i]}).addTo(_this.map)
                  layer.center = marker
+                 // _this.markers.addLayer(marker)
                  marker.on('click', function (event) {
                    event.preventDefault()
                  })
