@@ -307,6 +307,9 @@ export default {
       this.map.on('popupclose', function (e) {
         _this.selectedFeature = null
       })
+      this.map.on('click', function (evt) {
+        console.log(evt.latlng)
+      })
       this.controlLayers = L.control.layers({}, {})
       var tiles = {
         osm: {
@@ -448,7 +451,8 @@ export default {
            layer.id = feature.properties.id
           
            if (feature.geometry.type !== 'Polygon') {
-	           layer.on('mouseover', function (layer) {
+	           layer.on('mouseover', function (evt) {
+                  console.log(evt)
 // 	             this.unbindPopup()
 // 	             if (_this.isSelected(feature)) {
 // 	               _this.map.closePopup()
@@ -480,12 +484,16 @@ export default {
 	       }
 	      }
 	       _this.layers[i].getLayers().forEach(function (layer) {
-               if (layer.feature.geometry.type === 'Polygon') {
-                 var marker = L.marker(layer.getCenter(), {icon: _this.icons[i]}).addTo(_this.map)
+          layer.on('click', function (evt) {
+            console.log(evt)
+          })
+                if (layer.feature.geometry.type === 'Polygon' || layer.feature.properties.marker) {
+                 var latlng = layer.feature.properties.marker || layer.getCenter()
+                 var marker = L.marker(latlng, {icon: _this.icons[i]}).addTo(_this.map)
                  layer.center = marker
                  // _this.markers.addLayer(marker)
                  marker.on('click', function (event) {
-                   event.preventDefault()
+                   return false
                  })
                  marker.on('mouseover', function (truc) {
                    this.unbindPopup()
