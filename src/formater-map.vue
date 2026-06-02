@@ -450,7 +450,7 @@ export default {
          onEachFeature: function (feature, layer) {
            layer.id = feature.properties.id
           
-           if (feature.geometry.type !== 'Polygon') {
+           if (feature.geometry.type !== 'Polygon' && !feature.properties.marker) {
 	           layer.on('mouseover', function (evt) {
                   console.log(evt)
 // 	             this.unbindPopup()
@@ -484,13 +484,12 @@ export default {
 	       }
 	      }
 	       _this.layers[i].getLayers().forEach(function (layer) {
-          layer.on('click', function (evt) {
-            console.log(evt)
-          })
+                
                 if (layer.feature.geometry.type === 'Polygon' || layer.feature.properties.marker) {
                  var latlng = layer.feature.properties.marker || layer.getCenter()
                  var marker = L.marker(latlng, {icon: _this.icons[i]}).addTo(_this.map)
                  layer.center = marker
+
                  // _this.markers.addLayer(marker)
                  marker.on('click', function (event) {
                    return false
@@ -539,7 +538,18 @@ export default {
 	    })
       this.layers[i].addTo(this.map)
       this.onMap[i] = true
-      this.controlLayers.addOverlay(this.layers[i],  this.groups[i].short +'<span class="square" style="background:' + this.colors[i] + '">')
+      
+      // Uniquement quand tout est chargé, pour que ce soit dans l'ordre
+      if (this.loaded === this.geojsonUrl.length) {
+          this.addControlLayers()
+      }
+    },
+    addControlLayers () {
+      for(var i in this.layers) {
+        this.controlLayers.addOverlay(this.layers[i],  this.groups[i].short +'<span class="square" style="background:' + this.colors[i] + '">')
+      }
+      // bring to front the last
+
     },
     isSelected (feature) {
       return (this.selectedFeature && this.selectedFeature.properties.id === feature.properties.id)

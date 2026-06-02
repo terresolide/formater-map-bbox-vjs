@@ -975,7 +975,7 @@
         "name": "Balkans",
         "popup": "fmt-under",
         "width": 140,
-        "marker": { "lat": 42.16560675405716, "lng": 20.823420805379217 },
+        "marker": { "lat": 42.16560675405716, "lng": 20.623420805379217 },
         "theme": ["Tectonique", "Aléa anthropique et climatique"],
         "leaders": ["M. Métois (LGLTPE)"],
         "description": "La région des Balkans est une des zones les plus sismiques d'Europe, avec un intense développement industriel et démographique. Ce projet a pour objectif de mieux quantifier les déformations d’origine tectonique dans cette région (cinématique et localisation des failles actives, étude des séismes). Il s’intéresse aussi aux déformations d’origine anthropique ou climatique (liées à l’exploitation de ressources naturelles ou aux variations du niveau marin).",
